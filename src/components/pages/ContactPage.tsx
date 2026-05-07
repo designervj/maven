@@ -6,6 +6,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { homeFooterCta, siteContact } from "@/lib/homepage-data";
+import { useState } from "react";
 
 const offices = [
   {
@@ -21,6 +22,58 @@ const offices = [
 ];
 
 export default function ContactPage() {
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    project: "",
+    message: "",
+    location: ""
+  })
+  const [saving, setSaving] = useState(false)
+
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      setSaving(true)
+      const response = await fetch('/api/form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+      const value = await response.json();
+      if (value.success) {
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          project: "",
+          message: "",
+          location: ""
+        })
+        alert("Thank you for contacting us! We will get back to you soon.");
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setSaving(false)
+    }
+  }
+
   return (
     <main className="bg-white text-[#111111]">
       <section className="border-b border-[#d7d7d7] bg-white pt-24 md:pt-28">
@@ -93,8 +146,10 @@ export default function ContactPage() {
                     </span>
                     <input
                       type="text"
-                      name="subject"
+                      value={form.name}
+                      name="name"
                       placeholder="Your name"
+                      onChange={(e) => handleChangeInput(e)}
                       className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
                     />
                   </label>
@@ -105,7 +160,9 @@ export default function ContactPage() {
                     <input
                       type="email"
                       name="email"
+                      value={form.email}
                       placeholder="you@example.com"
+                      onChange={(e) => handleChangeInput(e)}
                       className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
                     />
                   </label>
@@ -119,7 +176,9 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       name="phone"
+                      value={form.phone}
                       placeholder="+91"
+                      onChange={(e) => handleChangeInput(e)}
                       className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
                     />
                   </label>
@@ -129,6 +188,8 @@ export default function ContactPage() {
                     </span>
                     <select
                       name="project"
+                      value={form.project}
+                      onChange={(e) => handleChangeInput(e)}
                       className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
                     >
                       <option>Residence</option>
@@ -148,6 +209,8 @@ export default function ContactPage() {
                     type="text"
                     name="location"
                     placeholder="City / Site location"
+                    value={form.location}
+                    onChange={(e) => handleChangeInput(e)}
                     className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
                   />
                 </label>
@@ -157,18 +220,21 @@ export default function ContactPage() {
                     Tell us about your project
                   </span>
                   <textarea
-                    name="body"
+                    name="message"
                     rows={6}
+                    value={form.message}
                     placeholder="Share size, timeline, goals, and any links or references."
+                    onChange={(e) => handleChangeInput(e)}
                     className="mt-2 w-full resize-none border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
                   />
                 </label>
 
                 <button
                   type="submit"
+                  onClick={handleSubmit}
                   className="w-full bg-[#111111] hover:bg-[#000000] text-white py-6 rounded-none font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  Send inquiry
+                  {saving ? "Submitting..." : "Send inquiry"}
                 </button>
               </form>
             </motion.div>
