@@ -8,6 +8,7 @@ import {
 } from "next/font/google";
 
 import NavigationWrapper from "@/components/layout/NavigationWrapper";
+import ReduxProvider from "@/components/layout/ReduxProvider";
 import "@/styles/index.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -42,7 +43,6 @@ export const metadata: Metadata = {
   description:
     "Maven Projects is a premier architecture and interior design studio in Jaipur, creating modern, functional, and sustainable homes across Rajasthan.",
 
-  // ✅ FAVICON ADDED HERE
   icons: {
     icon: [
       { url: "/assets/Image/favicon-3.svg" },
@@ -64,9 +64,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${manrope.variable} ${cormorant.variable} font-inter text-brand-text`}
       >
-        <NavigationWrapper>
-          {children}
-        </NavigationWrapper>
+        <ReduxProvider>
+          <NavigationWrapper>
+            {children}
+          </NavigationWrapper>
+        </ReduxProvider>
       </body>
     </html>
   );

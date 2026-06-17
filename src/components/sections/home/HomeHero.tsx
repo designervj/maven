@@ -25,7 +25,7 @@ export default function HomeHero({ content }: HomeHeroProps) {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.05)_0%,rgba(10,10,10,0.1)_50%,rgba(10,10,10,0.2)_100%)]" />
+        <div className="absolute inset-0 bg-black/40 bg-[linear-gradient(180deg,rgba(10,10,10,0.1)_0%,rgba(10,10,10,0.5)_100%)]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1500px] px-5 pb-8 pt-28 md:px-8 md:pb-10 lg:px-10 lg:pt-32">

@@ -36,7 +36,7 @@ export default function HomeFaq({ items }: HomeFaqProps) {
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="border border-[#dfdfdf] p-8 md:p-10"
+              className="border border-[#dfdfdf] bg-white p-8 md:p-10 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#b0b0b0] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)]"
             >
               <h3 className="font-display mb-4 text-xl md:text-2xl font-medium leading-tight text-[#141414]">
                 {item.question}
