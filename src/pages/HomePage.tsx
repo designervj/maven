@@ -111,7 +111,19 @@ export default function HomePage() {
   };
 
   // ─── Founder Feature ──────────────────────────────────────────────────────────
-  const founderFeature = {
+  const founderSection = getSection("Founder Feature");
+  const founderProps = founderSection?.props ?? {};
+  const founderFeature = founderSection ? {
+    eyebrow: t(founderProps.eyebrow) || "Our Philosophy",
+    title: t(founderProps.title)?.replace(/<[^>]*>/g, "") || "Designing with discipline, warmth, and long-term clarity.",
+    quote: t(founderProps.quote) || "Every successful project balances concept and control.",
+    description: t(founderProps.description) || "Our studio pairs strong architectural thinking with calm execution support.",
+    image: founderProps.image || "/assets/Image/team-img.jpg",
+    secondaryImage: founderProps.secondaryImage || "/assets/Image/project-image2.png",
+    role: t(founderProps.role) || "Architecture / Interiors / Execution",
+    name: t(founderProps.name) || "Maven Projects",
+    cta: { label: t(founderProps.cta) || "Meet the studio", href: founderProps.ctaLink || "/about" },
+  } : {
     eyebrow: "Our Philosophy",
     title: "Designing with discipline, warmth, and long-term clarity.",
     quote: "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful.",
@@ -124,10 +136,16 @@ export default function HomePage() {
   };
 
   // ─── FAQ ──────────────────────────────────────────────────────────────────────
-  const faqItems = [
-    { question: "How do I find a reliable architect or interior designer in Jaipur?", answer: "The best approach is to find a studio that aligns with your style and values." },
-    { question: "Can Maven Projects manage my entire construction project?", answer: "Yes, we provide end-to-end project management from design to on-site execution." },
-  ];
+  const faqData = getSectionItems("FAQ");
+  const faqItems = faqData.length > 0
+    ? faqData.map((item: any) => ({
+        question: t(item.props?.question),
+        answer: t(item.props?.answer),
+      }))
+    : [
+        { question: "How do I find a reliable architect or interior designer in Jaipur?", answer: "The best approach is to find a studio that aligns with your style and values." },
+        { question: "Can Maven Projects manage my entire construction project?", answer: "Yes, we provide end-to-end project management from design to on-site execution." },
+      ];
 
   // ─── Closing CTA ──────────────────────────────────────────────────────────────
   const ctaSection = getSection("Client Logos");

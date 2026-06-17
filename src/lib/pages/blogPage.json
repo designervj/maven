@@ -1,9 +1,18 @@
 {
-  "title": { "en": "Blog", "hi": "Blog" },
+  "title": {
+    "en": "Blog",
+    "hi": "Blog"
+  },
   "slug": "blog",
   "isPublished": true,
-  "metaTitle": { "en": "Blog | Maven Projects", "hi": "Blog | Maven Projects" },
-  "metaDescription": { "en": "Read our latest insights, design stories, and studio updates from Maven Projects in Jaipur.", "hi": "Read our latest insights, design stories, and studio updates from Maven Projects in Jaipur." },
+  "metaTitle": {
+    "en": "Blog | Maven Projects",
+    "hi": "Blog | Maven Projects"
+  },
+  "metaDescription": {
+    "en": "Read our latest insights, design stories, and studio updates from Maven Projects in Jaipur.",
+    "hi": "Read our latest insights, design stories, and studio updates from Maven Projects in Jaipur."
+  },
   "content": [
     {
       "id": "blog-hero",
@@ -11,10 +20,19 @@
       "layout": "full",
       "adminTitle": "Blog Hero",
       "props": {
-        "label": { "en": "Blog", "hi": "Blog" },
-        "heading": { "en": "Stories from the studio and beyond.", "hi": "Stories from the studio and beyond." },
-        "description": { "en": "We are preparing new articles about architecture, interior design, and our project journeys in Jaipur. Stay tuned.", "hi": "We are preparing new articles about architecture, interior design, and our project journeys in Jaipur. Stay tuned." },
-        "image": "/assets/Image/project-image1.png"
+        "label": {
+          "en": "Blog",
+          "hi": "Blog"
+        },
+        "heading": {
+          "en": "Stories from the studio and beyond.",
+          "hi": "Stories from the studio and beyond."
+        },
+        "description": {
+          "en": "We are preparing new articles about architecture, interior design, and our project journeys in Jaipur. Stay tuned.",
+          "hi": "We are preparing new articles about architecture, interior design, and our project journeys in Jaipur. Stay tuned."
+        },
+        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop"
       }
     },
     {
@@ -27,33 +45,60 @@
           "id": "blog-1",
           "type": "item",
           "props": {
-            "title": { "en": "How a modern facade stays warm and welcoming", "hi": "How a modern facade stays warm and welcoming" },
-            "excerpt": { "en": "A closer look at proportion, materials, and threshold design in our recent residential work.", "hi": "A closer look at proportion, materials, and threshold design in our recent residential work." },
+            "title": {
+              "en": "How a modern facade stays warm and welcoming",
+              "hi": "How a modern facade stays warm and welcoming"
+            },
+            "excerpt": {
+              "en": "A closer look at proportion, materials, and threshold design in our recent residential work.",
+              "hi": "A closer look at proportion, materials, and threshold design in our recent residential work."
+            },
             "image": "/assets/Image/about-image.jpg",
             "slug": "modern-facade",
-            "tag": { "en": "Media", "hi": "Media" }
+            "tag": {
+              "en": "Media",
+              "hi": "Media"
+            }
           }
         },
         {
           "id": "blog-2",
           "type": "item",
           "props": {
-            "title": { "en": "Designing joinery that feels architectural", "hi": "Designing joinery that feels architectural" },
-            "excerpt": { "en": "Interior details can reinforce the larger spatial idea when geometry, texture, and light are handled together.", "hi": "Interior details can reinforce the larger spatial idea when geometry, texture, and light are handled together." },
+            "title": {
+              "en": "Designing joinery that feels architectural",
+              "hi": "Designing joinery that feels architectural"
+            },
+            "excerpt": {
+              "en": "Interior details can reinforce the larger spatial idea when geometry, texture, and light are handled together.",
+              "hi": "Interior details can reinforce the larger spatial idea when geometry, texture, and light are handled together."
+            },
             "image": "/assets/Image/project-image1.png",
             "slug": "designing-joinery",
-            "tag": { "en": "Press release", "hi": "Press release" }
+            "tag": {
+              "en": "Press release",
+              "hi": "Press release"
+            }
           }
         },
         {
           "id": "blog-3",
           "type": "item",
           "props": {
-            "title": { "en": "Recent hospitality concept highlighted by editors", "hi": "Recent hospitality concept highlighted by editors" },
-            "excerpt": { "en": "A published project story focused on circulation, atmosphere, and restrained material layering.", "hi": "A published project story focused on circulation, atmosphere, and restrained material layering." },
+            "title": {
+              "en": "Recent hospitality concept highlighted by editors",
+              "hi": "Recent hospitality concept highlighted by editors"
+            },
+            "excerpt": {
+              "en": "A published project story focused on circulation, atmosphere, and restrained material layering.",
+              "hi": "A published project story focused on circulation, atmosphere, and restrained material layering."
+            },
             "image": "/assets/Image/project-image2.png",
             "slug": "hospitality-concept",
-            "tag": { "en": "News", "hi": "News" }
+            "tag": {
+              "en": "News",
+              "hi": "News"
+            }
           }
         }
       ]
@@ -64,9 +109,18 @@
       "layout": "cta",
       "adminTitle": "Newsletter",
       "props": {
-        "heading": { "en": "Stay updated with our latest stories", "hi": "Stay updated with our latest stories" },
-        "description": { "en": "Subscribe to receive new articles and studio updates from Maven Projects.", "hi": "Subscribe to receive new articles and studio updates from Maven Projects." },
-        "submitText": { "en": "Subscribe Now", "hi": "Subscribe Now" }
+        "heading": {
+          "en": "Stay updated with our latest stories",
+          "hi": "Stay updated with our latest stories"
+        },
+        "description": {
+          "en": "Subscribe to receive new articles and studio updates from Maven Projects.",
+          "hi": "Subscribe to receive new articles and studio updates from Maven Projects."
+        },
+        "submitText": {
+          "en": "Subscribe Now",
+          "hi": "Subscribe Now"
+        }
       }
     }
   ]

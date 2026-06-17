@@ -154,11 +154,20 @@ export default function Header() {
             >
               {/* ── LEFT: white nav panel ─────────────────────────────── */}
               <div className="relative flex w-full flex-col justify-between bg-white px-8 py-6 md:w-[58%] lg:w-[50%]">
-                {/* Logo */}
-                <div>
+                {/* Logo and Mobile Close */}
+                <div className="flex items-start justify-between">
                   <Link href="/" onClick={() => setOpen(false)}>
                     <img src="/assets/Image/New-Logo.png" alt="Maven Projects" className="h-12 w-auto md:h-16" />
                   </Link>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(false)}
+                    aria-label="Close menu"
+                    className="md:hidden inline-flex items-center gap-2 bg-[#111111] px-3 py-2 text-[10px] font-medium uppercase tracking-[0.18em] text-white transition-colors duration-200 hover:bg-black"
+                  >
+                    
+                    <X size={13} strokeWidth={2} />
+                  </button>
                 </div>
 
                 {/* Nav + sub-links side by side */}
@@ -179,7 +188,7 @@ export default function Header() {
                           href={item.href}
                           onClick={() => setOpen(false)}
                           className={cn(
-                            "font-display block text-[clamp(1.9rem,4vw,3rem)] font-medium leading-[1.18] tracking-[-0.03em] transition-colors duration-200",
+                            "font-display block text-[clamp(1.9rem,4vw,3rem)] font-medium md:leading-[1.18] leading-[1.50] tracking-[-0.03em] transition-colors duration-200",
                             pathname === item.href
                               ? "text-[#111111]"
                               : "text-[#666666] hover:text-[#111111]"

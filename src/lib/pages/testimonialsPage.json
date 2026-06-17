@@ -1,9 +1,18 @@
 {
-  "title": { "en": "Testimonials", "hi": "Testimonials" },
+  "title": {
+    "en": "Testimonials",
+    "hi": "Testimonials"
+  },
   "slug": "testimonials",
   "isPublished": true,
-  "metaTitle": { "en": "Client Testimonials | Maven Projects Jaipur", "hi": "Client Testimonials | Maven Projects Jaipur" },
-  "metaDescription": { "en": "Read what our clients say about working with Maven Projects — Jaipur's trusted architecture and interior design studio.", "hi": "Read what our clients say about working with Maven Projects — Jaipur's trusted architecture and interior design studio." },
+  "metaTitle": {
+    "en": "Client Testimonials | Maven Projects Jaipur",
+    "hi": "Client Testimonials | Maven Projects Jaipur"
+  },
+  "metaDescription": {
+    "en": "Read what our clients say about working with Maven Projects — Jaipur's trusted architecture and interior design studio.",
+    "hi": "Read what our clients say about working with Maven Projects — Jaipur's trusted architecture and interior design studio."
+  },
   "content": [
     {
       "id": "testimonials-hero",
@@ -11,10 +20,19 @@
       "layout": "full",
       "adminTitle": "Testimonials Hero",
       "props": {
-        "label": { "en": "Client Stories", "hi": "Client Stories" },
-        "heading": { "en": "What our clients say about us.", "hi": "What our clients say about us." },
-        "description": { "en": "Real stories from clients who trusted us with their most important spaces.", "hi": "Real stories from clients who trusted us with their most important spaces." },
-        "image": "/assets/Image/about-us-img.jpeg"
+        "label": {
+          "en": "Client Stories",
+          "hi": "Client Stories"
+        },
+        "heading": {
+          "en": "What our clients say about us.",
+          "hi": "What our clients say about us."
+        },
+        "description": {
+          "en": "Real stories from clients who trusted us with their most important spaces.",
+          "hi": "Real stories from clients who trusted us with their most important spaces."
+        },
+        "image": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2000&auto=format&fit=crop"
       }
     },
     {
@@ -27,9 +45,18 @@
           "id": "testi-1",
           "type": "item",
           "props": {
-            "quote": { "en": "Maven Projects gave our home a rare sense of stillness. Every room feels generous, resolved, and beautifully easy to live in.", "hi": "Maven Projects gave our home a rare sense of stillness. Every room feels generous, resolved, and beautifully easy to live in." },
-            "author": { "en": "Residential Client", "hi": "Residential Client" },
-            "role": { "en": "Jaipur", "hi": "Jaipur" },
+            "quote": {
+              "en": "Maven Projects gave our home a rare sense of stillness. Every room feels generous, resolved, and beautifully easy to live in.",
+              "hi": "Maven Projects gave our home a rare sense of stillness. Every room feels generous, resolved, and beautifully easy to live in."
+            },
+            "author": {
+              "en": "Residential Client",
+              "hi": "Residential Client"
+            },
+            "role": {
+              "en": "Jaipur",
+              "hi": "Jaipur"
+            },
             "avatar": "/assets/Image/testimonials-img.png",
             "rating": 5
           }
@@ -38,9 +65,18 @@
           "id": "testi-2",
           "type": "item",
           "props": {
-            "quote": { "en": "The team transformed our villa renovation into a seamless, stress-free experience. The final result exceeded every expectation.", "hi": "The team transformed our villa renovation into a seamless, stress-free experience. The final result exceeded every expectation." },
-            "author": { "en": "Villa Owner", "hi": "Villa Owner" },
-            "role": { "en": "Vaishali Nagar, Jaipur", "hi": "Vaishali Nagar, Jaipur" },
+            "quote": {
+              "en": "The team transformed our villa renovation into a seamless, stress-free experience. The final result exceeded every expectation.",
+              "hi": "The team transformed our villa renovation into a seamless, stress-free experience. The final result exceeded every expectation."
+            },
+            "author": {
+              "en": "Villa Owner",
+              "hi": "Villa Owner"
+            },
+            "role": {
+              "en": "Vaishali Nagar, Jaipur",
+              "hi": "Vaishali Nagar, Jaipur"
+            },
             "avatar": "/assets/Image/testimonials-img.png",
             "rating": 5
           }
@@ -49,9 +85,18 @@
           "id": "testi-3",
           "type": "item",
           "props": {
-            "quote": { "en": "From our first consultation to moving in, Maven Projects was professional, transparent, and genuinely invested in creating a beautiful home for our family.", "hi": "From our first consultation to moving in, Maven Projects was professional, transparent, and genuinely invested in creating a beautiful home for our family." },
-            "author": { "en": "Homeowner", "hi": "Homeowner" },
-            "role": { "en": "Malviya Nagar, Jaipur", "hi": "Malviya Nagar, Jaipur" },
+            "quote": {
+              "en": "From our first consultation to moving in, Maven Projects was professional, transparent, and genuinely invested in creating a beautiful home for our family.",
+              "hi": "From our first consultation to moving in, Maven Projects was professional, transparent, and genuinely invested in creating a beautiful home for our family."
+            },
+            "author": {
+              "en": "Homeowner",
+              "hi": "Homeowner"
+            },
+            "role": {
+              "en": "Malviya Nagar, Jaipur",
+              "hi": "Malviya Nagar, Jaipur"
+            },
             "avatar": "/assets/Image/testimonials-img.png",
             "rating": 5
           }
@@ -64,9 +109,18 @@
       "layout": "cta",
       "adminTitle": "Testimonials CTA",
       "props": {
-        "heading": { "en": "Ready to become our next success story?", "hi": "Ready to become our next success story?" },
-        "description": { "en": "Let's build something extraordinary together. Contact us to start your project.", "hi": "Let's build something extraordinary together. Contact us to start your project." },
-        "primaryButton": { "en": "Start a Project", "hi": "Start a Project" },
+        "heading": {
+          "en": "Ready to become our next success story?",
+          "hi": "Ready to become our next success story?"
+        },
+        "description": {
+          "en": "Let's build something extraordinary together. Contact us to start your project.",
+          "hi": "Let's build something extraordinary together. Contact us to start your project."
+        },
+        "primaryButton": {
+          "en": "Start a Project",
+          "hi": "Start a Project"
+        },
         "primaryButtonLink": "/contact"
       }
     }

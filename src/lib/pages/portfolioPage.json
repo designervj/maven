@@ -1,9 +1,18 @@
 {
-  "title": { "en": "Portfolio", "hi": "Portfolio" },
+  "title": {
+    "en": "Portfolio",
+    "hi": "Portfolio"
+  },
   "slug": "portfolio",
   "isPublished": true,
-  "metaTitle": { "en": "Portfolio | Architecture & Interior Projects Jaipur | Maven Projects", "hi": "Portfolio | Architecture & Interior Projects Jaipur | Maven Projects" },
-  "metaDescription": { "en": "Browse Maven Projects' portfolio of modern architecture and luxury interiors in Jaipur, featuring our signature work in Malviya Nagar and Jagatpura.", "hi": "Browse Maven Projects' portfolio of modern architecture and luxury interiors in Jaipur." },
+  "metaTitle": {
+    "en": "Portfolio | Architecture & Interior Projects Jaipur | Maven Projects",
+    "hi": "Portfolio | Architecture & Interior Projects Jaipur | Maven Projects"
+  },
+  "metaDescription": {
+    "en": "Browse Maven Projects' portfolio of modern architecture and luxury interiors in Jaipur, featuring our signature work in Malviya Nagar and Jagatpura.",
+    "hi": "Browse Maven Projects' portfolio of modern architecture and luxury interiors in Jaipur."
+  },
   "content": [
     {
       "id": "portfolio-hero",
@@ -11,10 +20,19 @@
       "layout": "full",
       "adminTitle": "Portfolio Hero",
       "props": {
-        "label": { "en": "Our Portfolio", "hi": "Our Portfolio" },
-        "heading": { "en": "Transforming ideas into beautiful, lived-in spaces across Jaipur.", "hi": "Transforming ideas into beautiful, lived-in spaces across Jaipur." },
-        "description": { "en": "A curated look at our recent architecture and interior projects that blend modern aesthetics with functional living.", "hi": "A curated look at our recent architecture and interior projects that blend modern aesthetics with functional living." },
-        "image": "/assets/Image/project-image2.png"
+        "label": {
+          "en": "Our Portfolio",
+          "hi": "Our Portfolio"
+        },
+        "heading": {
+          "en": "Transforming ideas into beautiful, lived-in spaces across Jaipur.",
+          "hi": "Transforming ideas into beautiful, lived-in spaces across Jaipur."
+        },
+        "description": {
+          "en": "A curated look at our recent architecture and interior projects that blend modern aesthetics with functional living.",
+          "hi": "A curated look at our recent architecture and interior projects that blend modern aesthetics with functional living."
+        },
+        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop"
       }
     },
     {
@@ -27,7 +45,10 @@
           "id": "port-1",
           "type": "item",
           "props": {
-            "title": { "en": "Primary Residence House", "hi": "Primary Residence House" },
+            "title": {
+              "en": "Primary Residence House",
+              "hi": "Primary Residence House"
+            },
             "category": "New build",
             "location": "Jaipur, India",
             "image": "/assets/Image/about-img.jpg",
@@ -39,7 +60,10 @@
           "id": "port-2",
           "type": "item",
           "props": {
-            "title": { "en": "Field View Villa", "hi": "Field View Villa" },
+            "title": {
+              "en": "Field View Villa",
+              "hi": "Field View Villa"
+            },
             "category": "Private home",
             "location": "Ahmedabad, India",
             "image": "/assets/Image/about-image.jpg",
@@ -51,7 +75,10 @@
           "id": "port-3",
           "type": "item",
           "props": {
-            "title": { "en": "Lightwell Gallery", "hi": "Lightwell Gallery" },
+            "title": {
+              "en": "Lightwell Gallery",
+              "hi": "Lightwell Gallery"
+            },
             "category": "Cultural interiors",
             "location": "Mumbai, India",
             "image": "/assets/Image/project-image2.png",
@@ -67,14 +94,29 @@
       "layout": "banner",
       "adminTitle": "Portfolio CTA",
       "props": {
-        "label": { "en": "Before the build", "hi": "Before the build" },
-        "heading": { "en": "Ready to Start Your Project?", "hi": "Ready to Start Your Project?" },
-        "description": { "en": "Seeing our work is just the beginning. Let's collaborate to create something special for you and your family.", "hi": "Seeing our work is just the beginning. Let's collaborate to create something special for you and your family." },
+        "label": {
+          "en": "Before the build",
+          "hi": "Before the build"
+        },
+        "heading": {
+          "en": "Ready to Start Your Project?",
+          "hi": "Ready to Start Your Project?"
+        },
+        "description": {
+          "en": "Seeing our work is just the beginning. Let's collaborate to create something special for you and your family.",
+          "hi": "Seeing our work is just the beginning. Let's collaborate to create something special for you and your family."
+        },
         "image": "/assets/Image/project-image1.png",
         "secondaryImage": "/assets/Image/project-image2.png",
-        "primaryButton": { "en": "Start Your Project Here", "hi": "Start Your Project Here" },
+        "primaryButton": {
+          "en": "Start Your Project Here",
+          "hi": "Start Your Project Here"
+        },
         "primaryButtonLink": "/contact",
-        "secondaryButton": { "en": "Discover more", "hi": "Discover more" },
+        "secondaryButton": {
+          "en": "Discover more",
+          "hi": "Discover more"
+        },
         "secondaryButtonLink": "/about"
       }
     }

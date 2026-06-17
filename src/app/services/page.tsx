@@ -3,6 +3,7 @@
 import { getPageData } from "@/lib/pageHelpers";
 import PageHero from "@/components/pages/PageHero";
 import HomeStudioIntro from "@/components/sections/home/HomeStudioIntro";
+import HomeDesignLeadership from "@/components/sections/home/HomeDesignLeadership";
 import HomeServices from "@/components/sections/home/HomeServices";
 import HomeProcess from "@/components/sections/home/HomeProcess";
 import HomeFeatureBanner from "@/components/sections/home/HomeFeatureBanner";
@@ -29,7 +30,19 @@ export default function ServicesPage() {
     cta: { label: t(introProps.cta) || "View Projects", href: introProps.ctaLink || "/portfolio" }
   } : null;
 
-  // 3. Services grid
+  // 3. Design Leadership
+  const leadershipSection = getSection("Design Leadership");
+  const leadershipProps = leadershipSection?.props ?? {};
+  const leadershipItems = getSectionItems("Design Leadership");
+  const leadershipData = leadershipSection ? {
+    title: t(leadershipProps.title)?.replace(/<[^>]*>/g, "") || "Honoring creativity, quality, and design leadership",
+    image: leadershipProps.image || "/assets/Image/project-image2.png",
+    points: leadershipItems.map((item: any) => ({
+      text: t(item.props?.text),
+    })),
+  } : null;
+
+  // 4. Services grid
   const serviceItems = getSectionItems("Services");
   const services = serviceItems.length > 0
     ? serviceItems.map((item: any, i: number) => ({
@@ -45,7 +58,7 @@ export default function ServicesPage() {
         { index: "03", title: "Renovation", description: "Breathing new life into old spaces with modern aesthetics.", icon: "ruler" as const, linkLabel: "Renovation" },
       ];
 
-  // 4. Feature Banner (Turnkey Solutions)
+  // 5. Feature Banner (Turnkey Solutions)
   const featureSection = getSection("Turnkey Solutions");
   const featureProps = featureSection?.props ?? {};
   const featureData = featureSection ? {
@@ -56,7 +69,7 @@ export default function ServicesPage() {
     cta: { label: t(featureProps.cta) || "Learn More", href: featureProps.ctaLink || "/contact" }
   } : null;
 
-  // 5. Process steps
+  // 6. Process steps
   const processSection = getSection("Process");
   const processProps = processSection?.props ?? {};
   const processStepItems = getSectionItems("Process");
@@ -76,7 +89,7 @@ export default function ServicesPage() {
         { step: "02", title: "Design & Architecture", description: "Wireframes, system design, and tech stack selection." },
       ];
 
-  // 6. Partners Logo Strip
+  // 7. Partners Logo Strip
   const partnersSection = getSection("Our Partners");
   const partnerItems = getSectionItems("Our Partners");
   const partnersData = partnerItems.map((item: any) => ({
@@ -84,7 +97,7 @@ export default function ServicesPage() {
     src: item.props?.src,
   }));
 
-  // 7. Projects
+  // 8. Projects
   const projectsSection = getSection("Projects");
   const projectItems = getSectionItems("Projects");
   const projectsData = projectItems.map((item: any) => ({
@@ -96,7 +109,7 @@ export default function ServicesPage() {
     href: item.props?.href || "/portfolio",
   }));
 
-  // 8. FAQ
+  // 9. FAQ
   const faqSection = getSection("FAQ");
   const faqItems = getSectionItems("FAQ");
   const faqData = faqItems.map((item: any) => ({
@@ -104,7 +117,7 @@ export default function ServicesPage() {
     answer: t(item.props?.answer),
   }));
 
-  // 9. CTA
+  // 10. CTA
   const ctaSection = getSection("Command Center");
   const ctaProps = ctaSection?.props ?? {};
 
@@ -118,6 +131,8 @@ export default function ServicesPage() {
       />
       
       {studioIntroData && <HomeStudioIntro content={studioIntroData} />}
+      
+      {leadershipData && <HomeDesignLeadership title={leadershipData.title} points={leadershipData.points} image={leadershipData.image} />}
       
       <HomeServices items={services} />
       

@@ -1,9 +1,18 @@
 {
-  "title": { "en": "About Us", "hi": "About Us" },
+  "title": {
+    "en": "About Us",
+    "hi": "About Us"
+  },
   "slug": "about",
   "isPublished": true,
-  "metaTitle": { "en": "About Maven Projects | Leading Design Studio in Jaipur", "hi": "About Maven Projects | Leading Design Studio in Jaipur" },
-  "metaDescription": { "en": "Learn about Maven Projects, a dedicated architecture and interior design firm in Jaipur. We focus on modern, human-centered design and disciplined project delivery.", "hi": "Learn about Maven Projects, a dedicated architecture and interior design firm in Jaipur." },
+  "metaTitle": {
+    "en": "About Maven Projects | Leading Design Studio in Jaipur",
+    "hi": "About Maven Projects | Leading Design Studio in Jaipur"
+  },
+  "metaDescription": {
+    "en": "Learn about Maven Projects, a dedicated architecture and interior design firm in Jaipur. We focus on modern, human-centered design and disciplined project delivery.",
+    "hi": "Learn about Maven Projects, a dedicated architecture and interior design firm in Jaipur."
+  },
   "content": [
     {
       "id": "about-hero",
@@ -11,10 +20,19 @@
       "layout": "full",
       "adminTitle": "About Hero",
       "props": {
-        "label": { "en": "About Us", "hi": "About Us" },
-        "heading": { "en": "Modern design built on trust, clarity, and the way you live.", "hi": "Modern design built on trust, clarity, and the way you live." },
-        "description": { "en": "Maven Projects works across residences, renovations, and contemporary interiors with a strong emphasis on detail, material warmth, and design continuity for our clients in Jaipur.", "hi": "Maven Projects works across residences, renovations, and contemporary interiors with a strong emphasis on detail, material warmth, and design continuity for our clients in Jaipur." },
-        "image": "/assets/Image/about-us-img.jpeg"
+        "label": {
+          "en": "About Us",
+          "hi": "About Us"
+        },
+        "heading": {
+          "en": "Modern design built on trust, clarity, and the way you live.",
+          "hi": "Modern design built on trust, clarity, and the way you live."
+        },
+        "description": {
+          "en": "Maven Projects works across residences, renovations, and contemporary interiors with a strong emphasis on detail, material warmth, and design continuity for our clients in Jaipur.",
+          "hi": "Maven Projects works across residences, renovations, and contemporary interiors with a strong emphasis on detail, material warmth, and design continuity for our clients in Jaipur."
+        },
+        "image": "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
       }
     },
     {
@@ -23,9 +41,18 @@
       "layout": "intro",
       "adminTitle": "Studio Intro",
       "props": {
-        "eyebrow": { "en": "The Studio", "hi": "The Studio" },
-        "title": { "en": "We are a tight-knit team of architects and interior designers dedicated to creating spaces that balance raw materials with refined execution.", "hi": "We are a tight-knit team of architects and interior designers dedicated to creating spaces that balance raw materials with refined execution." },
-        "cta": { "en": "Our Services", "hi": "Our Services" },
+        "eyebrow": {
+          "en": "The Studio",
+          "hi": "The Studio"
+        },
+        "title": {
+          "en": "We are a tight-knit team of architects and interior designers dedicated to creating spaces that balance raw materials with refined execution.",
+          "hi": "We are a tight-knit team of architects and interior designers dedicated to creating spaces that balance raw materials with refined execution."
+        },
+        "cta": {
+          "en": "Our Services",
+          "hi": "Our Services"
+        },
         "ctaLink": "/services"
       }
     },
@@ -35,14 +62,26 @@
       "layout": "split",
       "adminTitle": "Why Us",
       "props": {
-        "label": { "en": "Our Philosophy", "hi": "Our Philosophy" },
-        "heading": { "en": "Designing with discipline, warmth, and long-term clarity.", "hi": "Designing with discipline, warmth, and long-term clarity." },
-        "description": { "en": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful, tailored to the people who live there.", "hi": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful, tailored to the people who live there." },
+        "label": {
+          "en": "Our Philosophy",
+          "hi": "Our Philosophy"
+        },
+        "heading": {
+          "en": "Designing with discipline, warmth, and long-term clarity.",
+          "hi": "Designing with discipline, warmth, and long-term clarity."
+        },
+        "description": {
+          "en": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful, tailored to the people who live there.",
+          "hi": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful, tailored to the people who live there."
+        },
         "image": "/assets/Image/team-img.jpg",
         "secondaryImage": "/assets/Image/project-image2.png",
         "role": "Architecture / Interiors / Execution",
         "name": "Maven Projects",
-        "cta": { "en": "Meet the studio", "hi": "Meet the studio" },
+        "cta": {
+          "en": "Meet the studio",
+          "hi": "Meet the studio"
+        },
         "ctaLink": "/contact"
       },
       "content": [
@@ -50,24 +89,42 @@
           "id": "why-1",
           "type": "item",
           "props": {
-            "key": { "en": "Studio", "hi": "Studio" },
-            "value": { "en": "Maven Projects, Jaipur", "hi": "Maven Projects, Jaipur" }
+            "key": {
+              "en": "Studio",
+              "hi": "Studio"
+            },
+            "value": {
+              "en": "Maven Projects, Jaipur",
+              "hi": "Maven Projects, Jaipur"
+            }
           }
         },
         {
           "id": "why-2",
           "type": "item",
           "props": {
-            "key": { "en": "Focus", "hi": "Focus" },
-            "value": { "en": "Architecture · Interiors · Renovation", "hi": "Architecture · Interiors · Renovation" }
+            "key": {
+              "en": "Focus",
+              "hi": "Focus"
+            },
+            "value": {
+              "en": "Architecture · Interiors · Renovation",
+              "hi": "Architecture · Interiors · Renovation"
+            }
           }
         },
         {
           "id": "why-3",
           "type": "item",
           "props": {
-            "key": { "en": "Approach", "hi": "Approach" },
-            "value": { "en": "Detail-led, client-first design", "hi": "Detail-led, client-first design" }
+            "key": {
+              "en": "Approach",
+              "hi": "Approach"
+            },
+            "value": {
+              "en": "Detail-led, client-first design",
+              "hi": "Detail-led, client-first design"
+            }
           }
         }
       ]
@@ -78,36 +135,72 @@
       "layout": "process",
       "adminTitle": "Our Process",
       "props": {
-        "eyebrow": { "en": "Methodology", "hi": "Methodology" },
-        "title": { "en": "A structured approach to architecture.", "hi": "A structured approach to architecture." },
-        "description": { "en": "From the first sketch to the final handover, our process ensures that every detail is accounted for, eliminating surprises and delivering a space that exceeds expectations.", "hi": "From the first sketch to the final handover, our process ensures that every detail is accounted for, eliminating surprises and delivering a space that exceeds expectations." }
+        "eyebrow": {
+          "en": "Methodology",
+          "hi": "Methodology"
+        },
+        "title": {
+          "en": "A structured approach to architecture.",
+          "hi": "A structured approach to architecture."
+        },
+        "description": {
+          "en": "From the first sketch to the final handover, our process ensures that every detail is accounted for, eliminating surprises and delivering a space that exceeds expectations.",
+          "hi": "From the first sketch to the final handover, our process ensures that every detail is accounted for, eliminating surprises and delivering a space that exceeds expectations."
+        }
       },
       "content": [
         {
           "id": "proc-1",
           "type": "item",
           "props": {
-            "step": { "en": "01", "hi": "01" },
-            "title": { "en": "Concept & Feasibility", "hi": "Concept & Feasibility" },
-            "description": { "en": "We analyze the site context, environmental factors, and client aspirations to develop a robust architectural concept.", "hi": "We analyze the site context, environmental factors, and client aspirations to develop a robust architectural concept." }
+            "step": {
+              "en": "01",
+              "hi": "01"
+            },
+            "title": {
+              "en": "Concept & Feasibility",
+              "hi": "Concept & Feasibility"
+            },
+            "description": {
+              "en": "We analyze the site context, environmental factors, and client aspirations to develop a robust architectural concept.",
+              "hi": "We analyze the site context, environmental factors, and client aspirations to develop a robust architectural concept."
+            }
           }
         },
         {
           "id": "proc-2",
           "type": "item",
           "props": {
-            "step": { "en": "02", "hi": "02" },
-            "title": { "en": "Detailed Design", "hi": "Detailed Design" },
-            "description": { "en": "Translating concepts into precise blueprints. We specify every material, joint, and finish to ensure structural integrity and aesthetic cohesion.", "hi": "Translating concepts into precise blueprints. We specify every material, joint, and finish to ensure structural integrity and aesthetic cohesion." }
+            "step": {
+              "en": "02",
+              "hi": "02"
+            },
+            "title": {
+              "en": "Detailed Design",
+              "hi": "Detailed Design"
+            },
+            "description": {
+              "en": "Translating concepts into precise blueprints. We specify every material, joint, and finish to ensure structural integrity and aesthetic cohesion.",
+              "hi": "Translating concepts into precise blueprints. We specify every material, joint, and finish to ensure structural integrity and aesthetic cohesion."
+            }
           }
         },
         {
           "id": "proc-3",
           "type": "item",
           "props": {
-            "step": { "en": "03", "hi": "03" },
-            "title": { "en": "Execution & Delivery", "hi": "Execution & Delivery" },
-            "description": { "en": "Our site supervisors coordinate with trusted contractors to ensure the build exactly matches the design intent, delivered on schedule.", "hi": "Our site supervisors coordinate with trusted contractors to ensure the build exactly matches the design intent, delivered on schedule." }
+            "step": {
+              "en": "03",
+              "hi": "03"
+            },
+            "title": {
+              "en": "Execution & Delivery",
+              "hi": "Execution & Delivery"
+            },
+            "description": {
+              "en": "Our site supervisors coordinate with trusted contractors to ensure the build exactly matches the design intent, delivered on schedule.",
+              "hi": "Our site supervisors coordinate with trusted contractors to ensure the build exactly matches the design intent, delivered on schedule."
+            }
           }
         }
       ]
@@ -124,8 +217,14 @@
           "type": "item",
           "props": {
             "index": "01",
-            "title": { "en": "Architecture", "hi": "Architecture" },
-            "description": { "en": "From high-end residential to boutique commercial buildings, we design structures that respond intelligently to their environment and the people who inhabit them.", "hi": "From high-end residential to boutique commercial buildings, we design structures that respond intelligently to their environment and the people who inhabit them." },
+            "title": {
+              "en": "Architecture",
+              "hi": "Architecture"
+            },
+            "description": {
+              "en": "From high-end residential to boutique commercial buildings, we design structures that respond intelligently to their environment and the people who inhabit them.",
+              "hi": "From high-end residential to boutique commercial buildings, we design structures that respond intelligently to their environment and the people who inhabit them."
+            },
             "icon": "house"
           }
         },
@@ -134,8 +233,14 @@
           "type": "item",
           "props": {
             "index": "02",
-            "title": { "en": "Interior Design", "hi": "Interior Design" },
-            "description": { "en": "We craft interiors that feel effortless and deeply personal, focusing on spatial flow, natural light, and authentic, durable materials.", "hi": "We craft interiors that feel effortless and deeply personal, focusing on spatial flow, natural light, and authentic, durable materials." },
+            "title": {
+              "en": "Interior Design",
+              "hi": "Interior Design"
+            },
+            "description": {
+              "en": "We craft interiors that feel effortless and deeply personal, focusing on spatial flow, natural light, and authentic, durable materials.",
+              "hi": "We craft interiors that feel effortless and deeply personal, focusing on spatial flow, natural light, and authentic, durable materials."
+            },
             "icon": "sofa"
           }
         },
@@ -144,8 +249,14 @@
           "type": "item",
           "props": {
             "index": "03",
-            "title": { "en": "Project Management", "hi": "Project Management" },
-            "description": { "en": "Our studio bridges the gap between design and construction. We rigorously manage the build process, ensuring every detail is executed as drawn.", "hi": "Our studio bridges the gap between design and construction. We rigorously manage the build process, ensuring every detail is executed as drawn." },
+            "title": {
+              "en": "Project Management",
+              "hi": "Project Management"
+            },
+            "description": {
+              "en": "Our studio bridges the gap between design and construction. We rigorously manage the build process, ensuring every detail is executed as drawn.",
+              "hi": "Our studio bridges the gap between design and construction. We rigorously manage the build process, ensuring every detail is executed as drawn."
+            },
             "icon": "ruler"
           }
         }
@@ -162,32 +273,56 @@
           "id": "stat-1",
           "type": "item",
           "props": {
-            "label": { "en": "Years Experience", "hi": "Years Experience" },
-            "value": { "en": "12+", "hi": "12+" }
+            "label": {
+              "en": "Years Experience",
+              "hi": "Years Experience"
+            },
+            "value": {
+              "en": "12+",
+              "hi": "12+"
+            }
           }
         },
         {
           "id": "stat-2",
           "type": "item",
           "props": {
-            "label": { "en": "Completed Projects", "hi": "Completed Projects" },
-            "value": { "en": "40+", "hi": "40+" }
+            "label": {
+              "en": "Completed Projects",
+              "hi": "Completed Projects"
+            },
+            "value": {
+              "en": "40+",
+              "hi": "40+"
+            }
           }
         },
         {
           "id": "stat-3",
           "type": "item",
           "props": {
-            "label": { "en": "Design Awards", "hi": "Design Awards" },
-            "value": { "en": "15", "hi": "15" }
+            "label": {
+              "en": "Design Awards",
+              "hi": "Design Awards"
+            },
+            "value": {
+              "en": "15",
+              "hi": "15"
+            }
           }
         },
         {
           "id": "stat-4",
           "type": "item",
           "props": {
-            "label": { "en": "City Focus", "hi": "City Focus" },
-            "value": { "en": "Jaipur", "hi": "Jaipur" }
+            "label": {
+              "en": "City Focus",
+              "hi": "City Focus"
+            },
+            "value": {
+              "en": "Jaipur",
+              "hi": "Jaipur"
+            }
           }
         }
       ]
@@ -198,10 +333,19 @@
       "layout": "cta",
       "adminTitle": "Results",
       "props": {
-        "label": { "en": "Let's Talk About Your Project", "hi": "Let's Talk About Your Project" },
-        "heading": { "en": "Let's create a home that feels composed, generous, and fully yours.", "hi": "Let's create a home that feels composed, generous, and fully yours." },
+        "label": {
+          "en": "Let's Talk About Your Project",
+          "hi": "Let's Talk About Your Project"
+        },
+        "heading": {
+          "en": "Let's create a home that feels composed, generous, and fully yours.",
+          "hi": "Let's create a home that feels composed, generous, and fully yours."
+        },
         "image": "/assets/Image/about-image.jpg",
-        "primaryButton": { "en": "Book a consultation", "hi": "Book a consultation" },
+        "primaryButton": {
+          "en": "Book a consultation",
+          "hi": "Book a consultation"
+        },
         "primaryButtonLink": "/contact"
       }
     }
