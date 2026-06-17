@@ -2,12 +2,40 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-
-import { homeFooterCta, siteContact } from "@/lib/homepage-data";
 import { useState } from "react";
 
+import { homeFooterCta, siteContact } from "@/lib/homepage-data";
+import { getPageData } from "@/lib/pageHelpers";
+
+// ─── Animation variants ────────────────────────────────────────────────────────
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0 },
+};
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
+const slideLeft = {
+  hidden: { opacity: 0, x: -24 },
+  show: { opacity: 1, x: 0 },
+};
+
+const slideRight = {
+  hidden: { opacity: 0, x: 24 },
+  show: { opacity: 1, x: 0 },
+};
+
+// ─── Office info ───────────────────────────────────────────────────────────────
 const offices = [
   {
     label: "Studio",
@@ -17,11 +45,47 @@ const offices = [
   {
     label: "Appointments",
     title: "By prior schedule",
-    details: ["Monday to Saturday", "9:00 AM to 7:00 PM", "Sunday", " 10:00 AM to 6:00 PM"],
+    details: [
+      "Monday to Saturday  ·  9:00 AM – 7:00 PM",
+      "Sunday  ·  10:00 AM – 6:00 PM",
+    ],
   },
 ];
 
 export default function ContactPage() {
+  const { getSection, getSectionItems, t } = getPageData("contact");
+
+  const heroSection = getSection("Contact Hero");
+  const heroProps = heroSection?.props ?? {};
+  const contactItems = getSectionItems("Contact Hero");
+
+  const contactHeading =
+    t(heroProps.heading)?.replace(/<[^>]*>/g, "") ||
+    "Get in touch with Maven Projects.";
+  const contactDescription =
+    t(heroProps.description) ||
+    "Share your project brief, timeline, location, and the kind of space you want to create.";
+
+  const emailItem = contactItems.find((i: any) =>
+    t(i.props?.label)?.toLowerCase().includes("email")
+  );
+  const phoneItem = contactItems.find((i: any) =>
+    t(i.props?.label)?.toLowerCase().includes("phone")
+  );
+  const addressItem = contactItems.find((i: any) =>
+    t(i.props?.label)?.toLowerCase().includes("address")
+  );
+
+  const phoneLabel = t(phoneItem?.props?.value) || siteContact.phoneLabel;
+  const phoneHref = phoneItem
+    ? `tel:${t(phoneItem.props?.value)}`
+    : siteContact.phoneHref;
+  const emailLabel = t(emailItem?.props?.value) || siteContact.emailLabel;
+  const emailHref = emailItem
+    ? `mailto:${t(emailItem.props?.value)}`
+    : siteContact.emailHref;
+  const address = t(addressItem?.props?.value) || siteContact.address;
+  const heroImage = heroProps.image || "/assets/Image/project-image1.png";
 
   const [form, setForm] = useState({
     name: "",
@@ -29,146 +93,259 @@ export default function ContactPage() {
     phone: "",
     project: "",
     message: "",
-    location: ""
-  })
-  const [saving, setSaving] = useState(false)
+    location: "",
+  });
+  const [saving, setSaving] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChangeInput = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  }
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
-      setSaving(true)
-      const response = await fetch('/api/form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      setSaving(true);
+      const response = await fetch("/api/form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
       const value = await response.json();
       if (value.success) {
-        setForm({
-          name: "",
-          email: "",
-          phone: "",
-          project: "",
-          message: "",
-          location: ""
-        })
-        alert("Thank you for contacting us! We will get back to you soon.");
-      } else {
-        alert("Something went wrong. Please try again.");
+        setForm({ name: "", email: "", phone: "", project: "", message: "", location: "" });
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 5000);
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     } finally {
-      setSaving(false)
+      setSaving(false);
     }
-  }
+  };
 
   return (
     <main className="bg-white text-[#111111]">
-      <section className="border-b border-[#d7d7d7] bg-white pt-24 md:pt-28">
-        <div className="mx-auto max-w-[1500px] px-5 pb-14 pt-6 md:px-8 lg:px-10">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(360px,0.85fr)]">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <p className="font-editorial text-[10px] uppercase tracking-[0.24em] text-[#777777] md:text-xs">
-                Contact
-              </p>
-              <h1 className="font-display mt-4 max-w-4xl text-[clamp(2.5rem,5vw,4.6rem)] font-medium leading-[0.98] tracking-[-0.045em] text-[#111111]">
-                Get in touch with Maven Projects.
-              </h1>
-              <p className="font-editorial mt-6 max-w-2xl text-sm leading-7 text-[#555555] md:text-base">
-                Share your project brief, timeline, location, and the kind of space you want to create. We usually respond
-                to all inquiries within 24 hours. Our goal is to provide you with clear answers and helpful guidance
-                from day one.
-              </p>
 
-              <div className="mt-10 grid gap-8 border-t border-[#d7d7d7] pt-6 md:grid-cols-3">
-                <div>
-                  <Phone className="h-5 w-5 text-[#111111]" strokeWidth={1.5} />
-                  <p className="font-editorial mt-4 text-[10px] uppercase tracking-[0.22em] text-[#777777] md:text-xs">
-                    Call
-                  </p>
-                  <a href={siteContact.phoneHref} className="font-editorial mt-2 block text-sm text-[#111111]">
-                    {siteContact.phoneLabel}
-                  </a>
-                </div>
-                <div>
-                  <Mail className="h-5 w-5 text-[#111111]" strokeWidth={1.5} />
-                  <p className="font-editorial mt-4 text-[10px] uppercase tracking-[0.22em] text-[#777777] md:text-xs">
-                    Email
-                  </p>
-                  <a href={siteContact.emailHref} className="font-editorial mt-2 block text-sm text-[#111111]">
-                    {siteContact.emailLabel}
-                  </a>
-                </div>
-                <div>
-                  <MapPin className="h-5 w-5 text-[#111111]" strokeWidth={1.5} />
-                  <p className="font-editorial mt-4 text-[10px] uppercase tracking-[0.22em] text-[#777777] md:text-xs">
-                    Visit
-                  </p>
-                  <p className="font-editorial mt-2 text-sm leading-7 text-[#111111]">{siteContact.address}</p>
-                </div>
-              </div>
+      {/* ─── HERO ─────────────────────────────────────────────────────────────── */}
+      <section className="relative isolate flex min-h-[62svh] items-end overflow-hidden bg-[#1a1a1a]">
+        {/* Background image */}
+        <motion.div
+          className="absolute inset-0"
+          initial={{ scale: 1.08 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <Image
+            src={heroImage}
+            alt="Maven Projects Contact"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.18)_0%,rgba(10,10,10,0.52)_60%,rgba(10,10,10,0.72)_100%)]" />
+        </motion.div>
+
+        {/* Hero text */}
+        <motion.div
+          className="relative z-10 mx-auto w-full max-w-[1500px] px-5 pb-12 pt-36 md:px-8 lg:px-10 lg:pt-40"
+          initial="hidden"
+          animate="show"
+          variants={stagger}
+        >
+          <motion.p
+            variants={fadeUp}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-editorial text-[10px] uppercase tracking-[0.28em] text-white/75 md:text-xs"
+          >
+            Contact
+          </motion.p>
+          <motion.h1
+            variants={fadeUp}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="font-display mt-4 max-w-3xl text-[clamp(2.6rem,6vw,5rem)] font-medium leading-[0.94] tracking-[-0.045em] text-white"
+          >
+            {contactHeading}
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            transition={{ duration: 0.75, ease: "easeOut" }}
+            className="font-editorial mt-6 max-w-xl text-sm leading-7 text-white/80 md:text-[0.95rem]"
+          >
+            {contactDescription}
+          </motion.p>
+
+          {/* Quick contact links */}
+          <motion.div
+            variants={stagger}
+            className="mt-10 flex flex-wrap gap-6 border-t border-white/30 pt-8"
+          >
+            {[
+              { href: phoneHref, label: phoneLabel, Icon: Phone },
+              { href: emailHref, label: emailLabel, Icon: Mail },
+            ].map(({ href, label, Icon }) => (
+              <motion.a
+                key={href}
+                href={href}
+                variants={fadeUp}
+                transition={{ duration: 0.65, ease: "easeOut" }}
+                className="group flex items-center gap-3 text-white/85 transition-colors duration-200 hover:text-white"
+              >
+                <Icon className="h-4 w-4 shrink-0" strokeWidth={1.5} />
+                <span className="font-editorial text-sm">{label}</span>
+                <ArrowRight className="h-3 w-3 translate-x-0 opacity-0 transition-all duration-200 group-hover:translate-x-1 group-hover:opacity-100" />
+              </motion.a>
+            ))}
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ─── MAIN CONTENT: info + form ────────────────────────────────────────── */}
+      <section className="border-b border-[#d7d7d7] bg-white">
+        <div className="mx-auto max-w-[1500px] px-5 py-16 md:px-8 lg:px-10 lg:py-20">
+          <div className="grid gap-14 lg:grid-cols-[minmax(0,0.85fr)_minmax(360px,1fr)] lg:gap-16">
+
+            {/* Left — contact details */}
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={stagger}
+            >
+              <motion.p
+                variants={slideLeft}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="font-editorial text-[10px] uppercase tracking-[0.26em] text-[#777777] md:text-xs"
+              >
+                Let's connect
+              </motion.p>
+              <motion.h2
+                variants={slideLeft}
+                transition={{ duration: 0.75, ease: "easeOut" }}
+                className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] font-medium leading-[1.02] tracking-[-0.04em] text-[#111111]"
+              >
+                We'd love to hear about your project.
+              </motion.h2>
+              <motion.p
+                variants={slideLeft}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="font-editorial mt-5 max-w-md text-sm leading-7 text-[#555555]"
+              >
+                Whether you're planning a new home, a renovation, or a commercial interior — reach out and let's start the conversation.
+              </motion.p>
+
+              {/* Contact cards */}
+              <motion.div
+                variants={stagger}
+                className="mt-10 grid gap-5 sm:grid-cols-3"
+              >
+                {[
+                  { Icon: Phone, label: "Call us", value: phoneLabel, href: phoneHref },
+                  { Icon: Mail, label: "Email us", value: emailLabel, href: emailHref },
+                  { Icon: MapPin, label: "Visit us", value: address, href: "#" },
+                ].map(({ Icon, label, value, href }) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    variants={fadeUp}
+                    transition={{ duration: 0.65, ease: "easeOut" }}
+                    className="group block border border-[#e5e5e5] bg-[#fafafa] p-5 transition-all duration-300 hover:border-[#111111] hover:bg-white"
+                  >
+                    <div className="flex h-9 w-9 items-center justify-center border border-[#dfdfdf] bg-white transition-colors duration-300 group-hover:border-[#111111]">
+                      <Icon className="h-4 w-4 text-[#555555] group-hover:text-[#111111] transition-colors duration-300" strokeWidth={1.5} />
+                    </div>
+                    <p className="font-editorial mt-4 text-[10px] uppercase tracking-[0.22em] text-[#888888] md:text-xs">
+                      {label}
+                    </p>
+                    <p className="font-editorial mt-2 text-sm leading-6 text-[#111111]">
+                      {value}
+                    </p>
+                  </motion.a>
+                ))}
+              </motion.div>
+
+              {/* Office hours */}
+              <motion.div
+                variants={stagger}
+                className="mt-10 grid gap-5 border-t border-[#e5e5e5] pt-8 sm:grid-cols-2"
+              >
+                {offices.map((office) => (
+                  <motion.div
+                    key={office.title}
+                    variants={fadeUp}
+                    transition={{ duration: 0.65, ease: "easeOut" }}
+                  >
+                    <p className="font-editorial text-[10px] uppercase tracking-[0.22em] text-[#888888] md:text-xs">
+                      {office.label}
+                    </p>
+                    <p className="font-display mt-2 text-lg font-medium tracking-[-0.02em] text-[#111111]">
+                      {office.title}
+                    </p>
+                    {office.details.map((d) => (
+                      <p key={d} className="font-editorial mt-1 text-sm leading-7 text-[#666666]">
+                        {d}
+                      </p>
+                    ))}
+                  </motion.div>
+                ))}
+              </motion.div>
             </motion.div>
 
+            {/* Right — inquiry form */}
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
-              className="border border-[#d7d7d7] bg-[#fafafa] p-6 md:p-8"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={slideRight}
+              transition={{ duration: 0.75, ease: "easeOut" }}
+              className="border border-[#d7d7d7] bg-[#fafafa] p-7 md:p-9"
             >
               <p className="font-editorial text-[10px] uppercase tracking-[0.24em] text-[#777777] md:text-xs">
                 Project inquiry
               </p>
-              <form
-                action={siteContact.emailHref}
-                method="get"
-                className="mt-6 space-y-5"
-              >
-                <div className="grid gap-5 md:grid-cols-2">
-                  <label className="block">
-                    <span className="font-editorial text-[10px] uppercase tracking-[0.22em] text-[#777777] md:text-xs">
-                      Name
-                    </span>
-                    <input
-                      type="text"
-                      value={form.name}
-                      name="name"
-                      placeholder="Your name"
-                      onChange={(e) => handleChangeInput(e)}
-                      className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
-                    />
-                  </label>
-                  <label className="block">
-                    <span className="font-editorial text-[10px] uppercase tracking-[0.22em] text-[#777777] md:text-xs">
-                      Email
-                    </span>
-                    <input
-                      type="email"
-                      name="email"
-                      value={form.email}
-                      placeholder="you@example.com"
-                      onChange={(e) => handleChangeInput(e)}
-                      className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
-                    />
-                  </label>
+              <p className="font-display mt-2 text-[1.35rem] font-medium tracking-[-0.025em] text-[#111111]">
+                Tell us about your project
+              </p>
+
+              {submitted && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-5 border border-[#c8e6c9] bg-[#f1f8e9] px-4 py-3 text-sm text-[#2e7d32]"
+                >
+                  ✓ Thank you! We'll be in touch within 24 hours.
+                </motion.div>
+              )}
+
+              <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
+                <div className="grid gap-4 md:grid-cols-2">
+                  {[
+                    { label: "Name", name: "name", type: "text", placeholder: "Your name" },
+                    { label: "Email", name: "email", type: "email", placeholder: "you@example.com" },
+                  ].map((field) => (
+                    <label key={field.name} className="block">
+                      <span className="font-editorial text-[10px] uppercase tracking-[0.22em] text-[#777777] md:text-xs">
+                        {field.label}
+                      </span>
+                      <input
+                        type={field.type}
+                        name={field.name}
+                        value={form[field.name as keyof typeof form]}
+                        placeholder={field.placeholder}
+                        onChange={handleChangeInput}
+                        className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition-all duration-200 focus:border-[#111111] focus:ring-0"
+                      />
+                    </label>
+                  ))}
                 </div>
 
-                <div className="grid gap-5 md:grid-cols-2">
+                <div className="grid gap-4 md:grid-cols-2">
                   <label className="block">
                     <span className="font-editorial text-[10px] uppercase tracking-[0.22em] text-[#777777] md:text-xs">
                       Phone
@@ -178,8 +355,8 @@ export default function ContactPage() {
                       name="phone"
                       value={form.phone}
                       placeholder="+91"
-                      onChange={(e) => handleChangeInput(e)}
-                      className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
+                      onChange={handleChangeInput}
+                      className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition-all duration-200 focus:border-[#111111]"
                     />
                   </label>
                   <label className="block">
@@ -189,9 +366,10 @@ export default function ContactPage() {
                     <select
                       name="project"
                       value={form.project}
-                      onChange={(e) => handleChangeInput(e)}
-                      className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
+                      onChange={handleChangeInput}
+                      className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition-all duration-200 focus:border-[#111111]"
                     >
+                      <option value="">Select type</option>
                       <option>Residence</option>
                       <option>Interiors</option>
                       <option>Renovation</option>
@@ -210,8 +388,8 @@ export default function ContactPage() {
                     name="location"
                     placeholder="City / Site location"
                     value={form.location}
-                    onChange={(e) => handleChangeInput(e)}
-                    className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
+                    onChange={handleChangeInput}
+                    className="mt-2 w-full border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition-all duration-200 focus:border-[#111111]"
                   />
                 </label>
 
@@ -221,52 +399,48 @@ export default function ContactPage() {
                   </span>
                   <textarea
                     name="message"
-                    rows={6}
+                    rows={5}
                     value={form.message}
-                    placeholder="Share size, timeline, goals, and any links or references."
-                    onChange={(e) => handleChangeInput(e)}
-                    className="mt-2 w-full resize-none border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition focus:border-[#111111]"
+                    placeholder="Share size, timeline, goals, and any references."
+                    onChange={handleChangeInput}
+                    className="mt-2 w-full resize-none border border-[#d7d7d7] bg-white px-4 py-3 text-sm text-[#111111] outline-none transition-all duration-200 focus:border-[#111111]"
                   />
                 </label>
 
-                <button
+                <motion.button
                   type="submit"
-                  onClick={handleSubmit}
-                  className="w-full bg-[#111111] hover:bg-[#000000] text-white py-6 rounded-none font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
+                  whileHover={{ backgroundColor: "#000000" }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.18 }}
+                  className="group flex w-full items-center justify-center gap-3 bg-[#111111] py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors duration-300"
                 >
-                  {saving ? "Submitting..." : "Send inquiry"}
-                </button>
+                  {saving ? (
+                    <>
+                      <span className="inline-block h-3 w-3 animate-spin rounded-full border border-white/30 border-t-white" />
+                      Submitting…
+                    </>
+                  ) : (
+                    <>
+                      Send inquiry
+                      <ArrowRight className="h-3.5 w-3.5 translate-x-0 transition-transform duration-200 group-hover:translate-x-1" />
+                    </>
+                  )}
+                </motion.button>
               </form>
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="border-b border-[#d7d7d7] bg-white py-14">
-        <div className="mx-auto max-w-[1500px] px-5 md:px-8 lg:px-10">
-          <div className="grid gap-8 md:grid-cols-2">
-            {offices.map((office) => (
-              <div key={office.title} className="border border-[#d7d7d7] p-6 md:p-8">
-                <p className="font-editorial text-[10px] uppercase tracking-[0.24em] text-[#777777] md:text-xs">
-                  {office.label}
-                </p>
-                <h2 className="font-display mt-4 text-[1.9rem] font-medium tracking-[-0.035em] text-[#111111]">
-                  {office.title}
-                </h2>
-                <div className="mt-6 space-y-2">
-                  {office.details.map((detail) => (
-                    <p key={detail} className="font-editorial text-sm leading-7 text-[#555555]">
-                      {detail}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white pt-12">
+      {/* ─── FOOTER CTA BANNER ────────────────────────────────────────────────── */}
+      <motion.section
+        className="bg-white pt-12"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={fadeIn}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="mx-auto max-w-[1500px]">
           <div className="relative min-h-[320px] overflow-hidden md:min-h-[430px]">
             <Image
@@ -276,28 +450,37 @@ export default function ContactPage() {
               sizes="100vw"
               className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,11,11,0.08)_0%,rgba(11,11,11,0.3)_100%)]" />
-            <div className="absolute inset-x-0 bottom-0 border-t border-white/60 bg-black/10 px-5 py-6 backdrop-blur-[2px] md:px-8">
-              <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,11,11,0.08)_0%,rgba(11,11,11,0.32)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 border-t border-white/50 bg-black/10 px-5 py-7 backdrop-blur-[2px] md:px-8 md:py-8">
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                variants={stagger}
+                className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"
+              >
                 <div>
-                  <p className="font-editorial text-[10px] uppercase tracking-[0.24em] text-white/88 md:text-xs">
+                  <motion.p variants={fadeUp} transition={{ duration: 0.6 }} className="font-editorial text-[10px] uppercase tracking-[0.24em] text-white/80 md:text-xs">
                     {homeFooterCta.eyebrow}
-                  </p>
-                  <h2 className="font-display mt-3 max-w-3xl text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.04] tracking-[-0.04em] text-white">
+                  </motion.p>
+                  <motion.h2 variants={fadeUp} transition={{ duration: 0.65 }} className="font-display mt-3 max-w-3xl text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.04] tracking-[-0.04em] text-white">
                     {homeFooterCta.title}
-                  </h2>
+                  </motion.h2>
                 </div>
-                <Link
-                  href={homeFooterCta.cta.href}
-                  className="inline-flex w-full items-center justify-center border border-white/75 bg-white px-5 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#111111] transition duration-300 hover:bg-transparent hover:text-white sm:w-fit"
-                >
-                  {homeFooterCta.cta.label}
-                </Link>
-              </div>
+                <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
+                  <Link
+                    href={homeFooterCta.cta.href}
+                    className="group inline-flex w-full items-center justify-center gap-2 border border-white/75 bg-white px-6 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#111111] transition duration-300 hover:bg-transparent hover:text-white sm:w-fit"
+                  >
+                    {homeFooterCta.cta.label}
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                  </Link>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 }

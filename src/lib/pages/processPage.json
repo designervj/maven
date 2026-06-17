@@ -1,0 +1,74 @@
+{
+  "title": { "en": "Our Process", "hi": "Our Process" },
+  "slug": "process",
+  "isPublished": true,
+  "metaTitle": { "en": "Our Process | Maven Projects | Design to Execution in Jaipur", "hi": "Our Process | Maven Projects | Design to Execution in Jaipur" },
+  "metaDescription": { "en": "See how Maven Projects guides clients from the first conversation through design development and site coordination to project completion in Jaipur.", "hi": "See how Maven Projects guides clients from the first conversation through design development and site coordination to project completion in Jaipur." },
+  "content": [
+    {
+      "id": "process-hero",
+      "type": "section",
+      "layout": "full",
+      "adminTitle": "Process Hero",
+      "props": {
+        "label": { "en": "Our Process", "hi": "Our Process" },
+        "heading": { "en": "A clear studio workflow that turns your vision into a buildable reality.", "hi": "A clear studio workflow that turns your vision into a buildable reality." },
+        "description": { "en": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey for your Jaipur home.", "hi": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey for your Jaipur home." },
+        "image": "/assets/Image/project-image1.png"
+      }
+    },
+    {
+      "id": "process-phases",
+      "type": "section",
+      "layout": "list",
+      "adminTitle": "Process Phases",
+      "props": {
+        "label": { "en": "Our Process", "hi": "Our Process" },
+        "heading": { "en": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey.", "hi": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey." },
+        "description": { "en": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence.", "hi": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence." }
+      },
+      "content": [
+        {
+          "id": "phase-1",
+          "type": "item",
+          "props": {
+            "step": "01",
+            "title": { "en": "Letter of Collaboration", "hi": "Letter of Collaboration" },
+            "desc": { "en": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief.", "hi": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief." }
+          }
+        },
+        {
+          "id": "phase-2",
+          "type": "item",
+          "props": {
+            "step": "02",
+            "title": { "en": "Evaluate & Design", "hi": "Evaluate & Design" },
+            "desc": { "en": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable.", "hi": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable." }
+          }
+        },
+        {
+          "id": "phase-3",
+          "type": "item",
+          "props": {
+            "step": "03",
+            "title": { "en": "Partner & Build", "hi": "Partner & Build" },
+            "desc": { "en": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision.", "hi": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision." }
+          }
+        }
+      ]
+    },
+    {
+      "id": "process-cta",
+      "type": "section",
+      "layout": "cta",
+      "adminTitle": "Process CTA",
+      "props": {
+        "label": { "en": "Let's Talk About Your Project", "hi": "Let's Talk About Your Project" },
+        "heading": { "en": "Let's create a home that feels composed, generous, and fully yours.", "hi": "Let's create a home that feels composed, generous, and fully yours." },
+        "image": "/assets/Image/about-image.jpg",
+        "primaryButton": { "en": "Book a consultation", "hi": "Book a consultation" },
+        "primaryButtonLink": "/contact"
+      }
+    }
+  ]
+}
