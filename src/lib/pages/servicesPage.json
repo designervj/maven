@@ -1,9 +1,18 @@
 {
-  "title": { "en": "Services", "hi": "Services" },
+  "title": {
+    "en": "Services",
+    "hi": "Services"
+  },
   "slug": "services",
   "isPublished": true,
-  "metaTitle": { "en": "Architecture & Interior Design Services Jaipur | Maven Projects", "hi": "Architecture & Interior Design Services Jaipur | Maven Projects" },
-  "metaDescription": { "en": "Explore our services including architectural planning, luxury interior design, and home renovations in Jaipur.", "hi": "Explore our services including architectural planning, luxury interior design, and home renovations in Jaipur." },
+  "metaTitle": {
+    "en": "Architecture & Interior Design Services Jaipur | Maven Projects",
+    "hi": "Architecture & Interior Design Services Jaipur | Maven Projects"
+  },
+  "metaDescription": {
+    "en": "Explore our services including architectural planning, luxury interior design, and home renovations in Jaipur.",
+    "hi": "Explore our services including architectural planning, luxury interior design, and home renovations in Jaipur."
+  },
   "content": [
     {
       "id": "services-hero",
@@ -11,10 +20,19 @@
       "layout": "full",
       "adminTitle": "Services Hero",
       "props": {
-        "label": { "en": "Our Services", "hi": "Our Services" },
-        "heading": { "en": "Comprehensive solutions for your ideal living space.", "hi": "Comprehensive solutions for your ideal living space." },
-        "description": { "en": "From the first sketch to the final brick, we provide integrated architectural and interior services to bring your project to life across Jaipur.", "hi": "From the first sketch to the final brick, we provide integrated architectural and interior services to bring your project to life across Jaipur." },
-        "image": "/assets/Image/about-image.jpg"
+        "label": {
+          "en": "Our Services",
+          "hi": "Our Services"
+        },
+        "heading": {
+          "en": "Comprehensive solutions for your ideal living space.",
+          "hi": "Comprehensive solutions for your ideal living space."
+        },
+        "description": {
+          "en": "From the first sketch to the final brick, we provide integrated architectural and interior services to bring your project to life across Jaipur.",
+          "hi": "From the first sketch to the final brick, we provide integrated architectural and interior services to bring your project to life across Jaipur."
+        },
+        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
       }
     },
     {
@@ -23,11 +41,75 @@
       "layout": "intro",
       "adminTitle": "Studio Intro",
       "props": {
-        "eyebrow": { "en": "Our Capabilities", "hi": "Our Capabilities" },
-        "title": { "en": "We offer a fully integrated approach to design and construction, ensuring continuity from concept to completion.", "hi": "We offer a fully integrated approach to design and construction, ensuring continuity from concept to completion." },
-        "cta": { "en": "View Projects", "hi": "View Projects" },
+        "eyebrow": {
+          "en": "Our Capabilities",
+          "hi": "Our Capabilities"
+        },
+        "title": {
+          "en": "We offer a fully integrated approach to design and construction, ensuring continuity from concept to completion.",
+          "hi": "We offer a fully integrated approach to design and construction, ensuring continuity from concept to completion."
+        },
+        "cta": {
+          "en": "View Projects",
+          "hi": "View Projects"
+        },
         "ctaLink": "/portfolio"
       }
+    },
+    {
+      "id": "services-leadership",
+      "type": "section",
+      "layout": "leadership",
+      "adminTitle": "Design Leadership",
+      "props": {
+        "title": {
+          "en": "Honoring creativity, quality, and design leadership",
+          "hi": "Honoring creativity, quality, and design leadership"
+        },
+        "image": "/assets/Image/project-image2.png"
+      },
+      "content": [
+        {
+          "id": "p1",
+          "type": "item",
+          "props": {
+            "text": {
+              "en": "We deliver innovative designs that perfectly.",
+              "hi": "We deliver innovative designs that perfectly."
+            }
+          }
+        },
+        {
+          "id": "p2",
+          "type": "item",
+          "props": {
+            "text": {
+              "en": "Sustainable and modern design solutions tailored.",
+              "hi": "Sustainable and modern design solutions tailored."
+            }
+          }
+        },
+        {
+          "id": "p3",
+          "type": "item",
+          "props": {
+            "text": {
+              "en": "Our team transforms your vision into elegant.",
+              "hi": "Our team transforms your vision into elegant."
+            }
+          }
+        },
+        {
+          "id": "p4",
+          "type": "item",
+          "props": {
+            "text": {
+              "en": "We begin by understanding your needs.",
+              "hi": "We begin by understanding your needs."
+            }
+          }
+        }
+      ]
     },
     {
       "id": "services-grid",
@@ -39,8 +121,14 @@
           "id": "svc-arch",
           "type": "item",
           "props": {
-            "name": { "en": "Architecture", "hi": "Architecture" },
-            "desc": { "en": "We design safe, beautiful, and sustainable homes that stand the test of time, from Jagatpura to C-Scheme.", "hi": "We design safe, beautiful, and sustainable homes that stand the test of time, from Jagatpura to C-Scheme." },
+            "name": {
+              "en": "Architecture",
+              "hi": "Architecture"
+            },
+            "desc": {
+              "en": "We design safe, beautiful, and sustainable homes that stand the test of time, from Jagatpura to C-Scheme.",
+              "hi": "We design safe, beautiful, and sustainable homes that stand the test of time, from Jagatpura to C-Scheme."
+            },
             "icon": "house"
           }
         },
@@ -48,8 +136,14 @@
           "id": "svc-interior",
           "type": "item",
           "props": {
-            "name": { "en": "Interior Design", "hi": "Interior Design" },
-            "desc": { "en": "Bespoke interiors that blend style with functionality, creating spaces you'll love to live in across Jaipur.", "hi": "Bespoke interiors that blend style with functionality, creating spaces you'll love to live in across Jaipur." },
+            "name": {
+              "en": "Interior Design",
+              "hi": "Interior Design"
+            },
+            "desc": {
+              "en": "Bespoke interiors that blend style with functionality, creating spaces you'll love to live in across Jaipur.",
+              "hi": "Bespoke interiors that blend style with functionality, creating spaces you'll love to live in across Jaipur."
+            },
             "icon": "sofa"
           }
         },
@@ -57,8 +151,14 @@
           "id": "svc-reno",
           "type": "item",
           "props": {
-            "name": { "en": "Renovation", "hi": "Renovation" },
-            "desc": { "en": "Breathing new life into old spaces with modern aesthetics, high-quality materials, and structural upgrades.", "hi": "Breathing new life into old spaces with modern aesthetics, high-quality materials, and structural upgrades." },
+            "name": {
+              "en": "Renovation",
+              "hi": "Renovation"
+            },
+            "desc": {
+              "en": "Breathing new life into old spaces with modern aesthetics, high-quality materials, and structural upgrades.",
+              "hi": "Breathing new life into old spaces with modern aesthetics, high-quality materials, and structural upgrades."
+            },
             "icon": "ruler"
           }
         }
@@ -70,9 +170,18 @@
       "layout": "list",
       "adminTitle": "Process",
       "props": {
-        "label": { "en": "Our Process", "hi": "Our Process" },
-        "heading": { "en": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey.", "hi": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey." },
-        "description": { "en": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence.", "hi": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence." }
+        "label": {
+          "en": "Our Process",
+          "hi": "Our Process"
+        },
+        "heading": {
+          "en": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey.",
+          "hi": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey."
+        },
+        "description": {
+          "en": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence.",
+          "hi": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence."
+        }
       },
       "content": [
         {
@@ -80,8 +189,14 @@
           "type": "item",
           "props": {
             "step": "01",
-            "title": { "en": "Letter of Collaboration", "hi": "Letter of Collaboration" },
-            "desc": { "en": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief.", "hi": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief." }
+            "title": {
+              "en": "Letter of Collaboration",
+              "hi": "Letter of Collaboration"
+            },
+            "desc": {
+              "en": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief.",
+              "hi": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief."
+            }
           }
         },
         {
@@ -89,8 +204,14 @@
           "type": "item",
           "props": {
             "step": "02",
-            "title": { "en": "Evaluate & Design", "hi": "Evaluate & Design" },
-            "desc": { "en": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable.", "hi": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable." }
+            "title": {
+              "en": "Evaluate & Design",
+              "hi": "Evaluate & Design"
+            },
+            "desc": {
+              "en": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable.",
+              "hi": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable."
+            }
           }
         },
         {
@@ -98,8 +219,14 @@
           "type": "item",
           "props": {
             "step": "03",
-            "title": { "en": "Partner & Build", "hi": "Partner & Build" },
-            "desc": { "en": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision.", "hi": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision." }
+            "title": {
+              "en": "Partner & Build",
+              "hi": "Partner & Build"
+            },
+            "desc": {
+              "en": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision.",
+              "hi": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision."
+            }
           }
         }
       ]
@@ -110,11 +237,20 @@
       "layout": "feature",
       "adminTitle": "Turnkey Solutions",
       "props": {
-        "eyebrow": { "en": "Turnkey Delivery", "hi": "Turnkey Delivery" },
-        "title": { "en": "End-to-End Design & Build without the friction.", "hi": "End-to-End Design & Build without the friction." },
-        "image": "/assets/Image/project-image3.jpg",
+        "eyebrow": {
+          "en": "Turnkey Delivery",
+          "hi": "Turnkey Delivery"
+        },
+        "title": {
+          "en": "End-to-End Design & Build without the friction.",
+          "hi": "End-to-End Design & Build without the friction."
+        },
+        "image": "/assets/Image/project-image1.png",
         "secondaryImage": "/assets/Image/project-image2.png",
-        "cta": { "en": "Learn More", "hi": "Learn More" },
+        "cta": {
+          "en": "Learn More",
+          "hi": "Learn More"
+        },
         "ctaLink": "/contact"
       }
     },
@@ -125,10 +261,38 @@
       "adminTitle": "Our Partners",
       "props": {},
       "content": [
-        { "id": "l-1", "type": "item", "props": { "name": "Kohler", "src": "https://upload.wikimedia.org/wikipedia/commons/4/41/Kohler_Co._logo.svg" } },
-        { "id": "l-2", "type": "item", "props": { "name": "Hafele", "src": "https://upload.wikimedia.org/wikipedia/commons/0/05/Hafele_logo.svg" } },
-        { "id": "l-3", "type": "item", "props": { "name": "Dorset", "src": "https://upload.wikimedia.org/wikipedia/commons/4/47/Dorset_logo.svg" } },
-        { "id": "l-4", "type": "item", "props": { "name": "Jaguar", "src": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Jaquar_Logo.svg" } }
+        {
+          "id": "l-1",
+          "type": "item",
+          "props": {
+            "name": "Kohler",
+            "src": "/assets/Image/brand-logo (1).svg"
+          }
+        },
+        {
+          "id": "l-2",
+          "type": "item",
+          "props": {
+            "name": "Hafele",
+            "src": "/assets/Image/brand-logo (2).svg"
+          }
+        },
+        {
+          "id": "l-3",
+          "type": "item",
+          "props": {
+            "name": "Dorset",
+            "src": "/assets/Image/brand-logo (3).svg"
+          }
+        },
+        {
+          "id": "l-4",
+          "type": "item",
+          "props": {
+            "name": "Jaguar",
+            "src": "/assets/Image/brand-logo (4).svg"
+          }
+        }
       ]
     },
     {
@@ -142,9 +306,18 @@
           "id": "proj-1",
           "type": "item",
           "props": {
-            "title": { "en": "Jagatpura Villa", "hi": "Jagatpura Villa" },
-            "category": { "en": "Architecture", "hi": "Architecture" },
-            "location": { "en": "Jaipur", "hi": "Jaipur" },
+            "title": {
+              "en": "Jagatpura Villa",
+              "hi": "Jagatpura Villa"
+            },
+            "category": {
+              "en": "Architecture",
+              "hi": "Architecture"
+            },
+            "location": {
+              "en": "Jaipur",
+              "hi": "Jaipur"
+            },
             "year": "2023",
             "image": "/assets/Image/project-image2.png",
             "href": "/portfolio"
@@ -154,11 +327,20 @@
           "id": "proj-2",
           "type": "item",
           "props": {
-            "title": { "en": "C-Scheme Residence", "hi": "C-Scheme Residence" },
-            "category": { "en": "Interior Design", "hi": "Interior Design" },
-            "location": { "en": "Jaipur", "hi": "Jaipur" },
+            "title": {
+              "en": "C-Scheme Residence",
+              "hi": "C-Scheme Residence"
+            },
+            "category": {
+              "en": "Interior Design",
+              "hi": "Interior Design"
+            },
+            "location": {
+              "en": "Jaipur",
+              "hi": "Jaipur"
+            },
             "year": "2022",
-            "image": "/assets/Image/project-image3.jpg",
+            "image": "/assets/Image/project-img.jpg",
             "href": "/portfolio"
           }
         },
@@ -166,9 +348,18 @@
           "id": "proj-3",
           "type": "item",
           "props": {
-            "title": { "en": "Malviya Nagar Renovation", "hi": "Malviya Nagar Renovation" },
-            "category": { "en": "Renovation", "hi": "Renovation" },
-            "location": { "en": "Jaipur", "hi": "Jaipur" },
+            "title": {
+              "en": "Malviya Nagar Renovation",
+              "hi": "Malviya Nagar Renovation"
+            },
+            "category": {
+              "en": "Renovation",
+              "hi": "Renovation"
+            },
+            "location": {
+              "en": "Jaipur",
+              "hi": "Jaipur"
+            },
             "year": "2024",
             "image": "/assets/Image/project-image1.png",
             "href": "/portfolio"
@@ -182,9 +373,18 @@
       "layout": "testimonial",
       "adminTitle": "Testimonial",
       "props": {
-        "quote": { "en": "Maven Projects completely transformed our home. Their attention to detail in both architecture and interior design is unmatched in Jaipur.", "hi": "Maven Projects completely transformed our home. Their attention to detail in both architecture and interior design is unmatched in Jaipur." },
-        "name": { "en": "Rajiv Sharma", "hi": "Rajiv Sharma" },
-        "role": { "en": "Client, Jagatpura Villa", "hi": "Client, Jagatpura Villa" },
+        "quote": {
+          "en": "Maven Projects completely transformed our home. Their attention to detail in both architecture and interior design is unmatched in Jaipur.",
+          "hi": "Maven Projects completely transformed our home. Their attention to detail in both architecture and interior design is unmatched in Jaipur."
+        },
+        "name": {
+          "en": "Rajiv Sharma",
+          "hi": "Rajiv Sharma"
+        },
+        "role": {
+          "en": "Client, Jagatpura Villa",
+          "hi": "Client, Jagatpura Villa"
+        },
         "image": "/assets/Image/team-img.jpg"
       }
     },
@@ -199,24 +399,42 @@
           "id": "faq-1",
           "type": "item",
           "props": {
-            "question": { "en": "Do you provide both architecture and interior design?", "hi": "Do you provide both architecture and interior design?" },
-            "answer": { "en": "Yes, we specialize in comprehensive design solutions. Handling both architecture and interiors ensures a seamless transition and cohesive aesthetic.", "hi": "Yes, we specialize in comprehensive design solutions. Handling both architecture and interiors ensures a seamless transition and cohesive aesthetic." }
+            "question": {
+              "en": "Do you provide both architecture and interior design?",
+              "hi": "Do you provide both architecture and interior design?"
+            },
+            "answer": {
+              "en": "Yes, we specialize in comprehensive design solutions. Handling both architecture and interiors ensures a seamless transition and cohesive aesthetic.",
+              "hi": "Yes, we specialize in comprehensive design solutions. Handling both architecture and interiors ensures a seamless transition and cohesive aesthetic."
+            }
           }
         },
         {
           "id": "faq-2",
           "type": "item",
           "props": {
-            "question": { "en": "How long does a typical project take?", "hi": "How long does a typical project take?" },
-            "answer": { "en": "Timelines vary by project size. A full residential build can take 12-18 months from concept to completion, while interior renovations may take 3-6 months.", "hi": "Timelines vary by project size. A full residential build can take 12-18 months from concept to completion, while interior renovations may take 3-6 months." }
+            "question": {
+              "en": "How long does a typical project take?",
+              "hi": "How long does a typical project take?"
+            },
+            "answer": {
+              "en": "Timelines vary by project size. A full residential build can take 12-18 months from concept to completion, while interior renovations may take 3-6 months.",
+              "hi": "Timelines vary by project size. A full residential build can take 12-18 months from concept to completion, while interior renovations may take 3-6 months."
+            }
           }
         },
         {
           "id": "faq-3",
           "type": "item",
           "props": {
-            "question": { "en": "Do you manage the construction phase?", "hi": "Do you manage the construction phase?" },
-            "answer": { "en": "We offer project management services where we coordinate closely with contractors to ensure the build aligns perfectly with our design specifications.", "hi": "We offer project management services where we coordinate closely with contractors to ensure the build aligns perfectly with our design specifications." }
+            "question": {
+              "en": "Do you manage the construction phase?",
+              "hi": "Do you manage the construction phase?"
+            },
+            "answer": {
+              "en": "We offer project management services where we coordinate closely with contractors to ensure the build aligns perfectly with our design specifications.",
+              "hi": "We offer project management services where we coordinate closely with contractors to ensure the build aligns perfectly with our design specifications."
+            }
           }
         }
       ]
@@ -227,9 +445,18 @@
       "layout": "cta",
       "adminTitle": "Command Center",
       "props": {
-        "heading": { "en": "Let's Talk About Your New Project", "hi": "Let's Talk About Your New Project" },
-        "description": { "en": "Every great home starts with a simple conversation. We're here to help you navigate the complexities of design and construction with ease.", "hi": "Every great home starts with a simple conversation. We're here to help you navigate the complexities of design and construction with ease." },
-        "primaryButton": { "en": "Book Your Free Consultation", "hi": "Book Your Free Consultation" },
+        "heading": {
+          "en": "Let's Talk About Your New Project",
+          "hi": "Let's Talk About Your New Project"
+        },
+        "description": {
+          "en": "Every great home starts with a simple conversation. We're here to help you navigate the complexities of design and construction with ease.",
+          "hi": "Every great home starts with a simple conversation. We're here to help you navigate the complexities of design and construction with ease."
+        },
+        "primaryButton": {
+          "en": "Book Your Free Consultation",
+          "hi": "Book Your Free Consultation"
+        },
         "primaryButtonLink": "/contact"
       }
     }

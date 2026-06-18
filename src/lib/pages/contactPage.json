@@ -1,9 +1,18 @@
 {
-  "title": { "en": "Contact", "hi": "Contact" },
+  "title": {
+    "en": "Contact",
+    "hi": "Contact"
+  },
   "slug": "contact",
   "isPublished": true,
-  "metaTitle": { "en": "Contact Maven Projects | Best Architects in Jaipur", "hi": "Contact Maven Projects | Best Architects in Jaipur" },
-  "metaDescription": { "en": "Ready to start your project? Contact Maven Projects in Jaipur today for expert architecture and interior design consultations. Call us at +91 8209117064.", "hi": "Ready to start your project? Contact Maven Projects in Jaipur today for expert architecture and interior design consultations." },
+  "metaTitle": {
+    "en": "Contact Maven Projects | Best Architects in Jaipur",
+    "hi": "Contact Maven Projects | Best Architects in Jaipur"
+  },
+  "metaDescription": {
+    "en": "Ready to start your project? Contact Maven Projects in Jaipur today for expert architecture and interior design consultations. Call us at +91 8209117064.",
+    "hi": "Ready to start your project? Contact Maven Projects in Jaipur today for expert architecture and interior design consultations."
+  },
   "content": [
     {
       "id": "contact-hero",
@@ -11,34 +20,88 @@
       "layout": "split",
       "adminTitle": "Contact Hero",
       "props": {
-        "label": { "en": "Contact", "hi": "Contact" },
-        "heading": { "en": "Get in touch with Maven Projects.", "hi": "Get in touch with Maven Projects." },
-        "description": { "en": "Share your project brief, timeline, location, and the kind of space you want to create. We usually respond to all inquiries within 24 hours. Our goal is to provide you with clear answers and helpful guidance from day one.", "hi": "Share your project brief, timeline, location, and the kind of space you want to create. We usually respond to all inquiries within 24 hours." },
-        "image": "/assets/Image/homeslider-img.jpg"
+        "label": {
+          "en": "Contact",
+          "hi": "Contact"
+        },
+        "heading": {
+          "en": "Get in touch with Maven Projects.",
+          "hi": "Get in touch with Maven Projects."
+        },
+        "description": {
+          "en": "Share your project brief, timeline, location, and the kind of space you want to create. We usually respond to all inquiries within 24 hours. Our goal is to provide you with clear answers and helpful guidance from day one.",
+          "hi": "Share your project brief, timeline, location, and the kind of space you want to create. We usually respond to all inquiries within 24 hours."
+        },
+        "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop"
       },
       "content": [
         {
           "id": "contact-phone",
           "type": "item",
           "props": {
-            "label": { "en": "Phone", "hi": "Phone" },
-            "value": { "en": "+91 8209117064", "hi": "+91 8209117064" }
+            "label": {
+              "en": "Phone",
+              "hi": "Phone"
+            },
+            "value": {
+              "en": "+91 8209117064",
+              "hi": "+91 8209117064"
+            }
           }
         },
         {
           "id": "contact-email",
           "type": "item",
           "props": {
-            "label": { "en": "Email", "hi": "Email" },
-            "value": { "en": "mavenprojectshq@gmail.com", "hi": "mavenprojectshq@gmail.com" }
+            "label": {
+              "en": "Email",
+              "hi": "Email"
+            },
+            "value": {
+              "en": "mavenprojectshq@gmail.com",
+              "hi": "mavenprojectshq@gmail.com"
+            }
           }
         },
         {
           "id": "contact-address",
           "type": "item",
           "props": {
-            "label": { "en": "Address", "hi": "Address" },
-            "value": { "en": "A-291, JDA Staff colony, Mahal Road, Jagatpura, Jaipur, Rajasthan 302017", "hi": "A-291, JDA Staff colony, Mahal Road, Jagatpura, Jaipur, Rajasthan 302017" }
+            "label": {
+              "en": "Address",
+              "hi": "Address"
+            },
+            "value": {
+              "en": "A-291, JDA Staff colony, Mahal Road, Jagatpura, Jaipur, Rajasthan 302017",
+              "hi": "A-291, JDA Staff colony, Mahal Road, Jagatpura, Jaipur, Rajasthan 302017"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact-offices",
+      "type": "section",
+      "layout": "list",
+      "adminTitle": "Offices",
+      "props": {},
+      "content": [
+        {
+          "id": "office-1",
+          "type": "item",
+          "props": {
+            "label": { "en": "Studio", "hi": "Studio" },
+            "title": { "en": "Jaipur", "hi": "Jaipur" },
+            "details": { "en": "A-291, JDA Staff colony, Mahal Road, Jagatpura, 302017", "hi": "A-291, JDA Staff colony, Mahal Road, Jagatpura, 302017" }
+          }
+        },
+        {
+          "id": "office-2",
+          "type": "item",
+          "props": {
+            "label": { "en": "Appointments", "hi": "Appointments" },
+            "title": { "en": "By prior schedule", "hi": "By prior schedule" },
+            "details": { "en": "Monday to Saturday  ·  9:00 AM – 7:00 PM | Sunday  ·  10:00 AM – 6:00 PM", "hi": "Monday to Saturday  ·  9:00 AM – 7:00 PM | Sunday  ·  10:00 AM – 6:00 PM" }
           }
         }
       ]

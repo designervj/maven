@@ -1,9 +1,18 @@
 {
-  "title": { "en": "Home", "hi": "Home" },
+  "title": {
+    "en": "Home",
+    "hi": "Home"
+  },
   "slug": "home",
   "isPublished": true,
-  "metaTitle": { "en": "Maven Projects | Architecture & Interior Design in Jaipur", "hi": "Maven Projects | Architecture & Interior Design in Jaipur" },
-  "metaDescription": { "en": "Creating homes that feel natural, spacious, and fully yours.", "hi": "Creating homes that feel natural, spacious, and fully yours." },
+  "metaTitle": {
+    "en": "Maven Projects | Architecture & Interior Design in Jaipur",
+    "hi": "Maven Projects | Architecture & Interior Design in Jaipur"
+  },
+  "metaDescription": {
+    "en": "Creating homes that feel natural, spacious, and fully yours.",
+    "hi": "Creating homes that feel natural, spacious, and fully yours."
+  },
   "content": [
     {
       "id": "hero-section",
@@ -11,13 +20,28 @@
       "layout": "full",
       "adminTitle": "Hero",
       "props": {
-        "label": { "en": "Recent Work / Jaipur", "hi": "Recent Work / Jaipur" },
-        "heading": { "en": "CREATING HOMES THAT FEEL NATURAL AND SPACIOUS", "hi": "CREATING HOMES THAT FEEL NATURAL AND SPACIOUS" },
-        "description": { "en": "Creating homes that feel natural, spacious, and fully yours.", "hi": "Creating homes that feel natural, spacious, and fully yours." },
-        "image": "/assets/Image/about-us-img.jpeg",
-        "primaryButton": { "en": "Explore portfolio", "hi": "Explore portfolio" },
+        "label": {
+          "en": "Recent Work / Jaipur",
+          "hi": "Recent Work / Jaipur"
+        },
+        "heading": {
+          "en": "CREATING HOMES THAT FEEL NATURAL AND SPACIOUS",
+          "hi": "CREATING HOMES THAT FEEL NATURAL AND SPACIOUS"
+        },
+        "description": {
+          "en": "Creating homes that feel natural, spacious, and fully yours.",
+          "hi": "Creating homes that feel natural, spacious, and fully yours."
+        },
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop",
+        "primaryButton": {
+          "en": "Explore portfolio",
+          "hi": "Explore portfolio"
+        },
         "primaryButtonLink": "/portfolio",
-        "secondaryButton": { "en": "Start a conversation", "hi": "Start a conversation" },
+        "secondaryButton": {
+          "en": "Start a conversation",
+          "hi": "Start a conversation"
+        },
         "secondaryButtonLink": "/contact"
       }
     },
@@ -27,9 +51,18 @@
       "layout": "text",
       "adminTitle": "Core",
       "props": {
-        "label": { "en": "Your Partner in Design", "hi": "Your Partner in Design" },
-        "heading": { "en": "Maven Projects is a premier architecture and interior design studio based in Jaipur. We specialize in contemporary spaces that prioritize clarity, comfort, and character.", "hi": "Maven Projects is a premier architecture and interior design studio based in Jaipur. We specialize in contemporary spaces that prioritize clarity, comfort, and character." },
-        "cta": { "en": "Learn more about us", "hi": "Learn more about us" },
+        "label": {
+          "en": "Your Partner in Design",
+          "hi": "Your Partner in Design"
+        },
+        "heading": {
+          "en": "Maven Projects is a premier architecture and interior design studio based in Jaipur. We specialize in contemporary spaces that prioritize clarity, comfort, and character.",
+          "hi": "Maven Projects is a premier architecture and interior design studio based in Jaipur. We specialize in contemporary spaces that prioritize clarity, comfort, and character."
+        },
+        "cta": {
+          "en": "Learn more about us",
+          "hi": "Learn more about us"
+        },
         "ctaLink": "/about"
       }
     },
@@ -43,8 +76,14 @@
           "id": "svc-1",
           "type": "item",
           "props": {
-            "name": { "en": "Architecture", "hi": "Architecture" },
-            "desc": { "en": "We design safe, beautiful, and sustainable homes that stand the test of time, from Jagatpura to C-Scheme.", "hi": "We design safe, beautiful, and sustainable homes that stand the test of time, from Jagatpura to C-Scheme." },
+            "name": {
+              "en": "Architecture",
+              "hi": "Architecture"
+            },
+            "desc": {
+              "en": "We design safe, beautiful, and sustainable homes that stand the test of time, from Jagatpura to C-Scheme.",
+              "hi": "We design safe, beautiful, and sustainable homes that stand the test of time, from Jagatpura to C-Scheme."
+            },
             "icon": "house"
           }
         },
@@ -52,8 +91,14 @@
           "id": "svc-2",
           "type": "item",
           "props": {
-            "name": { "en": "Interior Design", "hi": "Interior Design" },
-            "desc": { "en": "Bespoke interiors that blend style with functionality, creating spaces you'll love to live in across Jaipur.", "hi": "Bespoke interiors that blend style with functionality, creating spaces you'll love to live in across Jaipur." },
+            "name": {
+              "en": "Interior Design",
+              "hi": "Interior Design"
+            },
+            "desc": {
+              "en": "Bespoke interiors that blend style with functionality, creating spaces you'll love to live in across Jaipur.",
+              "hi": "Bespoke interiors that blend style with functionality, creating spaces you'll love to live in across Jaipur."
+            },
             "icon": "sofa"
           }
         },
@@ -61,8 +106,14 @@
           "id": "svc-3",
           "type": "item",
           "props": {
-            "name": { "en": "Renovation", "hi": "Renovation" },
-            "desc": { "en": "Breathing new life into old spaces with modern aesthetics, high-quality materials, and structural upgrades.", "hi": "Breathing new life into old spaces with modern aesthetics, high-quality materials, and structural upgrades." },
+            "name": {
+              "en": "Renovation",
+              "hi": "Renovation"
+            },
+            "desc": {
+              "en": "Breathing new life into old spaces with modern aesthetics, high-quality materials, and structural upgrades.",
+              "hi": "Breathing new life into old spaces with modern aesthetics, high-quality materials, and structural upgrades."
+            },
             "icon": "ruler"
           }
         }
@@ -78,7 +129,10 @@
           "id": "proj-1",
           "type": "item",
           "props": {
-            "title": { "en": "Primary Residence House", "hi": "Primary Residence House" },
+            "title": {
+              "en": "Primary Residence House",
+              "hi": "Primary Residence House"
+            },
             "tag": "New build",
             "location": "Jaipur, India",
             "image": "/assets/Image/about-img.jpg",
@@ -90,7 +144,10 @@
           "id": "proj-2",
           "type": "item",
           "props": {
-            "title": { "en": "Field View Villa", "hi": "Field View Villa" },
+            "title": {
+              "en": "Field View Villa",
+              "hi": "Field View Villa"
+            },
             "tag": "Private home",
             "location": "Ahmedabad, India",
             "image": "/assets/Image/about-image.jpg",
@@ -102,7 +159,10 @@
           "id": "proj-3",
           "type": "item",
           "props": {
-            "title": { "en": "Lightwell Gallery", "hi": "Lightwell Gallery" },
+            "title": {
+              "en": "Lightwell Gallery",
+              "hi": "Lightwell Gallery"
+            },
             "tag": "Cultural interiors",
             "location": "Mumbai, India",
             "image": "/assets/Image/project-image2.png",
@@ -118,9 +178,18 @@
       "layout": "list",
       "adminTitle": "Results",
       "props": {
-        "label": { "en": "Our Process", "hi": "Our Process" },
-        "heading": { "en": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey.", "hi": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey." },
-        "description": { "en": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence.", "hi": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence." }
+        "label": {
+          "en": "Our Process",
+          "hi": "Our Process"
+        },
+        "heading": {
+          "en": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey.",
+          "hi": "We guide you from the first conversation through to move-in, turning complex planning into a clear, collaborative journey."
+        },
+        "description": {
+          "en": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence.",
+          "hi": "Every decision is led by detail and transparency, ensuring the final design evolves with precision and absolute confidence."
+        }
       },
       "content": [
         {
@@ -128,8 +197,14 @@
           "type": "item",
           "props": {
             "target": "01",
-            "title": { "en": "Letter of Collaboration", "hi": "Letter of Collaboration" },
-            "sub": { "en": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief.", "hi": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief." }
+            "title": {
+              "en": "Letter of Collaboration",
+              "hi": "Letter of Collaboration"
+            },
+            "sub": {
+              "en": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief.",
+              "hi": "We establish scope, intent, and working rhythm early so the project starts with aligned expectations and a shared architectural brief."
+            }
           }
         },
         {
@@ -137,8 +212,14 @@
           "type": "item",
           "props": {
             "target": "02",
-            "title": { "en": "Evaluate & Design", "hi": "Evaluate & Design" },
-            "sub": { "en": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable.", "hi": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable." }
+            "title": {
+              "en": "Evaluate & Design",
+              "hi": "Evaluate & Design"
+            },
+            "sub": {
+              "en": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable.",
+              "hi": "Concept development, material study, planning, and technical refinement move in parallel to keep the design both expressive and buildable."
+            }
           }
         },
         {
@@ -146,8 +227,14 @@
           "type": "item",
           "props": {
             "target": "03",
-            "title": { "en": "Partner & Build", "hi": "Partner & Build" },
-            "sub": { "en": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision.", "hi": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision." }
+            "title": {
+              "en": "Partner & Build",
+              "hi": "Partner & Build"
+            },
+            "sub": {
+              "en": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision.",
+              "hi": "With consultants, vendors, and site teams aligned, we stay involved through execution to protect the quality of every decision."
+            }
           }
         }
       ]
@@ -158,11 +245,20 @@
       "layout": "banner",
       "adminTitle": "AI Workflow",
       "props": {
-        "label": { "en": "Before the build", "hi": "Before the build" },
-        "heading": { "en": "The best builds start before the build", "hi": "The best builds start before the build" },
+        "label": {
+          "en": "Before the build",
+          "hi": "Before the build"
+        },
+        "heading": {
+          "en": "The best builds start before the build",
+          "hi": "The best builds start before the build"
+        },
         "image": "/assets/Image/project-image1.png",
         "secondaryImage": "/assets/Image/project-image2.png",
-        "cta": { "en": "Discover more", "hi": "Discover more" },
+        "cta": {
+          "en": "Discover more",
+          "hi": "Discover more"
+        },
         "ctaLink": "/about"
       }
     },
@@ -172,12 +268,64 @@
       "layout": "cta",
       "adminTitle": "Client Logos",
       "props": {
-        "label": { "en": "Let's Talk About Your Project", "hi": "Let's Talk About Your Project" },
-        "heading": { "en": "Let's create a home that feels composed, generous, and fully yours.", "hi": "Let's create a home that feels composed, generous, and fully yours." },
+        "label": {
+          "en": "Let's Talk About Your Project",
+          "hi": "Let's Talk About Your Project"
+        },
+        "heading": {
+          "en": "Let's create a home that feels composed, generous, and fully yours.",
+          "hi": "Let's create a home that feels composed, generous, and fully yours."
+        },
         "image": "/assets/Image/about-image.jpg",
-        "primaryButton": { "en": "Book a consultation", "hi": "Book a consultation" },
+        "primaryButton": {
+          "en": "Book a consultation",
+          "hi": "Book a consultation"
+        },
         "primaryButtonLink": "/contact"
       }
+    },
+    {
+      "id": "founder-feature",
+      "type": "section",
+      "layout": "founder",
+      "adminTitle": "Founder Feature",
+      "props": {
+        "eyebrow": { "en": "Our Philosophy", "hi": "Our Philosophy" },
+        "title": { "en": "Designing with discipline, warmth, and long-term clarity.", "hi": "Designing with discipline, warmth, and long-term clarity." },
+        "quote": { "en": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful.", "hi": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful." },
+        "description": { "en": "Our studio pairs strong architectural thinking with calm execution support.", "hi": "Our studio pairs strong architectural thinking with calm execution support." },
+        "image": "/assets/Image/team-img.jpg",
+        "secondaryImage": "/assets/Image/project-image2.png",
+        "role": { "en": "Architecture / Interiors / Execution", "hi": "Architecture / Interiors / Execution" },
+        "name": { "en": "Maven Projects", "hi": "Maven Projects" },
+        "cta": { "en": "Meet the studio", "hi": "Meet the studio" },
+        "ctaLink": "/about"
+      }
+    },
+    {
+      "id": "faq-section",
+      "type": "section",
+      "layout": "faq",
+      "adminTitle": "FAQ",
+      "props": {},
+      "content": [
+        {
+          "id": "faq-1",
+          "type": "item",
+          "props": {
+            "question": { "en": "How do I find a reliable architect or interior designer in Jaipur?", "hi": "How do I find a reliable architect or interior designer in Jaipur?" },
+            "answer": { "en": "The best approach is to find a studio that aligns with your style and values.", "hi": "The best approach is to find a studio that aligns with your style and values." }
+          }
+        },
+        {
+          "id": "faq-2",
+          "type": "item",
+          "props": {
+            "question": { "en": "Can Maven Projects manage my entire construction project?", "hi": "Can Maven Projects manage my entire construction project?" },
+            "answer": { "en": "Yes, we provide end-to-end project management from design to on-site execution.", "hi": "Yes, we provide end-to-end project management from design to on-site execution." }
+          }
+        }
+      ]
     }
   ]
 }

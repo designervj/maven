@@ -35,22 +35,7 @@ const slideRight = {
   show: { opacity: 1, x: 0 },
 };
 
-// ─── Office info ───────────────────────────────────────────────────────────────
-const offices = [
-  {
-    label: "Studio",
-    title: "Jaipur",
-    details: ["A-291, JDA Staff colony, Mahal Road, Jagatpura, 302017"],
-  },
-  {
-    label: "Appointments",
-    title: "By prior schedule",
-    details: [
-      "Monday to Saturday  ·  9:00 AM – 7:00 PM",
-      "Sunday  ·  10:00 AM – 6:00 PM",
-    ],
-  },
-];
+// ─── Office info mapped from JSON dynamically ───
 
 export default function ContactPage() {
   const { getSection, getSectionItems, t } = getPageData("contact");
@@ -86,6 +71,26 @@ export default function ContactPage() {
     : siteContact.emailHref;
   const address = t(addressItem?.props?.value) || siteContact.address;
   const heroImage = heroProps.image || "/assets/Image/project-image1.png";
+
+  const officeItems = getSectionItems("Offices");
+  const offices = officeItems.length > 0 
+    ? officeItems.map((item: any) => ({
+        label: t(item.props?.label),
+        title: t(item.props?.title),
+        details: t(item.props?.details)?.split("|").map((d: string) => d.trim()) || [],
+      }))
+    : [
+        {
+          label: "Studio",
+          title: "Jaipur",
+          details: ["A-291, JDA Staff colony, Mahal Road, Jagatpura, 302017"],
+        },
+        {
+          label: "Appointments",
+          title: "By prior schedule",
+          details: ["Monday to Saturday  ·  9:00 AM – 7:00 PM", "Sunday  ·  10:00 AM – 6:00 PM"],
+        },
+      ];
 
   const [form, setForm] = useState({
     name: "",
