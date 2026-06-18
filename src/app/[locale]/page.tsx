@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import HomePage from "@/pages/HomePage";
+import HomePage from "@/views/pages/HomePage";
 
 export const metadata: Metadata = {
   title: "Best Architects & Interior Designers in Jaipur | Maven Projects",
