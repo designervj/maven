@@ -2,9 +2,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Page } from './pageType';
 import { createPageThunk, deletePageThunk, fetchFastApiPagesThunk, fetchPageBySlugThunk, fetchPagesThunk, savePageContentThunk, updatePageThunk } from './pageThunk';
 
-// ─── Local JSON Fallback Data ─────────────────────────────────────────────────
-import { localPages, homePageFallback } from '@/lib/localPages';
-
 interface PageState {
   allPages: Page[];
   currentPages: Page | null;
@@ -15,8 +12,8 @@ interface PageState {
 }
 
 const initialState: PageState = {
-  allPages: localPages,
-  currentPages: homePageFallback,
+  allPages: [],
+  currentPages: null,
   isAllPageFetched: false,
   isError: false,
   isLoading: false,

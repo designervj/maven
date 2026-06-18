@@ -1,5 +1,6 @@
 'use client';
 import { useState, useRef, useEffect, useCallback, KeyboardEvent } from 'react';
+import { useAppSelector } from '@/redux/hooks';
 
 interface Props {
   value: string;
@@ -26,7 +27,7 @@ const STYLE_KEYS = [
 
 export default function EditableText({
   value,
-  isEditable,
+  isEditable: isEditableProp,
   onSave,
   className = '',
   tag: Tag = 'span',
@@ -34,6 +35,8 @@ export default function EditableText({
   placeholder = '',
   style: passedStyle,
 }: Props) {
+  const isEditablePage = useAppSelector((state) => state.pages.isEditablePage);
+  const isEditable = isEditableProp && isEditablePage;
   const [editing, setEditing] = useState(false);
   const [editValue, setEditValue] = useState(value);
   const [inputStyle, setInputStyle] = useState<Record<string, string>>({});

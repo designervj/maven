@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ==========================================================
+     COLORS
+  ========================================================== */
+  --primary: #111111;
+  --primary-light: #333333;
+  --primary-dark: #000000;
+  --primary-hover: #1a1a1a;
+
+  --secondary: #121212;
+  --accent: #b07d3a;
+
+  --background: #FFFFFF;
+  --surface: #F4F4F0;
+  --card: #FFFFFF;
+
+  --text: #111111;
+  --text-secondary: #555555;
+  --text-muted: #aaaaaa;
+
+  --border: #d9d9d9;
+  --border-hover: #b07d3a;
+
+  --success: #22c55e;
+  --warning: #f1c27a;
+  --danger: #ef4444;
+  --info: #5b8cff;
+  --violet: #9a7bff;
+
+  /* ==========================================================
+     TYPOGRAPHY & SIZING
+  ========================================================== */
+  /* Fonts */
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-montserrat), system-ui, sans-serif;
+  --font-display: var(--font-display), serif;
+  --font-editorial: var(--font-editorial), sans-serif;
+
+  /* Font Size */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-md: 18px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 48px;
+  --text-5xl: 64px;
+
+  /* Font Weight */
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Line Height */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.8;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  --radius: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  @apply mx-auto max-w-5xl px-4 sm:px-6 lg:px-8;
+}
+
+.container-lg {
+  @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.container-xl {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background: #ffffff;
+  color: var(--brand-text);
+  overflow-x: hidden;
+}
+
+.rounded-md {
+  border-radius: 6px !important;
+}
+
+.editable-text {
+  cursor: pointer;
+  outline: 2px dashed transparent;
+  outline-offset: 2px;
+  transition: outline-color 0.15s ease;
+}
+
+.editable-text:hover {
+  outline-color: #b07d3a;
+}
+
+.swiper-navigation-icon {
+  color: #000;
+  width: 10px !important;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-montserrat), sans-serif;
+  }
+
+  .font-editorial {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .home-shell {
+    background: linear-gradient(
+      180deg,
+      var(--secondary) 0%,
+      var(--secondary) 18%,
+      var(--surface) 18%,
+      var(--surface) 100%
+    );
+  }
+
+  .home-panel {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(18px);
+  }
+
+  .home-grain {
+    position: relative;
+  }
+
+  .home-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.65) 1px,
+      transparent 0
+    );
+    background-size: 16px 16px;
+    opacity: 0.08;
+  }
+
+  .home-section-line {
+    position: relative;
+  }
+
+  .home-section-line::after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(75, 61, 49, 0.18), transparent);
+  }
+}

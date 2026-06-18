@@ -1,0 +1,106 @@
+{
+  "title": {
+    "en": "Footer",
+    "hi": "Footer"
+  },
+  "slug": "footer",
+  "isPublished": true,
+  "metaTitle": {
+    "en": "Footer",
+    "hi": "Footer"
+  },
+  "metaDescription": {
+    "en": "Footer",
+    "hi": "Footer"
+  },
+  "content": [
+    {
+      "id": "footer-brand",
+      "type": "section",
+      "layout": "column",
+      "adminTitle": "Footer Brand",
+      "props": {
+        "logo": "/assets/Image/New-Logo.png",
+        "logoAlt": "Maven Projects",
+        "socialLinks": [
+          { "label": "Instagram", "href": "https://www.instagram.com/maven.projects.official?igsh=MTI1ZDl1aXFqdzI2bA%3D%3D" },
+          { "label": "Facebook", "href": "https://www.facebook.com/profile.php?id=61583407575742" },
+          { "label": "LinkedIn", "href": "https://linkedin.com/" },
+          { "label": "YouTube", "href": "https://youtube.com/" }
+        ]
+      }
+    },
+    {
+      "id": "footer-quick-links",
+      "type": "section",
+      "layout": "column",
+      "adminTitle": "Footer Quick Links",
+      "props": {
+        "heading": {
+          "en": "Quick Links",
+          "hi": "Quick Links"
+        }
+      },
+      "content": [
+        { "label": "HOME", "href": "/" },
+        { "label": "ABOUT US", "href": "/about" },
+        { "label": "SERVICES", "href": "/services" },
+        { "label": "BLOG", "href": "/blog" },
+        { "label": "PORTFOLIO", "href": "/portfolio" },
+        { "label": "CONTACT US", "href": "/contact" }
+      ]
+    },
+    {
+      "id": "footer-location",
+      "type": "section",
+      "layout": "column",
+      "adminTitle": "Footer Location",
+      "props": {
+        "heading": {
+          "en": "Location",
+          "hi": "Location"
+        },
+        "address": {
+          "en": "A-291, JDA Staff colony, Mahal Road, Jagatpura, Jaipur, Rajasthan 302017",
+          "hi": "A-291, JDA Staff colony, Mahal Road, Jagatpura, Jaipur, Rajasthan 302017"
+        },
+        "email": "mavenprojectshq@gmail.com",
+        "phone": "+91 8209117064"
+      }
+    },
+    {
+      "id": "footer-contact",
+      "type": "section",
+      "layout": "column",
+      "adminTitle": "Footer Contact",
+      "props": {
+        "heading": {
+          "en": "Contact",
+          "hi": "Contact"
+        }
+      },
+      "content": [
+        { "label": "Book a consultation", "href": "mailto:mavenprojectshq@gmail.com" },
+        { "label": "Speak to our team", "href": "tel:+91 8209117064" },
+        { "label": "Our selected work", "href": "/portfolio" }
+      ]
+    },
+    {
+      "id": "footer-bottom",
+      "type": "section",
+      "layout": "full",
+      "adminTitle": "Footer Bottom",
+      "props": {
+        "copyright": {
+          "en": "Copyright 2026 Maven Projects",
+          "hi": "Copyright 2026 Maven Projects"
+        },
+        "backToTopLabel": {
+          "en": "Back to top",
+          "hi": "Back to top"
+        },
+        "backToTopHref": "#hero"
+      }
+    }
+  ]
+}

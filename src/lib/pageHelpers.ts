@@ -1,31 +1,14 @@
 /**
  * pageHelpers.ts
  * ─────────────────────────────────────────────────────────────────────────────
- * Pure utility — resolves page content by slug.
- *
- * Priority order:
- *   1. Live page from Redux store (when API has loaded it)
- *   2. Bundled local JSON fallback (always available, zero latency)
- *
- * NO useSelector here — works in Server Components, Client Components, and
- * any plain TypeScript module. SSR-safe.
- *
- * Usage in a component:
- *   const { getSection, getSectionItems, t } = getPageData('home');
- *
- * Usage with Redux live data (in a 'use client' component):
- *   const livePage = useAppSelector(selectPageBySlug('home'));
- *   const { getSection, getSectionItems, t } = getPageData('home', livePage ?? undefined);
+ * Pure utility — resolves page content by slug from Redux live data.
  */
 
-import { localPages } from '@/lib/localPages';
 import type { PageBlock } from '@/redux/slices/pages/pageType';
 import type { Page } from '@/redux/slices/pages/pageType';
 
 export function getPageData(slug: string, livePage?: Page) {
-  // Prefer live Redux page (from API), fall back to local JSON bundle
-  const page: Page | null =
-    livePage ?? localPages.find((p) => p.slug === slug) ?? null;
+  const page: Page | null = livePage ?? null;
 
   const content: PageBlock[] = Array.isArray(page?.content)
     ? (page!.content as PageBlock[])

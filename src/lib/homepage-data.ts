@@ -226,19 +226,7 @@ export const featureBanner: FeatureBanner = {
   cta: { label: "Discover more", href: "/about" },
 };
 
-// export const projectMetrics: StatItem[] = [
-//   { value: "10+", label: "Years experience" },
-//   { value: "200+", label: "Concepts and studies" },
-//   { value: "100+", label: "Materials and vendor partners" },
-//   { value: "400+", label: "Technical drawings delivered" },
-// ];
 
-// export const awards: AwardItem[] = [
-//   { year: "2024", title: "Best contemporary residence", source: "Indian Design Awards" },
-//   { year: "2023", title: "Interior concept showcase", source: "Build Review" },
-//   { year: "2023", title: "Emerging architecture practice", source: "Design Dialogues" },
-//   { year: "2022", title: "Residential detailing award", source: "Habitat Interiors" },
-// ];
 
 export const founderFeature: FounderFeature = {
   eyebrow: "Our Philosophy",

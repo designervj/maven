@@ -217,6 +217,10 @@ export const selectActiveTheme = (state: RootState): Theme | null => {
     : state.blueprint.payload?.public_theme ?? null;
 };
 
+/** Brand Assets public theme — source of truth for dynamic CSS vars */
+export const selectBrandAssetsPublicTheme = (state: RootState): Theme | null =>
+  state.blueprint.payload?.brandAssets?.public_theme ?? null;
+
 /** Brand value — taglines, social links */
 export const selectBrandValue = (state: RootState) =>
   state.blueprint.payload?.brandValue ?? null;
