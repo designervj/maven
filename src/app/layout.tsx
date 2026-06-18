@@ -7,8 +7,6 @@ import {
   Poppins,
 } from "next/font/google";
 
-import NavigationWrapper from "@/components/layout/NavigationWrapper";
-import ReduxProvider from "@/components/layout/ReduxProvider";
 import "@/styles/index.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -64,11 +62,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${manrope.variable} ${cormorant.variable} font-inter text-brand-text`}
       >
-        <ReduxProvider>
-          <NavigationWrapper>
-            {children}
-          </NavigationWrapper>
-        </ReduxProvider>
+        {children}
       </body>
     </html>
   );

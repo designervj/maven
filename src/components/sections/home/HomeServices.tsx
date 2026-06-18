@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 
 import { fadeInUp, stagger } from "@/components/sections/anim";
-import type { ServiceItem } from "@/lib/homepage-data";
-
-type HomeServicesProps = {
-  items: ServiceItem[];
-};
+import { useSection } from "@/lib/hooks/useSection";
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
+import { RootState } from "@/redux/store";
+import EditableText from "@/components/shared/EditableText";
+import { saveField } from "@/lib/editorUtils";
 
 const CustomHouse = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 32" fill="currentColor" {...props}>
@@ -27,13 +27,22 @@ const CustomSofa = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const icons = {
+const icons: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   house: CustomHouse,
   ruler: CustomRuler,
   sofa: CustomSofa,
 };
 
-export default function HomeServices({ items }: HomeServicesProps) {
+export default function HomeServices() {
+  const dispatch = useAppDispatch();
+  const currentPages = useAppSelector((state: RootState) => state.pages.currentPages);
+  const isEditable = useAppSelector((state: RootState) => state.pages.isEditablePage);
+  const section = useSection("Services");
+  if (!section) return null;
+
+  const items = Array.isArray(section.content) ? section.content : [];
+  const handle = (fieldPath: string) => (value: string) => saveField(dispatch, currentPages, section.id, fieldPath, value);
+
   return (
     <section
       id="services"
@@ -53,12 +62,13 @@ export default function HomeServices({ items }: HomeServicesProps) {
         </motion.div>
 
         <div className="grid gap-8 border-t border-[#d7d7d7] pt-6 md:grid-cols-3 md:gap-6">
-          {items.map((item) => {
-            const Icon = icons[item.icon as keyof typeof icons] || icons.house;
+          {items.map((item: any, i: number) => {
+            const iconKey = item.props?.icon || ["house", "sofa", "ruler"][i] || "house";
+            const Icon = icons[iconKey] || icons.house;
 
             return (
               <motion.article
-                key={item.index}
+                key={item.id || i}
                 variants={fadeInUp}
                 className="flex flex-col min-h-[340px] border border-[#dfdfdf] p-8 md:p-10"
               >
@@ -67,10 +77,10 @@ export default function HomeServices({ items }: HomeServicesProps) {
                 </div>
 
                 <h3 className="font-display mt-2 mb-4 text-2xl md:text-[1.75rem] font-medium leading-tight text-[#141414]">
-                  {item.title}
+                  <EditableText value={item.props?.name?.en || ''} isEditable={isEditable} onSave={handle(`content.${i}.props.name.en`)} tag="span" />
                 </h3>
                 <p className="font-editorial text-sm leading-7 text-[#555555]">
-                  {item.description}
+                  <EditableText value={item.props?.desc?.en || ''} isEditable={isEditable} onSave={handle(`content.${i}.props.desc.en`)} tag="span" />
                 </p>
               </motion.article>
             );

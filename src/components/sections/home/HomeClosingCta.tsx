@@ -5,13 +5,22 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { fadeInUp } from "@/components/sections/anim";
-import type { FeatureBanner } from "@/lib/homepage-data";
+import { useSection } from "@/lib/hooks/useSection";
+import { t } from "@/lib/section-utils";
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
+import { RootState } from "@/redux/store";
+import EditableText from "@/components/shared/EditableText";
+import { saveField } from "@/lib/editorUtils";
 
-type HomeClosingCtaProps = {
-  content: FeatureBanner;
-};
+export default function HomeClosingCta() {
+  const dispatch = useAppDispatch();
+  const currentPages = useAppSelector((state: RootState) => state.pages.currentPages);
+  const isEditable = useAppSelector((state: RootState) => state.pages.isEditablePage);
+  const section = useSection("Client Logos");
+  if (!section) return null;
 
-export default function HomeClosingCta({ content }: HomeClosingCtaProps) {
+  const p = section.props;
+  const handle = (fieldPath: string) => (value: string) => saveField(dispatch, currentPages, section.id, fieldPath, value);
   return (
     <section className="bg-white pt-12">
       <motion.div
@@ -22,8 +31,8 @@ export default function HomeClosingCta({ content }: HomeClosingCtaProps) {
       >
         <motion.div variants={fadeInUp} className="relative min-h-[300px] overflow-hidden md:min-h-[420px]">
           <Image
-            src={content.image}
-            alt={content.title}
+            src={p.image || "/assets/Image/about-image.jpg"}
+            alt={t(p.heading)}
             fill
             sizes="100vw"
             className="object-cover object-center"
@@ -33,17 +42,17 @@ export default function HomeClosingCta({ content }: HomeClosingCtaProps) {
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="font-editorial text-[10px] uppercase tracking-[0.24em] text-white/88 md:text-xs">
-                  {content.eyebrow}
+                  <EditableText value={p.label?.en || ''} isEditable={isEditable} onSave={handle('props.label.en')} tag="span" />
                 </p>
                 <h2 className="font-display mt-3 max-w-3xl text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.04] tracking-[-0.04em] text-white">
-                  {content.title}
+                  <EditableText value={p.heading?.en || ''} isEditable={isEditable} onSave={handle('props.heading.en')} tag="span" />
                 </h2>
               </div>
               <Link
-                href={content.cta.href}
+                href={p.primaryButtonLink || "/contact"}
                 className="inline-flex w-full items-center justify-center border border-white/75 bg-white px-5 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#111111] transition duration-300 hover:bg-transparent hover:text-white sm:w-fit"
               >
-                {content.cta.label}
+                <EditableText value={p.primaryButton?.en || ''} isEditable={isEditable} onSave={handle('props.primaryButton.en')} tag="span" />
               </Link>
             </div>
           </div>

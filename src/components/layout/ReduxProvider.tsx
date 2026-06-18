@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { type ReactNode, useEffect } from "react";
 import { Provider } from "react-redux";
 import { store } from "@/redux/store";
 import { fetchFastApiPagesThunk } from "@/redux/slices/pages/pageThunk";
@@ -31,7 +31,7 @@ function StoreInitializer() {
 export default function ReduxProvider({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <Provider store={store}>

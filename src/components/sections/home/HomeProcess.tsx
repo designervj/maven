@@ -5,16 +5,11 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { fadeInUp, stagger } from "@/components/sections/anim";
-import type { ProcessStep } from "@/lib/homepage-data";
-
-type HomeProcessProps = {
-  intro: {
-    eyebrow: string;
-    title: string;
-    description: string;
-  };
-  steps: ProcessStep[];
-};
+import { useSection } from "@/lib/hooks/useSection";
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
+import { RootState } from "@/redux/store";
+import EditableText from "@/components/shared/EditableText";
+import { saveField } from "@/lib/editorUtils";
 
 function ProcessWireframe() {
   return (
@@ -26,8 +21,18 @@ function ProcessWireframe() {
   );
 }
 
-export default function HomeProcess({ intro, steps }: HomeProcessProps) {
+export default function HomeProcess() {
+  const dispatch = useAppDispatch();
+  const currentPages = useAppSelector((state: RootState) => state.pages.currentPages);
+  const isEditable = useAppSelector((state: RootState) => state.pages.isEditablePage);
+  const section = useSection("Results");
   const [openIndex, setOpenIndex] = useState(0);
+
+  if (!section) return null;
+
+  const p = section.props;
+  const steps = Array.isArray(section.content) ? section.content : [];
+  const handle = (fieldPath: string) => (value: string) => saveField(dispatch, currentPages, section.id, fieldPath, value);
 
   return (
     <section
@@ -46,31 +51,31 @@ export default function HomeProcess({ intro, steps }: HomeProcessProps) {
             variants={fadeInUp}
             className="font-editorial text-[10px] uppercase tracking-[0.26em] text-[#767676] md:text-xs"
           >
-            {intro.eyebrow}
+            <EditableText value={p.label?.en || ''} isEditable={isEditable} onSave={handle('props.label.en')} tag="span" />
           </motion.p>
           <motion.h2
             variants={fadeInUp}
             className="font-display mt-4 max-w-5xl text-[clamp(2rem,4.7vw,3.45rem)] font-medium leading-[1.02] tracking-[-0.04em] text-[#141414]"
           >
-            {intro.title}
+            <EditableText value={p.heading?.en || ''} isEditable={isEditable} onSave={handle('props.heading.en')} tag="span" />
           </motion.h2>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(360px,0.85fr)] lg:items-center">
           <div>
-            <motion.p
-              variants={fadeInUp}
-              className="font-editorial mb-8 max-w-2xl text-sm leading-7 text-[#555555] md:text-base"
-            >
-              {intro.description}
-            </motion.p>
+              <motion.p
+                variants={fadeInUp}
+                className="font-editorial mb-8 max-w-2xl text-sm leading-7 text-[#555555] md:text-base"
+              >
+                <EditableText value={p.description?.en || ''} isEditable={isEditable} onSave={handle('props.description.en')} tag="span" />
+              </motion.p>
 
             <div className="space-y-0 border-y border-[#d7d7d7]">
-              {steps.map((step, index) => {
+              {steps.map((step: any, index: number) => {
                 const isOpen = openIndex === index;
 
                 return (
-                  <motion.div key={step.step} variants={fadeInUp} className="border-b border-[#d7d7d7] last:border-b-0">
+                  <motion.div key={step.id || index} variants={fadeInUp} className="border-b border-[#d7d7d7] last:border-b-0">
                     <button
                       type="button"
                       onClick={() => setOpenIndex(index)}
@@ -78,10 +83,10 @@ export default function HomeProcess({ intro, steps }: HomeProcessProps) {
                     >
                       <div>
                         <p className="font-editorial text-[10px] uppercase tracking-[0.24em] text-[#7d7d7d] md:text-xs">
-                          {step.step}
+                          {step.props?.target || step.id || `0${index + 1}`}
                         </p>
                         <h3 className="font-display mt-2 text-[1.3rem] font-medium text-[#141414] md:text-[1.5rem]">
-                          {step.title}
+                          <EditableText value={step.props?.title?.en || ''} isEditable={isEditable} onSave={handle(`content.${index}.props.title.en`)} tag="span" />
                         </h3>
                       </div>
                       <Plus
@@ -95,7 +100,7 @@ export default function HomeProcess({ intro, steps }: HomeProcessProps) {
                     >
                       <div className="overflow-hidden">
                         <p className="font-editorial max-w-xl text-sm leading-7 text-[#555555] md:text-base">
-                          {step.description}
+                          <EditableText value={step.props?.sub?.en || ''} isEditable={isEditable} onSave={handle(`content.${index}.props.sub.en`)} tag="span" />
                         </p>
                       </div>
                     </div>

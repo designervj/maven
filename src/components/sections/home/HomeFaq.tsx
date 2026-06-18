@@ -3,16 +3,11 @@
 import { motion } from "framer-motion";
 import { fadeInUp, stagger } from "@/components/sections/anim";
 
-type FaqItem = {
-  question: string;
-  answer: string;
-};
-
-type HomeFaqProps = {
-  items: FaqItem[];
-};
-
-export default function HomeFaq({ items }: HomeFaqProps) {
+export default function HomeFaq() {
+  const items = [
+    { question: "How do I find a reliable architect or interior designer in Jaipur?", answer: "The best approach is to find a studio that aligns with your style and values." },
+    { question: "Can Maven Projects manage my entire construction project?", answer: "Yes, we provide end-to-end project management from design to on-site execution." },
+  ];
   return (
     <section className="bg-white py-16 md:py-20 border-t border-[#d7d7d7]">
       <motion.div

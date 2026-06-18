@@ -5,13 +5,19 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { fadeInUp, stagger } from "@/components/sections/anim";
-import type { FounderFeature } from "@/lib/homepage-data";
 
-type HomeFounderFeatureProps = {
-  content: FounderFeature;
-};
-
-export default function HomeFounderFeature({ content }: HomeFounderFeatureProps) {
+export default function HomeFounderFeature() {
+  const content = {
+    eyebrow: "Our Philosophy",
+    title: "Designing with discipline, warmth, and long-term clarity.",
+    quote: "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful.",
+    description: "Our studio pairs strong architectural thinking with calm execution support.",
+    image: "/assets/Image/team-img.jpg",
+    secondaryImage: "/assets/Image/project-image2.png",
+    role: "Architecture / Interiors / Execution",
+    name: "Maven Projects",
+    cta: { label: "Meet the studio", href: "/about" },
+  };
   return (
     <section className="bg-[#0f0f10] py-16 text-white md:py-20">
       <motion.div
