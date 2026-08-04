@@ -35,7 +35,7 @@ export default function AboutPage() {
         eyebrow={t(heroProps.label) || "About Us"}
         title={t(heroProps.heading)?.replace(/<[^>]*>/g, "") || "Modern design built on trust, clarity, and the way you live."}
         description={t(heroProps.description) || "Maven Projects works across residences, renovations, and contemporary interiors."}
-        image={heroProps.image || "/assets/Image/about-us-img.jpeg"}
+        image={"/assets/Image/uploads/IMG_3965.JPG"}
       />
       
       <HomeStudioIntro />

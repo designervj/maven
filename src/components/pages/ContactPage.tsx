@@ -70,7 +70,7 @@ export default function ContactPage() {
     ? `mailto:${t(emailItem.props?.value)}`
     : siteContact.emailHref;
   const address = t(addressItem?.props?.value) || siteContact.address;
-  const heroImage = heroProps.image || "/assets/Image/project-image1.png";
+  const heroImage = "/assets/Image/uploads/IMG_5647.PNG";
 
   const officeItems = getSectionItems("Offices");
   const offices = officeItems.length > 0 

@@ -65,7 +65,8 @@ const pagesSlice = createSlice({
       apiPages.forEach((apiPage) => {
         const idx = merged.findIndex((p) => p.slug === apiPage.slug);
         if (idx !== -1) {
-          merged[idx] = apiPage; // replace local JSON with live API data
+          // Keep local JSON during development so our edits show up!
+          // merged[idx] = apiPage;
         } else {
           merged.push(apiPage); // add new pages from API
         }
@@ -132,7 +133,8 @@ const pagesSlice = createSlice({
         apiPages.forEach((apiPage: Page) => {
           const idx = merged.findIndex((p) => p.slug === apiPage.slug);
           if (idx !== -1) {
-            merged[idx] = apiPage;
+            // Keep local JSON during development so our edits show up!
+            // merged[idx] = apiPage; 
           } else {
             merged.push(apiPage);
           }

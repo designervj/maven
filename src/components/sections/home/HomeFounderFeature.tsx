@@ -12,8 +12,8 @@ export default function HomeFounderFeature() {
     title: "Designing with discipline, warmth, and long-term clarity.",
     quote: "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful.",
     description: "Our studio pairs strong architectural thinking with calm execution support.",
-    image: "/assets/Image/team-img.jpg",
-    secondaryImage: "/assets/Image/project-image2.png",
+    image: "/assets/Image/uploads/IMG_3964.JPG",
+    secondaryImage: "/assets/Image/uploads/IMG_5641.PNG",
     role: "Architecture / Interiors / Execution",
     name: "Maven Projects",
     cta: { label: "Meet the studio", href: "/about" },
@@ -44,7 +44,7 @@ export default function HomeFounderFeature() {
                 alt={content.name}
                 fill
                 sizes="(max-width: 1024px) 100vw, 24vw"
-                className="object-cover object-center grayscale"
+                className="object-cover object-center"
               />
             </div>
           </motion.div>

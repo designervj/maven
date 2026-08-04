@@ -287,7 +287,7 @@ export const collaborationLogos: LogoItem[] = [
 export const homeFooterCta: FeatureBanner = {
   eyebrow: "Let's Talk About Your Project",
   title: "Let's create a home that feels composed, generous, and fully yours.",
-  image: "/assets/Image/about-image.jpg",
+  image: "/assets/Image/uploads/IMG_5631.PNG",
   cta: { label: "Book a consultation", href: "/contact" },
 };
 

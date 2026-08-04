@@ -21,9 +21,9 @@ export default function BlogPage() {
         meta: t(item.props?.tag) || "Article",
       }))
     : [
-        { title: "How a modern facade stays warm and welcoming", excerpt: "A closer look at proportion, materials, and threshold design.", image: "/assets/Image/about-image.jpg", href: "/about", meta: "Media" },
-        { title: "Designing joinery that feels architectural", excerpt: "Interior details can reinforce the larger spatial idea.", image: "/assets/Image/project-image1.png", href: "/portfolio", meta: "Press release" },
-        { title: "Recent hospitality concept highlighted by editors", excerpt: "A published project story focused on circulation and atmosphere.", image: "/assets/Image/project-image2.png", href: "/testimonials", meta: "News" },
+        { title: "How a modern facade stays warm and welcoming", excerpt: "A closer look at proportion, materials, and threshold design.", image: "/assets/Image/uploads/IMG_5637.PNG", href: "/about", meta: "Media" },
+        { title: "Designing joinery that feels architectural", excerpt: "Interior details can reinforce the larger spatial idea.", image: "/assets/Image/uploads/IMG_5638.PNG", href: "/portfolio", meta: "Press release" },
+        { title: "Recent hospitality concept highlighted by editors", excerpt: "A published project story focused on circulation and atmosphere.", image: "/assets/Image/uploads/IMG_5644.PNG", href: "/testimonials", meta: "News" },
       ];
 
   const newsletterSection = getSection("Newsletter");
@@ -35,7 +35,7 @@ export default function BlogPage() {
         eyebrow={t(heroProps.label) || "Blog"}
         title={t(heroProps.heading)?.replace(/<[^>]*>/g, "") || "Stories from the studio and beyond."}
         description={t(heroProps.description) || "Insights on architecture, interior design, and our project journeys."}
-        image="/assets/Image/project-image1.png"
+        image="/assets/Image/uploads/IMG_5636.PNG"
       />
       <HomeJournal items={journalEntries} />
       <SimpleCTA
