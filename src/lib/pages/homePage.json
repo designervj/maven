@@ -32,7 +32,7 @@
           "en": "Creating homes that feel natural, spacious, and fully yours.",
           "hi": "Creating homes that feel natural, spacious, and fully yours."
         },
-        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop",
+        "image": "/assets/Image/uploads/IMG_5651.PNG",
         "primaryButton": {
           "en": "Explore portfolio",
           "hi": "Explore portfolio"
@@ -135,7 +135,7 @@
             },
             "tag": "New build",
             "location": "Jaipur, India",
-            "image": "/assets/Image/about-img.jpg",
+            "image": "/assets/Image/uploads/IMG_5631.PNG",
             "href": "/portfolio",
             "year": "2024"
           }
@@ -150,7 +150,7 @@
             },
             "tag": "Private home",
             "location": "Ahmedabad, India",
-            "image": "/assets/Image/about-image.jpg",
+            "image": "/assets/Image/uploads/IMG_5632.PNG",
             "href": "/portfolio",
             "year": "2023"
           }
@@ -165,7 +165,7 @@
             },
             "tag": "Cultural interiors",
             "location": "Mumbai, India",
-            "image": "/assets/Image/project-image2.png",
+            "image": "/assets/Image/uploads/IMG_5633.PNG",
             "href": "/portfolio",
             "year": "2024"
           }
@@ -253,8 +253,8 @@
           "en": "The best builds start before the build",
           "hi": "The best builds start before the build"
         },
-        "image": "/assets/Image/project-image1.png",
-        "secondaryImage": "/assets/Image/project-image2.png",
+        "image": "/assets/Image/uploads/IMG_5634.PNG",
+        "secondaryImage": "/assets/Image/uploads/IMG_5635.PNG",
         "cta": {
           "en": "Discover more",
           "hi": "Discover more"
@@ -276,7 +276,7 @@
           "en": "Let's create a home that feels composed, generous, and fully yours.",
           "hi": "Let's create a home that feels composed, generous, and fully yours."
         },
-        "image": "/assets/Image/about-image.jpg",
+        "image": "/assets/Image/uploads/IMG_5636.PNG",
         "primaryButton": {
           "en": "Book a consultation",
           "hi": "Book a consultation"
@@ -294,8 +294,8 @@
         "title": { "en": "Designing with discipline, warmth, and long-term clarity.", "hi": "Designing with discipline, warmth, and long-term clarity." },
         "quote": { "en": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful.", "hi": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful." },
         "description": { "en": "Our studio pairs strong architectural thinking with calm execution support.", "hi": "Our studio pairs strong architectural thinking with calm execution support." },
-        "image": "/assets/Image/team-img.jpg",
-        "secondaryImage": "/assets/Image/project-image2.png",
+        "image": "/assets/Image/uploads/IMG_5637.PNG",
+        "secondaryImage": "/assets/Image/uploads/IMG_5638.PNG",
         "role": { "en": "Architecture / Interiors / Execution", "hi": "Architecture / Interiors / Execution" },
         "name": { "en": "Maven Projects", "hi": "Maven Projects" },
         "cta": { "en": "Meet the studio", "hi": "Meet the studio" },
