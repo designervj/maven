@@ -32,7 +32,7 @@
           "en": "From the first sketch to the final brick, we provide integrated architectural and interior services to bring your project to life across Jaipur.",
           "hi": "From the first sketch to the final brick, we provide integrated architectural and interior services to bring your project to life across Jaipur."
         },
-        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+        "image": "/assets/Image/uploads/IMG_5645.PNG"
       }
     },
     {
@@ -66,7 +66,7 @@
           "en": "Honoring creativity, quality, and design leadership",
           "hi": "Honoring creativity, quality, and design leadership"
         },
-        "image": "/assets/Image/project-image2.png"
+        "image": "/assets/Image/uploads/IMG_5648.PNG"
       },
       "content": [
         {
@@ -245,8 +245,8 @@
           "en": "End-to-End Design & Build without the friction.",
           "hi": "End-to-End Design & Build without the friction."
         },
-        "image": "/assets/Image/project-image1.png",
-        "secondaryImage": "/assets/Image/project-image2.png",
+        "image": "/assets/Image/uploads/IMG_5650.PNG",
+        "secondaryImage": "/assets/Image/uploads/IMG_5651.PNG",
         "cta": {
           "en": "Learn More",
           "hi": "Learn More"
@@ -319,7 +319,7 @@
               "hi": "Jaipur"
             },
             "year": "2023",
-            "image": "/assets/Image/project-image2.png",
+            "image": "/assets/Image/uploads/IMG_5640.PNG",
             "href": "/portfolio"
           }
         },
@@ -340,7 +340,7 @@
               "hi": "Jaipur"
             },
             "year": "2022",
-            "image": "/assets/Image/project-img.jpg",
+            "image": "/assets/Image/uploads/IMG_5641.PNG",
             "href": "/portfolio"
           }
         },
@@ -361,7 +361,7 @@
               "hi": "Jaipur"
             },
             "year": "2024",
-            "image": "/assets/Image/project-image1.png",
+            "image": "/assets/Image/uploads/IMG_5642.PNG",
             "href": "/portfolio"
           }
         }
@@ -385,7 +385,7 @@
           "en": "Client, Jagatpura Villa",
           "hi": "Client, Jagatpura Villa"
         },
-        "image": "/assets/Image/team-img.jpg"
+        "image": "/assets/Image/uploads/IMG_5644.PNG"
       }
     },
     {

@@ -32,7 +32,7 @@
           "en": "A curated look at our recent architecture and interior projects that blend modern aesthetics with functional living.",
           "hi": "A curated look at our recent architecture and interior projects that blend modern aesthetics with functional living."
         },
-        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop"
+        "image": "/assets/Image/uploads/IMG_5650.PNG"
       }
     },
     {
@@ -46,12 +46,12 @@
           "type": "item",
           "props": {
             "title": {
-              "en": "Primary Residence House",
-              "hi": "Primary Residence House"
+              "en": "Project 1",
+              "hi": "Project 1"
             },
-            "category": "New build",
+            "category": "Architecture",
             "location": "Jaipur, India",
-            "image": "/assets/Image/about-img.jpg",
+            "image": "/assets/Image/uploads/IMG_3963.JPG",
             "href": "/portfolio",
             "year": "2024"
           }
@@ -61,14 +61,14 @@
           "type": "item",
           "props": {
             "title": {
-              "en": "Field View Villa",
-              "hi": "Field View Villa"
+              "en": "Project 2",
+              "hi": "Project 2"
             },
-            "category": "Private home",
-            "location": "Ahmedabad, India",
-            "image": "/assets/Image/about-image.jpg",
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_3964.JPG",
             "href": "/portfolio",
-            "year": "2023"
+            "year": "2024"
           }
         },
         {
@@ -76,12 +76,312 @@
           "type": "item",
           "props": {
             "title": {
-              "en": "Lightwell Gallery",
-              "hi": "Lightwell Gallery"
+              "en": "Project 3",
+              "hi": "Project 3"
             },
-            "category": "Cultural interiors",
-            "location": "Mumbai, India",
-            "image": "/assets/Image/project-image2.png",
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_3965.JPG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-4",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 4",
+              "hi": "Project 4"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5631.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-5",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 5",
+              "hi": "Project 5"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5632.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-6",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 6",
+              "hi": "Project 6"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5633.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-7",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 7",
+              "hi": "Project 7"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5634.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-8",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 8",
+              "hi": "Project 8"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5635.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-9",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 9",
+              "hi": "Project 9"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5636.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-10",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 10",
+              "hi": "Project 10"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5637.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-11",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 11",
+              "hi": "Project 11"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5638.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-12",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 12",
+              "hi": "Project 12"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5639.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-13",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 13",
+              "hi": "Project 13"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5640.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-14",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 14",
+              "hi": "Project 14"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5641.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-15",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 15",
+              "hi": "Project 15"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5642.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-16",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 16",
+              "hi": "Project 16"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5643.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-17",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 17",
+              "hi": "Project 17"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5644.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-18",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 18",
+              "hi": "Project 18"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5645.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-19",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 19",
+              "hi": "Project 19"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5646.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-20",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 20",
+              "hi": "Project 20"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5647.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-21",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 21",
+              "hi": "Project 21"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5648.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-22",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 22",
+              "hi": "Project 22"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5650.PNG",
+            "href": "/portfolio",
+            "year": "2024"
+          }
+        },
+        {
+          "id": "port-23",
+          "type": "item",
+          "props": {
+            "title": {
+              "en": "Project 23",
+              "hi": "Project 23"
+            },
+            "category": "Architecture",
+            "location": "Jaipur, India",
+            "image": "/assets/Image/uploads/IMG_5651.PNG",
             "href": "/portfolio",
             "year": "2024"
           }
@@ -106,8 +406,8 @@
           "en": "Seeing our work is just the beginning. Let's collaborate to create something special for you and your family.",
           "hi": "Seeing our work is just the beginning. Let's collaborate to create something special for you and your family."
         },
-        "image": "/assets/Image/project-image1.png",
-        "secondaryImage": "/assets/Image/project-image2.png",
+        "image": "/assets/Image/uploads/IMG_5642.PNG",
+        "secondaryImage": "/assets/Image/uploads/IMG_5643.PNG",
         "primaryButton": {
           "en": "Start Your Project Here",
           "hi": "Start Your Project Here"

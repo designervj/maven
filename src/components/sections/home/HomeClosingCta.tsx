@@ -31,7 +31,7 @@ export default function HomeClosingCta() {
       >
         <motion.div variants={fadeInUp} className="relative min-h-[300px] overflow-hidden md:min-h-[420px]">
           <Image
-            src={p.image || "/assets/Image/about-image.jpg"}
+            src={"/assets/Image/uploads/IMG_5631.PNG"}
             alt={t(p.heading)}
             fill
             sizes="100vw"

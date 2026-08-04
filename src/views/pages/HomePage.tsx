@@ -7,6 +7,7 @@ import HomeProcess from "@/components/sections/home/HomeProcess";
 import HomeProjects from "@/components/sections/home/HomeProjects";
 import HomeServices from "@/components/sections/home/HomeServices";
 import HomeStudioIntro from "@/components/sections/home/HomeStudioIntro";
+import HomeGallery from "@/components/sections/home/HomeGallery";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <HomeStudioIntro />
       <HomeServices />
       <HomeProjects />
+      <HomeGallery />
       <HomeProcess />
       <HomeFeatureBanner />
       <HomeFounderFeature />

@@ -32,7 +32,7 @@
           "en": "Maven Projects works across residences, renovations, and contemporary interiors with a strong emphasis on detail, material warmth, and design continuity for our clients in Jaipur.",
           "hi": "Maven Projects works across residences, renovations, and contemporary interiors with a strong emphasis on detail, material warmth, and design continuity for our clients in Jaipur."
         },
-        "image": "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
+        "image": "/assets/Image/uploads/IMG_5643.PNG"
       }
     },
     {
@@ -74,8 +74,8 @@
           "en": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful, tailored to the people who live there.",
           "hi": "Every successful project balances concept and control. We believe a home should be as functional as it is beautiful, tailored to the people who live there."
         },
-        "image": "/assets/Image/team-img.jpg",
-        "secondaryImage": "/assets/Image/project-image2.png",
+        "image": "/assets/Image/uploads/IMG_5644.PNG",
+        "secondaryImage": "/assets/Image/uploads/IMG_5645.PNG",
         "role": "Architecture / Interiors / Execution",
         "name": "Maven Projects",
         "cta": {
@@ -341,7 +341,7 @@
           "en": "Let's create a home that feels composed, generous, and fully yours.",
           "hi": "Let's create a home that feels composed, generous, and fully yours."
         },
-        "image": "/assets/Image/about-image.jpg",
+        "image": "/assets/Image/uploads/IMG_5646.PNG",
         "primaryButton": {
           "en": "Book a consultation",
           "hi": "Book a consultation"

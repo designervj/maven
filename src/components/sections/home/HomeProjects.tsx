@@ -12,14 +12,14 @@ import { RootState } from "@/redux/store";
 import EditableText from "@/components/shared/EditableText";
 import { saveField } from "@/lib/editorUtils";
 
-export default function HomeProjects() {
+export default function HomeProjects({ showAll = false }: { showAll?: boolean }) {
   const dispatch = useAppDispatch();
   const currentPages = useAppSelector((state: RootState) => state.pages.currentPages);
   const isEditable = useAppSelector((state: RootState) => state.pages.isEditablePage);
   const section = useSection("Industries");
   if (!section) return null;
 
-  const items = Array.isArray(section.content) ? section.content.slice(0, 3) : [];
+  const items = Array.isArray(section.content) ? (showAll ? section.content : section.content.slice(0, 3)) : [];
   const handle = (fieldPath: string) => (value: string) => saveField(dispatch, currentPages, section.id, fieldPath, value);
 
   return (

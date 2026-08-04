@@ -32,7 +32,7 @@
           "en": "We are preparing new articles about architecture, interior design, and our project journeys in Jaipur. Stay tuned.",
           "hi": "We are preparing new articles about architecture, interior design, and our project journeys in Jaipur. Stay tuned."
         },
-        "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop"
+        "image": "/assets/Image/uploads/IMG_5636.PNG"
       }
     },
     {
@@ -53,7 +53,7 @@
               "en": "A closer look at proportion, materials, and threshold design in our recent residential work.",
               "hi": "A closer look at proportion, materials, and threshold design in our recent residential work."
             },
-            "image": "/assets/Image/about-image.jpg",
+            "image": "/assets/Image/uploads/IMG_5637.PNG",
             "slug": "modern-facade",
             "tag": {
               "en": "Media",
@@ -73,7 +73,7 @@
               "en": "Interior details can reinforce the larger spatial idea when geometry, texture, and light are handled together.",
               "hi": "Interior details can reinforce the larger spatial idea when geometry, texture, and light are handled together."
             },
-            "image": "/assets/Image/project-image1.png",
+            "image": "/assets/Image/uploads/IMG_5638.PNG",
             "slug": "designing-joinery",
             "tag": {
               "en": "Press release",
@@ -93,7 +93,7 @@
               "en": "A published project story focused on circulation, atmosphere, and restrained material layering.",
               "hi": "A published project story focused on circulation, atmosphere, and restrained material layering."
             },
-            "image": "/assets/Image/project-image2.png",
+            "image": "/assets/Image/uploads/IMG_5644.PNG",
             "slug": "hospitality-concept",
             "tag": {
               "en": "News",

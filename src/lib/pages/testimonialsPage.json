@@ -32,7 +32,7 @@
           "en": "Real stories from clients who trusted us with their most important spaces.",
           "hi": "Real stories from clients who trusted us with their most important spaces."
         },
-        "image": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2000&auto=format&fit=crop"
+        "image": "/assets/Image/uploads/IMG_5635.PNG"
       }
     },
     {
@@ -57,7 +57,7 @@
               "en": "Jaipur",
               "hi": "Jaipur"
             },
-            "avatar": "/assets/Image/testimonials-img.png",
+            "avatar": "/assets/Image/uploads/IMG_5647.PNG",
             "rating": 5
           }
         },
@@ -77,7 +77,7 @@
               "en": "Vaishali Nagar, Jaipur",
               "hi": "Vaishali Nagar, Jaipur"
             },
-            "avatar": "/assets/Image/testimonials-img.png",
+            "avatar": "/assets/Image/uploads/IMG_5648.PNG",
             "rating": 5
           }
         },
@@ -97,7 +97,7 @@
               "en": "Malviya Nagar, Jaipur",
               "hi": "Malviya Nagar, Jaipur"
             },
-            "avatar": "/assets/Image/testimonials-img.png",
+            "avatar": "/assets/Image/uploads/IMG_5650.PNG",
             "rating": 5
           }
         }

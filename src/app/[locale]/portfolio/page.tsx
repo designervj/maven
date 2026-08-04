@@ -21,9 +21,9 @@ export default function PortfolioPage() {
         eyebrow={t(heroProps.label) || "Our Portfolio"}
         title={t(heroProps.heading)?.replace(/<[^>]*>/g, "") || "Transforming ideas into beautiful, lived-in spaces across Jaipur."}
         description={t(heroProps.description) || "A curated look at our recent architecture and interior projects."}
-        image="/assets/Image/project-image2.png"
+        image="/assets/Image/uploads/IMG_5650.PNG"
       />
-      <HomeProjects />
+      <HomeProjects showAll={true} />
       <HomeFeatureBanner />
       <SimpleCTA
         title={t(ctaProps.heading)?.replace(/<[^>]*>/g, "") || "Ready to Start Your Project?"}

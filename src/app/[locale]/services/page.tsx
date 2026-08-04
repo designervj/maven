@@ -49,7 +49,7 @@ export default function ServicesPage() {
         eyebrow={t(heroProps.label) || "Our Services"}
         title={t(heroProps.heading)?.replace(/<[^>]*>/g, "") || "Comprehensive solutions for your ideal living space."}
         description={t(heroProps.description) || "From the first sketch to the final brick, integrated architectural and interior services."}
-        image={heroProps.image || "/assets/Image/about-image.jpg"}
+        image={"/assets/Image/uploads/IMG_5645.PNG"}
       />
       
       <HomeStudioIntro />
