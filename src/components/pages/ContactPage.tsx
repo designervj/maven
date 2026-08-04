@@ -248,7 +248,7 @@ export default function ContactPage() {
               {/* Contact cards */}
               <motion.div
                 variants={stagger}
-                className="mt-10 grid gap-5 sm:grid-cols-3"
+                className="mt-12 grid gap-4 sm:grid-cols-3 lg:gap-6"
               >
                 {[
                   { Icon: Phone, label: "Call us", value: phoneLabel, href: phoneHref },
@@ -260,17 +260,21 @@ export default function ContactPage() {
                     href={href}
                     variants={fadeUp}
                     transition={{ duration: 0.65, ease: "easeOut" }}
-                    className="group block border border-[#e5e5e5] bg-[#fafafa] p-5 transition-all duration-300 hover:border-[#111111] hover:bg-white"
+                    className="group relative flex flex-col justify-between overflow-hidden bg-[#fafafa] border border-[#e5e5e5] p-7 transition-all duration-500 hover:border-[#111111] hover:bg-[#111111] hover:shadow-2xl hover:-translate-y-1 md:p-8"
                   >
-                    <div className="flex h-9 w-9 items-center justify-center border border-[#dfdfdf] bg-white transition-colors duration-300 group-hover:border-[#111111]">
-                      <Icon className="h-4 w-4 text-[#555555] group-hover:text-[#111111] transition-colors duration-300" strokeWidth={1.5} />
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white border border-[#dfdfdf] transition-all duration-500 group-hover:border-transparent group-hover:bg-white/10">
+                        <Icon className="h-4 w-4 text-[#555555] transition-colors duration-500 group-hover:text-white" strokeWidth={1.5} />
+                      </div>
+                      <p className="font-editorial text-[10px] uppercase tracking-[0.2em] text-[#888888] transition-colors duration-500 group-hover:text-white/70 md:text-[11px]">
+                        {label}
+                      </p>
                     </div>
-                    <p className="font-editorial mt-4 text-[10px] uppercase tracking-[0.22em] text-[#888888] md:text-xs">
-                      {label}
-                    </p>
-                    <p className="font-editorial mt-2 text-sm leading-6 text-[#111111]">
-                      {value}
-                    </p>
+                    <div className="mt-8 md:mt-12">
+                      <p className="font-editorial text-[13px] leading-relaxed text-[#111111] transition-colors duration-500 group-hover:text-white break-words md:text-sm" style={{ wordBreak: 'break-word' }}>
+                        {value}
+                      </p>
+                    </div>
                   </motion.a>
                 ))}
               </motion.div>

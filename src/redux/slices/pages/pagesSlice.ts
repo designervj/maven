@@ -2,6 +2,27 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Page } from './pageType';
 import { createPageThunk, deletePageThunk, fetchFastApiPagesThunk, fetchPageBySlugThunk, fetchPagesThunk, savePageContentThunk, updatePageThunk } from './pageThunk';
 
+import contactPage from '@/lib/pages/contactPage.json';
+import blogPage from '@/lib/pages/blogPage.json';
+import footerPage from '@/lib/pages/footerPage.json';
+import servicesPage from '@/lib/pages/servicesPage.json';
+import aboutPage from '@/lib/pages/aboutPage.json';
+import testimonialsPage from '@/lib/pages/testimonialsPage.json';
+import processPage from '@/lib/pages/processPage.json';
+import homePage from '@/lib/pages/homePage.json';
+import portfolioPage from '@/lib/pages/portfolioPage.json';
+
+const fallbackPages = [
+  contactPage,
+  blogPage,
+  footerPage,
+  servicesPage,
+  aboutPage,
+  testimonialsPage,
+  processPage,
+  homePage,
+  portfolioPage
+] as unknown as Page[];
 interface PageState {
   allPages: Page[];
   currentPages: Page | null;
@@ -12,7 +33,7 @@ interface PageState {
 }
 
 const initialState: PageState = {
-  allPages: [],
+  allPages: fallbackPages,
   currentPages: null,
   isAllPageFetched: false,
   isError: false,
@@ -123,6 +144,9 @@ const pagesSlice = createSlice({
        .addCase(fetchFastApiPagesThunk.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
+        state.isAllPageFetched = true;
+        const home = state.allPages.find((page: Page) => page.slug === 'home');
+        if (home) state.currentPages = home;
        }) 
       // Fetch single page
       .addCase(fetchPageBySlugThunk.pending, (state) => {
