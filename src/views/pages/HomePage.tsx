@@ -11,7 +11,7 @@ import HomeGallery from "@/components/sections/home/HomeGallery";
 
 export default function HomePage() {
   return (
-    <main className="overflow-x-hidden bg-white text-[#141414]">
+    <main className="bg-white text-[#141414]">
       <HomeHero />
       <HomeStudioIntro />
       <HomeServices />

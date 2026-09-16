@@ -1,0 +1,56 @@
+{
+  "mode": "system",
+  "tokens": {
+    "color": {
+      "primary": "#111111",
+      "secondary": "#121212",
+      "accent": "#b07d3a",
+      "background": "#FFFFFF",
+      "surface": "#F4F4F0",
+      "text": "#111111",
+      "muted": "#aaaaaa",
+      "success": "#22c55e",
+      "warning": "#DEBB70",
+      "danger": "#C25E4B"
+    },
+    "font": {
+      "heading": "Montserrat",
+      "body": "Inter",
+      "scale": 1
+    },
+    "radius": {
+      "small": 4,
+      "medium": 8,
+      "large": 24
+    },
+    "spacing": {
+      "base": 8,
+      "section": 100
+    },
+    "motion": {
+      "enabled": true,
+      "reducedMotionSafe": true
+    }
+  },
+  "accent": "#b07d3a",
+  "density": "comfortable",
+  "colors": {
+    "primary": "#111111",
+    "secondary": "#121212",
+    "accent": "#b07d3a",
+    "surface": "#F4F4F0",
+    "background": "#FFFFFF",
+    "text": "#111111",
+    "buttons": {
+      "primary": "#111111",
+      "primaryText": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "secondaryText": "#111111"
+    }
+  },
+  "typography": {
+    "bodyFont": "Inter",
+    "headingFont": "Montserrat",
+    "customFonts": []
+  }
+}

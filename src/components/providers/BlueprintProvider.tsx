@@ -4,9 +4,10 @@ import { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { fetchBlueprintThunk } from '@/redux/slices/blueprint/blueprintThunk';
 import {
-  selectBrandAssetsPublicTheme,
+  selectActiveTheme,
   selectBlueprintLoading,
   selectBlueprintLastFetched,
+  setThemeContext,
   selectThemeContext,
 } from '@/redux/slices/blueprint/blueprintSlice';
 import { applyTheme } from '@/lib/applyTheme';
@@ -20,11 +21,17 @@ interface BlueprintProviderProps {
 
 export function BlueprintProvider({ children, context = 'public' }: BlueprintProviderProps) {
   const dispatch = useAppDispatch();
-  const activeTheme = useAppSelector(selectBrandAssetsPublicTheme);
+  const activeTheme = useAppSelector(selectActiveTheme);
   const loading = useAppSelector(selectBlueprintLoading);
   const lastFetched = useAppSelector(selectBlueprintLastFetched);
   const themeContext = useAppSelector(selectThemeContext);
   const didApply = useRef(false);
+
+  useEffect(() => {
+    if (themeContext !== context) {
+      dispatch(setThemeContext(context));
+    }
+  }, [context, dispatch, themeContext]);
 
   useEffect(() => {
     const isStale =

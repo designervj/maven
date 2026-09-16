@@ -1,11 +1,14 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { useAppSelector } from "@/redux/hooks";
 import { selectPageBySlug } from "@/redux/slices/pages/pagesSlice";
 import { t } from "@/lib/section-utils";
 import footerPageFallback from "@/lib/pages/footerPage.json";
+
+import { usePathname } from "next/navigation";
 
 const socialIcons: Record<string, typeof Instagram> = {
   Instagram,
@@ -20,7 +23,23 @@ function getSection(page: any, adminTitle: string) {
   return content.find((s: any) => s?.adminTitle === adminTitle);
 }
 
+function getLinkItem(item: any) {
+  return item?.props ?? item;
+}
+
 export default function Footer() {
+  const pathname = usePathname();
+
+  const currentPath = (typeof window !== "undefined" ? window.location.pathname : (pathname || "")).toLowerCase();
+  const isAuthOrAdmin =
+    currentPath.includes("login") ||
+    currentPath.includes("kalpauth") ||
+    currentPath.startsWith("/admin");
+
+  if (isAuthOrAdmin) {
+    return null;
+  }
+
   const footerPage = useAppSelector(selectPageBySlug("footer")) || footerPageFallback;
 
   const brand = getSection(footerPage, "Footer Brand");
@@ -67,11 +86,15 @@ export default function Footer() {
             {t(quickLinks?.props?.heading || "Quick Links")}
           </p>
           <div className="mt-6 space-y-3">
-            {(quickLinks?.content as any[] || []).map((item: any) => (
-              <Link key={item.label} href={item.href} className="font-editorial block text-sm text-[#111111] hover:font-bold transition-all duration-200">
-                {item.label}
+            {(quickLinks?.content as any[] || []).map((item: any) => {
+              const link = getLinkItem(item);
+
+              return (
+              <Link key={link.label} href={link.href} className="font-editorial block text-sm text-[#111111] hover:font-bold transition-all duration-200">
+                {link.label}
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -99,17 +122,19 @@ export default function Footer() {
             {t(contact?.props?.heading || "Contact")}
           </p>
           <div className="mt-6 space-y-3">
-            {(contact?.content as any[] || []).map((item: any) =>
-              item.href.startsWith("mailto:") || item.href.startsWith("tel:") ? (
-                <a key={item.label} href={item.href} className="font-editorial block text-sm text-[#111111] hover:font-bold transition-all duration-200">
-                  {item.label}
+            {(contact?.content as any[] || []).map((item: any) => {
+              const link = getLinkItem(item);
+
+              return link.href.startsWith("mailto:") || link.href.startsWith("tel:") ? (
+                <a key={link.label} href={link.href} className="font-editorial block text-sm text-[#111111] hover:font-bold transition-all duration-200">
+                  {link.label}
                 </a>
               ) : (
-                <Link key={item.label} href={item.href} className="font-editorial block text-sm text-[#111111] hover:font-bold transition-all duration-200">
-                  {item.label}
+                <Link key={link.label} href={link.href} className="font-editorial block text-sm text-[#111111] hover:font-bold transition-all duration-200">
+                  {link.label}
                 </Link>
-              )
-            )}
+              );
+            })}
           </div>
         </div>
       </div>

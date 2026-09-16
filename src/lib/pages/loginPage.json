@@ -1,0 +1,39 @@
+{
+  "title": {
+    "en": "Sign In",
+    "hi": "साइन इन"
+  },
+  "slug": "login",
+  "isPublished": true,
+  "metaTitle": {
+    "en": "Login | Maven Projects",
+    "hi": "लॉगिन | मेवेन प्रोजेक्ट्स"
+  },
+  "metaDescription": {
+    "en": "Sign in to access your Maven Projects account dashboard and design portal.",
+    "hi": "अपने मेवेन प्रोजेक्ट्स खाते का उपयोग करने के लिए लॉगिन करें।"
+  },
+  "content": [
+    {
+      "id": "login-hero",
+      "type": "section",
+      "layout": "split",
+      "adminTitle": "Login Section",
+      "props": {
+        "eyebrow": {
+          "en": "Client Portal",
+          "hi": "क्लाइंट पोर्टल"
+        },
+        "title": {
+          "en": "Welcome back to Maven",
+          "hi": "मेवेन में आपका वापस स्वागत है"
+        },
+        "description": {
+          "en": "Enter your registered credentials to access your account, project updates, and client features.",
+          "hi": "अपने खाते तक पहुंचने के लिए अपने विवरण दर्ज करें।"
+        },
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1600"
+      }
+    }
+  ]
+}

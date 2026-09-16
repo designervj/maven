@@ -77,6 +77,16 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
+  const currentPath = (typeof window !== "undefined" ? window.location.pathname : (pathname || "")).toLowerCase();
+  const isAuthOrAdmin =
+    currentPath.includes("login") ||
+    currentPath.includes("kalpauth") ||
+    currentPath.startsWith("/admin");
+
+  if (isAuthOrAdmin) {
+    return null;
+  }
+
   useEffect(() => { setOpen(false); }, [pathname]);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -88,7 +98,7 @@ export default function Header() {
   return (
     <>
       {/* ─── Header bar ─────────────────────────────────────────────────── */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#d9d9d9] bg-white transition-colors duration-300">
+      <header className="fixed inset-x-0 top-[var(--admin-bar-offset,0px)] z-50 border-b border-[#d9d9d9] bg-white transition-colors duration-300">
         <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-5 px-4 py-3 md:px-8 lg:px-10">
           <Link href="/" className="shrink-0">
             <img src="/assets/Image/New-Logo.png" alt="Maven Projects" className="h-12 w-auto md:h-16" />

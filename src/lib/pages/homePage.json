@@ -130,14 +130,14 @@
           "type": "item",
           "props": {
             "title": {
-              "en": "Project 1",
-              "hi": "Project 1"
+              "en": "Arihant Crest",
+              "hi": "Arihant Crest"
             },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5631.PNG",
+            "tag": "Completed",
+            "location": "Arihant Greens, Jagatpura",
+            "image": "/assets/Image/uploads/IMG_5650.PNG",
             "href": "/portfolio",
-            "year": "2024"
+            "year": "Completed"
           }
         },
         {
@@ -145,14 +145,14 @@
           "type": "item",
           "props": {
             "title": {
-              "en": "Project 2",
-              "hi": "Project 2"
+              "en": "Maven Aarna",
+              "hi": "Maven Aarna"
             },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5632.PNG",
+            "tag": "Completed",
+            "location": "Jagdamba Nagar, Jagatpura",
+            "image": "/assets/Image/uploads/IMG_5631.PNG",
             "href": "/portfolio",
-            "year": "2024"
+            "year": "Completed"
           }
         },
         {
@@ -160,14 +160,14 @@
           "type": "item",
           "props": {
             "title": {
-              "en": "Project 3",
-              "hi": "Project 3"
+              "en": "Maven Aven",
+              "hi": "Maven Aven"
             },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5633.PNG",
+            "tag": "Completed",
+            "location": "Budh Vihar, Jagatpura",
+            "image": "/assets/Image/uploads/IMG_5647.PNG",
             "href": "/portfolio",
-            "year": "2024"
+            "year": "Completed"
           }
         },
         {

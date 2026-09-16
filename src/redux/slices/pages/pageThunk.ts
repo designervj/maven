@@ -3,6 +3,20 @@ import { Page } from './pageType';
 
 const tenantHeader = process.env.NEXT_PUBLIC_TENANT_ID;
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const fallbackPageSlugs = [
+  'home',
+  'about',
+  'services',
+  'portfolio',
+  'process',
+  'testimonials',
+  'contact',
+  'blog',
+  'footer',
+  'login',
+  'kalpauth',
+  'admin',
+];
 
 // Fetch all pages
 export const fetchPagesThunk = createAsyncThunk(
@@ -44,8 +58,29 @@ export const fetchFastApiPagesThunk = createAsyncThunk(
         throw new Error(errorData.message || 'Failed to fetch pages');
       }
       const data= await response.json();
-      console.log("all pages fetched ", data)
-      return data.data;
+      const pages = Array.isArray(data.data) ? data.data : [];
+
+      if (pages.length > 0) {
+        return pages;
+      }
+
+      const directPages = await Promise.all(
+        fallbackPageSlugs.map(async (slug) => {
+          const pageResponse = await fetch(`/api/cms/pages?slug=${slug}`, {
+            method: "GET",
+            headers: {
+              'Content-Type': 'application/json',
+              "x-tenant-db": tenantHeader || "kp_codified_web_solution"
+            },
+          });
+
+          if (!pageResponse.ok) return null;
+          const pageData = await pageResponse.json();
+          return Array.isArray(pageData.data) ? pageData.data[0] : pageData.data;
+        })
+      );
+
+      return directPages.filter(Boolean);
     } catch (error: any) {
       return rejectWithValue(error.message);
     }
@@ -179,4 +214,3 @@ export const deletePageThunk = createAsyncThunk(
     }
   }
 );
-

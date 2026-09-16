@@ -1,0 +1,34 @@
+{
+  "title": {
+    "en": "Kalp Auth",
+    "hi": "कल्प ऑथ"
+  },
+  "slug": "kalpauth",
+  "isPublished": true,
+  "metaTitle": {
+    "en": "Authentication | Maven Projects",
+    "hi": "ऑथेंटिकेशन | मेवेन प्रोजेक्ट्स"
+  },
+  "metaDescription": {
+    "en": "Secure authentication endpoint for Maven Projects SSO and user account verification.",
+    "hi": "मेवेन प्रोजेक्ट्स एसएसओ के लिए सुरक्षित ऑथेंटिकेशन।"
+  },
+  "content": [
+    {
+      "id": "kalpauth-section",
+      "type": "section",
+      "layout": "auth",
+      "adminTitle": "KalpAuth SSO Section",
+      "props": {
+        "title": {
+          "en": "Kalp Secure Single Sign-On",
+          "hi": "कल्प सुरक्षित सिंगल साइन-ऑन"
+        },
+        "description": {
+          "en": "Single sign-on verification portal powered by Kalp Cloud Platform.",
+          "hi": "कल्प क्लाउड प्लेटफॉर्म द्वारा संचालित सिंगल साइन-ऑन।"
+        }
+      }
+    }
+  ]
+}

@@ -4,90 +4,183 @@ import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { loginUser, clearError } from "@/redux/slices/auth/authSlice";
-import { Eye, EyeOff, LogIn, AlertCircle, Loader2 } from "lucide-react";
+import { generateCodeChallenge, generateCodeVerifier } from "@/lib/pkce";
+import { Eye, EyeOff, LogIn, AlertCircle, Loader2, Mail, Lock, ArrowRight, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 export default function LoginFormSection() {
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const { isAuthenticated, loading, error } = useAppSelector((s) => s.auth);
+  const { isAuthenticated, loading, error, authUser } = useAppSelector((s) => s.auth);
 
-  const [email, setEmail] = useState("business@maven.com");
-  const [password, setPassword] = useState("1234567899");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
+  const [formError, setFormError] = useState("");
 
   useEffect(() => {
-    if (isAuthenticated) router.push("/");
+    if (isAuthenticated) {
+      router.push("/");
+    }
   }, [isAuthenticated, router]);
 
   useEffect(() => {
+    // Force hide any headers or footers present in the DOM for this page
+    const elementsToHide = document.querySelectorAll("header, footer");
+    elementsToHide.forEach((el) => {
+      (el as HTMLElement).style.setProperty("display", "none", "important");
+    });
     return () => {
       dispatch(clearError());
+      elementsToHide.forEach((el) => {
+        (el as HTMLElement).style.removeProperty("display");
+      });
     };
   }, [dispatch]);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!email.trim() || !password.trim()) return;
-    dispatch(loginUser({ email: email.trim(), password }));
+    setFormError("");
+
+    if (!email.trim() || !password.trim()) {
+      setFormError("Please provide both email and password.");
+      return;
+    }
+
+    try {
+      const response = await dispatch(loginUser({ email: email.trim(), password })).unwrap();
+      
+      if (response?.session) {
+        const role = response.session.role;
+        if (role === "customer") {
+          router.push("/");
+        } else if (role === "tenant_admin") {
+          try {
+            const codeVerifier = generateCodeVerifier();
+            const codeChallenge = await generateCodeChallenge(codeVerifier);
+            const environment = process.env.NEXT_PUBLIC_ENVIRONMENT || "prod";
+            const redirectUri =
+              environment === "dev"
+                ? `${window.location.origin}/auth/callback`
+                : "http://kalptree.xyz/auth/callback";
+
+            const res = await fetch("/api/auth/sso/create", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "x-tenant-db": process.env.NEXT_PUBLIC_TENANT_ID || "",
+              },
+              body: JSON.stringify({ codeChallenge, codeVerifier, redirectUri }),
+              credentials: "include",
+            });
+
+            if (res.ok) {
+              const ssoData = await res.json();
+              if (ssoData.success && ssoData.code) {
+                window.open(`${redirectUri}?code=${ssoData.code}`, "_blank");
+              }
+            }
+          } catch (ssoErr) {
+            console.warn("SSO redirect failed, falling back to standard flow", ssoErr);
+          }
+          router.push("/admin");
+        } else {
+          router.push("/");
+        }
+      }
+    } catch (err: any) {
+      const errMsg = typeof err === "string" ? err : err?.message || "Authentication failed";
+      setFormError(errMsg);
+    }
   };
 
+  const displayedError = formError || error;
+
   return (
-    <section className="w-full px-5 py-16 md:py-20">
-      <div className="mx-auto max-w-[440px]">
-        <div className="border border-[#dfdfdf] bg-white p-10 md:p-12">
-          <div className="mb-10 text-center">
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center border border-[#dfdfdf] bg-white">
-              <LogIn size={22} className="text-[#141414]" />
-            </div>
-            <h1 className="font-display text-[1.75rem] font-medium tracking-[-0.03em] text-[#141414]">
+    <div id="login-page-root" className="min-h-screen w-full flex bg-white font-sans text-slate-900">
+      {/* Left Column - Form Container */}
+      <div className="w-full lg:w-1/2 flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-12 relative z-10 bg-white">
+        <div className="max-w-md w-full mx-auto">
+          {/* Brand Header */}
+          <div className="mb-10 text-center lg:text-left">
+            <Link href="/" className="inline-block group mb-8">
+              <div className="flex items-center justify-center lg:justify-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center text-white font-black text-lg shadow-md group-hover:scale-105 transition-transform">
+                  M
+                </div>
+                <span className="text-2xl font-black uppercase tracking-tighter text-[#111111]">
+                  MAVEN
+                </span>
+              </div>
+            </Link>
+            <h1 className="text-3xl font-black text-slate-900 mb-2 leading-tight">
               Welcome back
             </h1>
-            <p className="font-editorial mt-2 text-xs uppercase tracking-[0.2em] text-[#767676]">
-              Sign in to continue
+            <p className="text-slate-500 text-sm font-medium">
+              Enter your credentials to access your account dashboard.
             </p>
           </div>
 
-          {error && (
-            <div className="mb-6 flex items-center gap-3 border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
-              <AlertCircle size={16} className="shrink-0" />
-              {error}
+          {/* Error Banner */}
+          {displayedError && (
+            <div className="p-4 mb-6 flex items-center gap-3 text-xs font-semibold text-red-600 bg-red-50 rounded-xl border border-red-200 animate-in fade-in slide-in-from-top-2 duration-300">
+              <AlertCircle size={18} className="shrink-0 text-red-500" />
+              <span>{displayedError}</span>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Login Form */}
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="font-editorial mb-2 block text-[10px] uppercase tracking-[0.24em] text-[#767676]">
-                Email
+              <label className="text-[11px] font-black uppercase tracking-widest text-slate-500 mb-2 block">
+                Email Address
               </label>
-              <input
-                type="email"
-                placeholder="you@company.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full border border-[#dfdfdf] bg-white px-5 py-4 font-editorial text-sm text-[#141414] outline-none transition-colors placeholder:text-[#b0b0b0] focus:border-[#141414]"
-                autoComplete="email"
-                required
-              />
+              <div className="relative group">
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-[#b07d3a] transition-colors">
+                  <Mail size={18} />
+                </div>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full flex h-12 rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-4 text-sm font-medium text-slate-900 transition-all focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#b07d3a]/20 focus:border-[#b07d3a] shadow-sm"
+                  placeholder="you@example.com"
+                  autoComplete="email"
+                />
+              </div>
             </div>
 
             <div>
-              <label className="font-editorial mb-2 block text-[10px] uppercase tracking-[0.24em] text-[#767676]">
-                Password
-              </label>
-              <div className="relative">
+              <div className="flex items-center justify-between mb-2">
+                <label className="text-[11px] font-black uppercase tracking-widest text-slate-500 block">
+                  Password
+                </label>
+                <Link
+                  href="#"
+                  className="text-[11px] font-bold text-[#b07d3a] hover:underline transition-all"
+                >
+                  Forgot password?
+                </Link>
+              </div>
+              <div className="relative group">
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-[#b07d3a] transition-colors">
+                  <Lock size={18} />
+                </div>
                 <input
                   type={showPassword ? "text" : "password"}
-                  placeholder="············"
+                  required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full border border-[#dfdfdf] bg-white px-5 py-4 pr-12 font-editorial text-sm text-[#141414] outline-none transition-colors placeholder:text-[#b0b0b0] focus:border-[#141414]"
+                  className="w-full flex h-12 rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-12 text-sm font-medium text-slate-900 transition-all focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#b07d3a]/20 focus:border-[#b07d3a] shadow-sm"
+                  placeholder="••••••••"
                   autoComplete="current-password"
-                  required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#b0b0b0] transition-colors hover:text-[#141414]"
+                  className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-700 transition-colors"
                   tabIndex={-1}
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -95,24 +188,67 @@ export default function LoginFormSection() {
               </div>
             </div>
 
+            <div className="flex items-center justify-between pt-1">
+              <label className="flex items-center gap-2 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                  className="w-4 h-4 rounded border-slate-300 text-[#111111] focus:ring-[#b07d3a]"
+                />
+                <span className="text-xs font-semibold text-slate-600">
+                  Keep me signed in
+                </span>
+              </label>
+            </div>
+
             <button
               type="submit"
               disabled={loading}
-              className="flex w-full items-center justify-center gap-2 border border-[#141414] bg-[#141414] px-5 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-white hover:text-[#141414] disabled:cursor-not-allowed disabled:opacity-50"
+              className="w-full flex h-12 mt-6 items-center justify-center rounded-xl bg-[#111111] hover:bg-[#1a1a1a] text-white px-4 py-2 text-sm font-black transition-all hover:shadow-lg hover:shadow-black/10 active:scale-[0.99] disabled:opacity-50 disabled:pointer-events-none gap-2 cursor-pointer"
             >
               {loading ? (
-                <><Loader2 size={16} className="animate-spin" /> Signing in...</>
+                <>
+                  <Loader2 size={18} className="animate-spin" />
+                  <span>Signing In...</span>
+                </>
               ) : (
-                <><LogIn size={16} /> Sign in</>
+                <>
+                  <span>Sign In</span>
+                  <ArrowRight size={18} />
+                </>
               )}
             </button>
           </form>
 
-          <p className="font-editorial mt-6 text-center text-[10px] uppercase tracking-[0.2em] text-[#b0b0b0]">
-            Secure login
-          </p>
+          {/* Secure Footer note */}
+          <div className="mt-10 pt-6 border-t border-slate-100 flex items-center justify-center gap-2 text-xs font-semibold text-slate-400">
+            <ShieldCheck size={16} className="text-[#b07d3a]" />
+            <span>Protected by Maven Enterprise Security</span>
+          </div>
         </div>
       </div>
-    </section>
+
+      {/* Right Column - Hero Banner */}
+      <div className="hidden lg:block lg:w-1/2 relative overflow-hidden bg-slate-950">
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1600"
+          alt="Maven Luxury Interiors Architecture"
+          className="absolute inset-0 w-full h-full object-cover opacity-85 animate-in fade-in zoom-in duration-1000"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
+        <div className="absolute bottom-12 left-12 right-12 p-8 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl">
+          <p className="text-white text-xl font-bold leading-relaxed font-serif">
+            "Design is not just what it looks like and feels like. Design is how it works."
+          </p>
+          <div className="mt-4 flex items-center gap-3">
+            <div className="h-0.5 w-8 bg-[#b07d3a] rounded-full"></div>
+            <p className="text-white/80 text-xs font-bold uppercase tracking-widest">
+              Maven Architectural Studio
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

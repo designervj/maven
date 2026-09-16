@@ -16,6 +16,7 @@ export async function fetcher<T = unknown>(
     ...options,
     headers: {
       'Content-Type': 'application/json',
+      'x-tenant-db': process.env.NEXT_PUBLIC_TENANT_ID || '',
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...(options.headers ?? {}),
     },
@@ -23,7 +24,16 @@ export async function fetcher<T = unknown>(
 
   if (!res.ok) {
     const errorBody = await res.text();
-    throw new Error(errorBody || `HTTP ${res.status}`);
+    let message = errorBody;
+
+    try {
+      const parsed = JSON.parse(errorBody);
+      message = parsed.detail || parsed.message || parsed.error || errorBody;
+    } catch {
+      message = errorBody;
+    }
+
+    throw new Error(message || `HTTP ${res.status}`);
   }
 
   return res.json() as Promise<T>;
