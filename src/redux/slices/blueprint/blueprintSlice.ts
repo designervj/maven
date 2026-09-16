@@ -14,6 +14,78 @@ import {
   updateBusinessProfileThunk,
   updateNavigationThunk,
 } from './blueprintThunk';
+import globalThemeConfig from '@/styles/global.json';
+
+const fallbackThemeSource =
+  (globalThemeConfig as any).public_theme ??
+  (globalThemeConfig as any).admin_theme;
+
+const fallbackTheme = {
+  ...fallbackThemeSource,
+  typography: {
+    ...(fallbackThemeSource.typography as any),
+    monoFont: fallbackThemeSource.typography?.monoFont ?? 'JetBrains Mono',
+  },
+} as Theme;
+
+function themeFromKalpTheme(kalpTheme: any): Theme | null {
+  if (!kalpTheme) return null;
+
+  const tokenColor = kalpTheme.tokens?.color ?? {};
+  const colors = kalpTheme.colors ?? {};
+  const font = kalpTheme.tokens?.font ?? {};
+  const typography = kalpTheme.typography ?? {};
+
+  return {
+    ...fallbackTheme,
+    colors: {
+      ...fallbackTheme.colors,
+      primary: tokenColor.primary ?? colors.primary ?? fallbackTheme.colors.primary,
+      secondary: tokenColor.secondary ?? colors.secondary ?? fallbackTheme.colors.secondary,
+      accent: tokenColor.accent ?? colors.accent ?? fallbackTheme.colors.accent,
+      background: tokenColor.background ?? colors.background ?? fallbackTheme.colors.background,
+      surface: tokenColor.surface ?? colors.surface ?? fallbackTheme.colors.surface,
+      text: tokenColor.text ?? colors.text ?? fallbackTheme.colors.text,
+      textMuted: tokenColor.muted ?? fallbackTheme.colors.textMuted,
+      success: tokenColor.success ?? fallbackTheme.colors.success,
+      warning: tokenColor.warning ?? fallbackTheme.colors.warning,
+      danger: tokenColor.danger ?? fallbackTheme.colors.danger,
+    },
+    typography: {
+      ...fallbackTheme.typography,
+      bodyFont: typography.bodyFont ?? font.body ?? fallbackTheme.typography.bodyFont,
+      headingFont: typography.headingFont ?? font.heading ?? fallbackTheme.typography.headingFont,
+    },
+  };
+}
+
+function normalizeBlueprintPayload(data: any): BlueprintPayload | null {
+  const source = data?.payload ?? data;
+  if (!source) return null;
+
+  const publicTheme =
+    source.public_theme ??
+    source.brandAssets?.public_theme ??
+    themeFromKalpTheme(source.experience?.public?.theme) ??
+    fallbackTheme;
+
+  const adminTheme =
+    source.admin_theme ??
+    source.brandAssets?.admin_theme ??
+    themeFromKalpTheme(source.experience?.admin?.theme) ??
+    publicTheme;
+
+  return {
+    ...source,
+    public_theme: publicTheme,
+    admin_theme: adminTheme,
+    brandAssets: {
+      ...(source.brandAssets ?? {}),
+      public_theme: publicTheme,
+      admin_theme: adminTheme,
+    },
+  } as BlueprintPayload;
+}
 
 // ============================================================
 // INITIAL STATE
@@ -76,7 +148,7 @@ const blueprintSlice = createSlice({
       })
       .addCase(fetchBlueprintThunk.fulfilled, (state, action) => {
         state.loading = false;
-        state.payload = action.payload.payload;
+        state.payload = normalizeBlueprintPayload(action.payload);
         state.lastFetched = new Date().toISOString();
         state.error = null;
       })
@@ -93,7 +165,7 @@ const blueprintSlice = createSlice({
       })
       .addCase(updateBlueprintThunk.fulfilled, (state, action) => {
         state.updating = false;
-        state.payload = action.payload.payload;
+        state.payload = normalizeBlueprintPayload(action.payload);
         state.lastFetched = new Date().toISOString();
       })
       .addCase(updateBlueprintThunk.rejected, (state, action) => {

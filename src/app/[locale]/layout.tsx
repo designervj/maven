@@ -2,7 +2,6 @@
 
 import { useSelector } from "react-redux";
 import type { RootState } from "@/redux/store";
-import GetAllPage from "@/components/getallData/pageData/GetAllPage";
 import EditModeToggle from "@/components/layout/EditModeToggle/EditModeToggle";
 import NavigationWrapper from "@/components/layout/NavigationWrapper";
 import ReduxProvider from "@/components/layout/ReduxProvider";
@@ -34,7 +33,6 @@ export default function LocaleLayout({
     <ReduxProvider>
       <BlueprintProvider context="public">
         <NavigationWrapper>
-          <GetAllPage />
           <EditModeToggle/>
           {children}
         </NavigationWrapper>

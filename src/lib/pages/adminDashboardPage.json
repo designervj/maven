@@ -1,0 +1,34 @@
+{
+  "title": {
+    "en": "Admin Dashboard",
+    "hi": "एडमिन डैशबोर्ड"
+  },
+  "slug": "admin",
+  "isPublished": true,
+  "metaTitle": {
+    "en": "Admin Portal | Maven Projects",
+    "hi": "एडमिन पोर्टल | मेवेन प्रोजेक्ट्स"
+  },
+  "metaDescription": {
+    "en": "Manage content, projects, inquiries, gallery, and site settings for Maven Projects.",
+    "hi": "मेवेन प्रोजेक्ट्स के लिए कंटेंट, प्रोजेक्ट्स और सेटिंग्स का प्रबंधन करें।"
+  },
+  "content": [
+    {
+      "id": "admin-overview",
+      "type": "section",
+      "layout": "dashboard",
+      "adminTitle": "Admin Overview",
+      "props": {
+        "title": {
+          "en": "Maven Management Console",
+          "hi": "मेवेन प्रबंधन कंसोल"
+        },
+        "description": {
+          "en": "Control system parameters, page content, inquiries, and media assets.",
+          "hi": "सिस्टम पैरामीटर, पेज कंटेंट और मीडिया प्रबंधित करें।"
+        }
+      }
+    }
+  ]
+}

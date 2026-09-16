@@ -11,6 +11,9 @@ import testimonialsPage from '@/lib/pages/testimonialsPage.json';
 import processPage from '@/lib/pages/processPage.json';
 import homePage from '@/lib/pages/homePage.json';
 import portfolioPage from '@/lib/pages/portfolioPage.json';
+import loginPage from '@/lib/pages/loginPage.json';
+import kalpauthPage from '@/lib/pages/kalpauthPage.json';
+import adminDashboardPage from '@/lib/pages/adminDashboardPage.json';
 
 const fallbackPages = [
   contactPage,
@@ -21,7 +24,10 @@ const fallbackPages = [
   testimonialsPage,
   processPage,
   homePage,
-  portfolioPage
+  portfolioPage,
+  loginPage,
+  kalpauthPage,
+  adminDashboardPage
 ] as unknown as Page[];
 interface PageState {
   allPages: Page[];

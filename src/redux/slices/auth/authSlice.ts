@@ -19,14 +19,13 @@ const initialState: AuthState = {
   error: null,
 };
 
-const api = process.env.NEXT_PUBLIC_API_URL;
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async ({ email, password }: { email: string; password: string }, { rejectWithValue }) => {
     try {
-      const data = await fetcher<LoginResponse>(`${api}/auth/login`, {
+      const data = await fetcher<LoginResponse>('/api/auth/login', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: email.trim().toLowerCase(), password: password.trim() }),
       });
       if (typeof window !== 'undefined') {
         localStorage.setItem('access_token', data.access_token);

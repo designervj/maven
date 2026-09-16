@@ -42,7 +42,7 @@ export default function HomeClosingCta() {
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="font-editorial text-[10px] uppercase tracking-[0.24em] text-white/88 md:text-xs">
-                  <EditableText value={p.label?.en || ''} isEditable={isEditable} onSave={handle('props.label.en')} tag="span" />
+                  <EditableText className="text-white" value={p.label?.en || ''} isEditable={isEditable} onSave={handle('props.label.en')} tag="span" />
                 </p>
                 <h2 className="font-display mt-3 max-w-3xl text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.04] tracking-[-0.04em] text-white">
                   <EditableText value={p.heading?.en || ''} isEditable={isEditable} onSave={handle('props.heading.en')} tag="span" />

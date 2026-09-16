@@ -1,13 +1,13 @@
 "use client";
 
-import { getPageData } from "@/lib/pageHelpers";
 import PageHero from "@/components/pages/PageHero";
 import HomeProjects from "@/components/sections/home/HomeProjects";
 import HomeFeatureBanner from "@/components/sections/home/HomeFeatureBanner";
 import SimpleCTA from "@/components/sections/SimpleCTA";
+import { usePageData } from "@/lib/hooks/usePageData";
 
 export default function PortfolioPage() {
-  const { getSection, t } = getPageData("portfolio");
+  const { getSection, getSectionItems, t } = usePageData("portfolio");
 
   const heroSection = getSection("Portfolio Hero");
   const heroProps = heroSection?.props ?? {};
@@ -21,9 +21,16 @@ export default function PortfolioPage() {
         eyebrow={t(heroProps.label) || "Our Portfolio"}
         title={t(heroProps.heading)?.replace(/<[^>]*>/g, "") || "Transforming ideas into beautiful, lived-in spaces across Jaipur."}
         description={t(heroProps.description) || "A curated look at our recent architecture and interior projects."}
-        image="/assets/Image/uploads/IMG_5650.PNG"
+        image={heroProps.image || "/assets/Image/uploads/IMG_5650.PNG"}
       />
-      <HomeProjects showAll={true} />
+      <HomeProjects
+        showAll={true}
+        itemsOverride={getSectionItems("Portfolio Grid")}
+        eyebrow="Completed / Ongoing"
+        title="Maven Project Portfolio"
+        showViewAll={false}
+        detailMode={true}
+      />
       <HomeFeatureBanner />
       <SimpleCTA
         title={t(ctaProps.heading)?.replace(/<[^>]*>/g, "") || "Ready to Start Your Project?"}
