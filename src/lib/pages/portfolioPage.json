@@ -45,7 +45,10 @@
           "id": "arihant-crest",
           "type": "item",
           "props": {
-            "title": { "en": "Arihant Crest", "hi": "Arihant Crest" },
+            "title": {
+              "en": "Arihant Crest",
+              "hi": "Arihant Crest"
+            },
             "tag": "Completed",
             "category": "Residential Architecture",
             "status": "Completed",
@@ -55,7 +58,7 @@
             "area": "111 sq yd each",
             "phases": "3",
             "completion": "Completed",
-            "image": "/assets/Image/uploads/IMG_5650.PNG",
+            "image": "/assets/projects/maven-project-1.png",
             "href": "/portfolio",
             "year": "Completed"
           }
@@ -64,7 +67,10 @@
           "id": "maven-aarna",
           "type": "item",
           "props": {
-            "title": { "en": "Maven Aarna", "hi": "Maven Aarna" },
+            "title": {
+              "en": "Maven Aarna",
+              "hi": "Maven Aarna"
+            },
             "tag": "Completed",
             "category": "Residential Architecture",
             "status": "Completed",
@@ -74,7 +80,7 @@
             "area": "110 sq yd each",
             "phases": "6",
             "completion": "Completed",
-            "image": "/assets/Image/uploads/IMG_5631.PNG",
+            "image": "/assets/projects/maven-project-2.png",
             "href": "/portfolio",
             "year": "Completed"
           }
@@ -83,7 +89,10 @@
           "id": "maven-aven",
           "type": "item",
           "props": {
-            "title": { "en": "Maven Aven", "hi": "Maven Aven" },
+            "title": {
+              "en": "Maven Aven",
+              "hi": "Maven Aven"
+            },
             "tag": "Completed",
             "category": "Residential Architecture",
             "status": "Completed",
@@ -93,7 +102,7 @@
             "area": "120 sq yd each",
             "phases": "2",
             "completion": "Completed",
-            "image": "/assets/Image/uploads/IMG_5647.PNG",
+            "image": "/assets/projects/maven-project-3.png",
             "href": "/portfolio",
             "year": "Completed"
           }
@@ -102,7 +111,10 @@
           "id": "b-11",
           "type": "item",
           "props": {
-            "title": { "en": "B-11", "hi": "B-11" },
+            "title": {
+              "en": "B-11",
+              "hi": "B-11"
+            },
             "tag": "Completed",
             "category": "Bungalow",
             "status": "Completed",
@@ -112,7 +124,7 @@
             "area": "226 sq yd",
             "phases": "Single",
             "completion": "Completed",
-            "image": "/assets/Image/uploads/IMG_5634.PNG",
+            "image": "/assets/projects/maven-project-4.png",
             "href": "/portfolio",
             "year": "Completed"
           }
@@ -121,7 +133,10 @@
           "id": "d-54",
           "type": "item",
           "props": {
-            "title": { "en": "D-54", "hi": "D-54" },
+            "title": {
+              "en": "D-54",
+              "hi": "D-54"
+            },
             "tag": "Ongoing",
             "category": "Bungalow",
             "status": "Ongoing",
@@ -131,7 +146,7 @@
             "area": "216 sq yd",
             "phases": "Single",
             "completion": "Expected September",
-            "image": "/assets/Image/uploads/IMG_5635.PNG",
+            "image": "/assets/projects/maven-project-5.png",
             "href": "/portfolio",
             "year": "Ongoing"
           }
@@ -140,7 +155,10 @@
           "id": "arihant-verona",
           "type": "item",
           "props": {
-            "title": { "en": "Arihant Verona", "hi": "Arihant Verona" },
+            "title": {
+              "en": "Arihant Verona",
+              "hi": "Arihant Verona"
+            },
             "tag": "Ongoing",
             "category": "Residential Architecture",
             "status": "Ongoing",
@@ -150,7 +168,7 @@
             "area": "150 sq yd each",
             "phases": "3",
             "completion": "Expected November",
-            "image": "/assets/Image/uploads/IMG_5644.PNG",
+            "image": "/assets/projects/maven-project-6.png",
             "href": "/portfolio",
             "year": "Ongoing"
           }
@@ -159,7 +177,10 @@
           "id": "palmara",
           "type": "item",
           "props": {
-            "title": { "en": "Palmara", "hi": "Palmara" },
+            "title": {
+              "en": "Palmara",
+              "hi": "Palmara"
+            },
             "tag": "Ongoing",
             "category": "Residential Architecture",
             "status": "Ongoing",
@@ -169,7 +190,7 @@
             "area": "150 sq yd each",
             "phases": "2",
             "completion": "Expected April",
-            "image": "/assets/Image/uploads/IMG_5645.PNG",
+            "image": "/assets/projects/maven-project-7.png",
             "href": "/portfolio",
             "year": "Ongoing"
           }
@@ -178,7 +199,10 @@
           "id": "bungalow-208",
           "type": "item",
           "props": {
-            "title": { "en": "Bungalow 208", "hi": "Bungalow 208" },
+            "title": {
+              "en": "Bungalow 208",
+              "hi": "Bungalow 208"
+            },
             "tag": "Ongoing",
             "category": "Bungalow",
             "status": "Ongoing",
@@ -188,7 +212,7 @@
             "area": "416 sq yd",
             "phases": "Single",
             "completion": "Expected July",
-            "image": "/assets/Image/uploads/IMG_5646.PNG",
+            "image": "/assets/projects/maven-project-8.png",
             "href": "/portfolio",
             "year": "Ongoing"
           }
@@ -197,7 +221,10 @@
           "id": "bungalow-214",
           "type": "item",
           "props": {
-            "title": { "en": "Bungalow 214", "hi": "Bungalow 214" },
+            "title": {
+              "en": "Bungalow 214",
+              "hi": "Bungalow 214"
+            },
             "tag": "Ongoing",
             "category": "Bungalow",
             "status": "Ongoing",
@@ -207,7 +234,7 @@
             "area": "333 sq yd",
             "phases": "Single",
             "completion": "Expected July",
-            "image": "/assets/Image/uploads/IMG_5651.PNG",
+            "image": "/assets/projects/maven-project-9.png",
             "href": "/portfolio",
             "year": "Ongoing"
           }
