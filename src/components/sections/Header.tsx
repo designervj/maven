@@ -100,26 +100,30 @@ export default function Header() {
       {/* ─── Header bar ─────────────────────────────────────────────────── */}
       <header className="fixed inset-x-0 top-[var(--admin-bar-offset,0px)] z-50 border-b border-[#d9d9d9] bg-white transition-colors duration-300">
         <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-5 px-4 py-3 md:px-8 lg:px-10">
-          <Link href="/" className="shrink-0">
+          <a href="/" className="shrink-0">
             <img src="/assets/Image/New-Logo.png" alt="Maven Projects" className="h-12 w-auto md:h-16" />
-          </Link>
+          </a>
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-7 xl:flex">
-            {siteNavigation.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "group relative font-editorial text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 md:text-[13px] py-1",
-                  pathname === item.href ? "text-[#111111] font-bold" : "text-[#333333] hover:text-[#111111]"
-                )}
-              >
-                {item.label}
-                {/* Animated underline sweep */}
-                <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#111111] transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
+            {siteNavigation.map((item) => {
+              const linkClasses = cn(
+                "group relative font-editorial text-[11px] uppercase tracking-[0.18em] transition-colors duration-300 md:text-[13px] py-1",
+                pathname === item.href ? "text-[#111111] font-bold" : "text-[#333333] hover:text-[#111111]"
+              );
+              
+              return item.href === "/" ? (
+                <a key={item.label} href={item.href} className={linkClasses}>
+                  {item.label}
+                  <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#111111] transition-all duration-300 group-hover:w-full" />
+                </a>
+              ) : (
+                <Link key={item.label} href={item.href} className={linkClasses}>
+                  {item.label}
+                  <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#111111] transition-all duration-300 group-hover:w-full" />
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Menu trigger */}
@@ -166,9 +170,9 @@ export default function Header() {
               <div className="relative flex w-full flex-col justify-between bg-white px-8 py-6 md:w-[58%] lg:w-[50%]">
                 {/* Logo and Mobile Close */}
                 <div className="flex items-start justify-between">
-                  <Link href="/" onClick={() => setOpen(false)}>
+                  <a href="/" onClick={() => setOpen(false)}>
                     <img src="/assets/Image/New-Logo.png" alt="Maven Projects" className="h-12 w-auto md:h-16" />
-                  </Link>
+                  </a>
                   <button
                     type="button"
                     onClick={() => setOpen(false)}
@@ -194,19 +198,35 @@ export default function Header() {
                         onMouseEnter={() => setHovered(item.label)}
                         onMouseLeave={() => setHovered(null)}
                       >
-                        <Link
-                          href={item.href}
-                          onClick={() => setOpen(false)}
-                          className={cn(
-                            "font-display block text-[clamp(1.9rem,4vw,3rem)] font-medium md:leading-[1.18] leading-[1.50] tracking-[-0.03em] transition-colors duration-200",
-                            pathname === item.href
-                              ? "text-[#111111]"
-                              : "text-[#666666] hover:text-[#111111]"
-                          )}
-                        >
-                          {item.label.charAt(0).toUpperCase() +
-                            item.label.slice(1).toLowerCase()}
-                        </Link>
+                        {item.href === "/" ? (
+                          <a
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className={cn(
+                              "font-display block text-[clamp(1.9rem,4vw,3rem)] font-medium md:leading-[1.18] leading-[1.50] tracking-[-0.03em] transition-colors duration-200",
+                              pathname === item.href
+                                ? "text-[#111111]"
+                                : "text-[#666666] hover:text-[#111111]"
+                            )}
+                          >
+                            {item.label.charAt(0).toUpperCase() +
+                              item.label.slice(1).toLowerCase()}
+                          </a>
+                        ) : (
+                          <Link
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className={cn(
+                              "font-display block text-[clamp(1.9rem,4vw,3rem)] font-medium md:leading-[1.18] leading-[1.50] tracking-[-0.03em] transition-colors duration-200",
+                              pathname === item.href
+                                ? "text-[#111111]"
+                                : "text-[#666666] hover:text-[#111111]"
+                            )}
+                          >
+                            {item.label.charAt(0).toUpperCase() +
+                              item.label.slice(1).toLowerCase()}
+                          </Link>
+                        )}
                       </motion.div>
                     ))}
                   </nav>
