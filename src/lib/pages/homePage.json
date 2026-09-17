@@ -126,7 +126,7 @@
       "adminTitle": "Industries",
       "content": [
         {
-          "id": "proj-1",
+          "id": "arihant-crest",
           "type": "item",
           "props": {
             "title": {
@@ -134,14 +134,21 @@
               "hi": "Arihant Crest"
             },
             "tag": "Completed",
+            "category": "Residential Architecture",
+            "status": "Completed",
+            "projectType": "3 row houses, 4BHK each",
             "location": "Arihant Greens, Jagatpura",
-            "image": "/assets/Image/uploads/IMG_5650.PNG",
+            "landmark": "Near NRI Colony",
+            "area": "111 sq yd each",
+            "phases": "3",
+            "completion": "Completed",
+            "image": "/assets/projects/maven-project-1.png",
             "href": "/portfolio",
             "year": "Completed"
           }
         },
         {
-          "id": "proj-2",
+          "id": "maven-aarna",
           "type": "item",
           "props": {
             "title": {
@@ -149,14 +156,21 @@
               "hi": "Maven Aarna"
             },
             "tag": "Completed",
+            "category": "Residential Architecture",
+            "status": "Completed",
+            "projectType": "6 row houses, 3BHK each",
             "location": "Jagdamba Nagar, Jagatpura",
-            "image": "/assets/Image/uploads/IMG_5631.PNG",
+            "landmark": "Near NRI Colony",
+            "area": "110 sq yd each",
+            "phases": "6",
+            "completion": "Completed",
+            "image": "/assets/projects/maven-project-2.png",
             "href": "/portfolio",
             "year": "Completed"
           }
         },
         {
-          "id": "proj-3",
+          "id": "maven-aven",
           "type": "item",
           "props": {
             "title": {
@@ -164,310 +178,149 @@
               "hi": "Maven Aven"
             },
             "tag": "Completed",
+            "category": "Residential Architecture",
+            "status": "Completed",
+            "projectType": "2 row houses, 3BHK each",
             "location": "Budh Vihar, Jagatpura",
-            "image": "/assets/Image/uploads/IMG_5647.PNG",
+            "landmark": "Near IIHMR College",
+            "area": "120 sq yd each",
+            "phases": "2",
+            "completion": "Completed",
+            "image": "/assets/projects/maven-project-3.png",
             "href": "/portfolio",
             "year": "Completed"
           }
         },
         {
-          "id": "proj-4",
+          "id": "b-11",
           "type": "item",
           "props": {
             "title": {
-              "en": "Project 4",
-              "hi": "Project 4"
+              "en": "B-11",
+              "hi": "B-11"
             },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5631.PNG",
+            "tag": "Completed",
+            "category": "Bungalow",
+            "status": "Completed",
+            "projectType": "4BHK bungalow",
+            "location": "Railway Colony, Jagatpura",
+            "landmark": "Near 7 No. Jagatpura",
+            "area": "226 sq yd",
+            "phases": "Single",
+            "completion": "Completed",
+            "image": "/assets/projects/maven-project-4.png",
             "href": "/portfolio",
-            "year": "2024"
+            "year": "Completed"
           }
         },
         {
-          "id": "proj-5",
+          "id": "d-54",
           "type": "item",
           "props": {
             "title": {
-              "en": "Project 5",
-              "hi": "Project 5"
+              "en": "D-54",
+              "hi": "D-54"
             },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5632.PNG",
+            "tag": "Ongoing",
+            "category": "Bungalow",
+            "status": "Ongoing",
+            "projectType": "5BHK bungalow",
+            "location": "Anand Vihar",
+            "landmark": "Railway Colony",
+            "area": "216 sq yd",
+            "phases": "Single",
+            "completion": "Expected September",
+            "image": "/assets/projects/maven-project-5.png",
             "href": "/portfolio",
-            "year": "2024"
+            "year": "Ongoing"
           }
         },
         {
-          "id": "proj-6",
+          "id": "arihant-verona",
           "type": "item",
           "props": {
             "title": {
-              "en": "Project 6",
-              "hi": "Project 6"
+              "en": "Arihant Verona",
+              "hi": "Arihant Verona"
             },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5633.PNG",
+            "tag": "Ongoing",
+            "category": "Residential Architecture",
+            "status": "Ongoing",
+            "projectType": "3 row houses",
+            "location": "Arihant Greens",
+            "landmark": "NRI Colony",
+            "area": "150 sq yd each",
+            "phases": "3",
+            "completion": "Expected November",
+            "image": "/assets/projects/maven-project-6.png",
             "href": "/portfolio",
-            "year": "2024"
+            "year": "Ongoing"
           }
         },
         {
-          "id": "proj-7",
+          "id": "palmara",
           "type": "item",
           "props": {
             "title": {
-              "en": "Project 7",
-              "hi": "Project 7"
+              "en": "Palmara",
+              "hi": "Palmara"
             },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5634.PNG",
+            "tag": "Ongoing",
+            "category": "Residential Architecture",
+            "status": "Ongoing",
+            "projectType": "2 row houses, 4BHK each",
+            "location": "Pink City Enclave, Jagatpura",
+            "landmark": "Khandaka Hospital",
+            "area": "150 sq yd each",
+            "phases": "2",
+            "completion": "Expected April",
+            "image": "/assets/projects/maven-project-7.png",
             "href": "/portfolio",
-            "year": "2024"
+            "year": "Ongoing"
           }
         },
         {
-          "id": "proj-8",
+          "id": "bungalow-208",
           "type": "item",
           "props": {
             "title": {
-              "en": "Project 8",
-              "hi": "Project 8"
+              "en": "Bungalow 208",
+              "hi": "Bungalow 208"
             },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5635.PNG",
+            "tag": "Ongoing",
+            "category": "Bungalow",
+            "status": "Ongoing",
+            "projectType": "Bungalow",
+            "location": "Taruchaya Nagar, Tonk Road",
+            "landmark": "Tonk Road",
+            "area": "416 sq yd",
+            "phases": "Single",
+            "completion": "Expected July",
+            "image": "/assets/projects/maven-project-8.png",
             "href": "/portfolio",
-            "year": "2024"
+            "year": "Ongoing"
           }
         },
         {
-          "id": "proj-9",
+          "id": "bungalow-214",
           "type": "item",
           "props": {
             "title": {
-              "en": "Project 9",
-              "hi": "Project 9"
+              "en": "Bungalow 214",
+              "hi": "Bungalow 214"
             },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5636.PNG",
+            "tag": "Ongoing",
+            "category": "Bungalow",
+            "status": "Ongoing",
+            "projectType": "Bungalow",
+            "location": "Taruchaya Nagar, Tonk Road",
+            "landmark": "Tonk Road",
+            "area": "333 sq yd",
+            "phases": "Single",
+            "completion": "Expected July",
+            "image": "/assets/projects/maven-project-9.png",
             "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-10",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 10",
-              "hi": "Project 10"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5637.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-11",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 11",
-              "hi": "Project 11"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5638.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-12",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 12",
-              "hi": "Project 12"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5639.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-13",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 13",
-              "hi": "Project 13"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5640.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-14",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 14",
-              "hi": "Project 14"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5641.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-15",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 15",
-              "hi": "Project 15"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5642.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-16",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 16",
-              "hi": "Project 16"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5643.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-17",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 17",
-              "hi": "Project 17"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5644.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-18",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 18",
-              "hi": "Project 18"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5645.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-19",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 19",
-              "hi": "Project 19"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5646.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-20",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 20",
-              "hi": "Project 20"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5647.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-21",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 21",
-              "hi": "Project 21"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5648.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-22",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 22",
-              "hi": "Project 22"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5650.PNG",
-            "href": "/portfolio",
-            "year": "2024"
-          }
-        },
-        {
-          "id": "proj-23",
-          "type": "item",
-          "props": {
-            "title": {
-              "en": "Project 23",
-              "hi": "Project 23"
-            },
-            "tag": "Architecture",
-            "location": "Jaipur, India",
-            "image": "/assets/Image/uploads/IMG_5651.PNG",
-            "href": "/portfolio",
-            "year": "2024"
+            "year": "Ongoing"
           }
         }
       ]
